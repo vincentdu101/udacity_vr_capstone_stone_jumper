@@ -315,14 +315,6 @@
      <Compile Include="Assets\PhotonChatApi\ChatState.cs" />
      <Compile Include="Assets\PhotonChatApi\ChatUserStatus.cs" />
      <Compile Include="Assets\PhotonChatApi\IChatClientListener.cs" />
-     <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
-     <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
-     <Compile Include="Assets\SampleScenes\Menu\Scripts\SceneAndURLLoader.cs" />
-     <Compile Include="Assets\SampleScenes\Scripts\CameraSwitch.cs" />
-     <Compile Include="Assets\SampleScenes\Scripts\LevelReset.cs" />
-     <Compile Include="Assets\SampleScenes\Scripts\ParticleSceneControls.cs" />
-     <Compile Include="Assets\SampleScenes\Scripts\PlaceTargetWithMouse.cs" />
-     <Compile Include="Assets\SampleScenes\Scripts\SlowMoButton.cs" />
      <Compile Include="Assets\Scripts\AIFollow.cs" />
      <Compile Include="Assets\Scripts\CharacterMenu.cs" />
      <Compile Include="Assets\Scripts\ControlSwitch.cs" />
@@ -339,64 +331,6 @@
      <Compile Include="Assets\Scripts\SkyboxReplacer.cs" />
      <Compile Include="Assets\Scripts\twinkle.cs" />
      <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
-     <Compile Include="Assets\VRSampleScenes\Scripts\Common\SessionData.cs" />
-     <Compile Include="Assets\VRSampleScenes\Scripts\Examples\ExampleInteractiveItem.cs" />
-     <Compile Include="Assets\VRSampleScenes\Scripts\Examples\ExampleRenderScale.cs" />
-     <Compile Include="Assets\VRSampleScenes\Scripts\Examples\ExampleRotation.cs" />
-     <Compile Include="Assets\VRSampleScenes\Scripts\Examples\ExampleTouchpad.cs" />
-     <Compile Include="Assets\VRSampleScenes\Scripts\Flyer\Asteroid.cs" />
-     <Compile Include="Assets\VRSampleScenes\Scripts\Flyer\AsteroidExplosion.cs" />
-     <Compile Include="Assets\VRSampleScenes\Scripts\Flyer\EnvironmentController.cs" />
-     <Compile Include="Assets\VRSampleScenes\Scripts\Flyer\ExplosionPhysicsForce.cs" />
-     <Compile Include="Assets\VRSampleScenes\Scripts\Flyer\FlyerAlignmentChecker.cs" />
-     <Compile Include="Assets\VRSampleScenes\Scripts\Flyer\FlyerGameController.cs" />
-     <Compile Include="Assets\VRSampleScenes\Scripts\Flyer\FlyerHealthController.cs" />
-     <Compile Include="Assets\VRSampleScenes\Scripts\Flyer\FlyerLaser.cs" />
-     <Compile Include="Assets\VRSampleScenes\Scripts\Flyer\FlyerLaserController.cs" />
-     <Compile Include="Assets\VRSampleScenes\Scripts\Flyer\FlyerMovementController.cs" />
-     <Compile Include="Assets\VRSampleScenes\Scripts\Flyer\ParticleSystemMultiplier.cs" />
-     <Compile Include="Assets\VRSampleScenes\Scripts\Flyer\Ring.cs" />
-     <Compile Include="Assets\VRSampleScenes\Scripts\Flyer\UIController.cs" />
-     <Compile Include="Assets\VRSampleScenes\Scripts\Intro\IntroManager.cs" />
-     <Compile Include="Assets\VRSampleScenes\Scripts\Maze\AgentTrail.cs" />
-     <Compile Include="Assets\VRSampleScenes\Scripts\Maze\AICharacterControl.cs" />
-     <Compile Include="Assets\VRSampleScenes\Scripts\Maze\CameraOrbit.cs" />
-     <Compile Include="Assets\VRSampleScenes\Scripts\Maze\DestinationMarker.cs" />
-     <Compile Include="Assets\VRSampleScenes\Scripts\Maze\ExitArea.cs" />
-     <Compile Include="Assets\VRSampleScenes\Scripts\Maze\MazeGameController.cs" />
-     <Compile Include="Assets\VRSampleScenes\Scripts\Maze\MazeTargetSetting.cs" />
-     <Compile Include="Assets\VRSampleScenes\Scripts\Maze\Player.cs" />
-     <Compile Include="Assets\VRSampleScenes\Scripts\Maze\SwitchButton.cs" />
-     <Compile Include="Assets\VRSampleScenes\Scripts\Maze\ThirdPersonCharacter.cs" />
-     <Compile Include="Assets\VRSampleScenes\Scripts\Maze\Turret.cs" />
-     <Compile Include="Assets\VRSampleScenes\Scripts\Menu\MenuAnimator.cs" />
-     <Compile Include="Assets\VRSampleScenes\Scripts\Menu\MenuButton.cs" />
-     <Compile Include="Assets\VRSampleScenes\Scripts\Menu\MenuItemPopout.cs" />
-     <Compile Include="Assets\VRSampleScenes\Scripts\Menu\MenuSelectorMover.cs" />
-     <Compile Include="Assets\VRSampleScenes\Scripts\ShootingGallery\ShootingGalleryController.cs" />
-     <Compile Include="Assets\VRSampleScenes\Scripts\ShootingGallery\ShootingGalleryGun.cs" />
-     <Compile Include="Assets\VRSampleScenes\Scripts\ShootingGallery\ShootingGalleryScore.cs" />
-     <Compile Include="Assets\VRSampleScenes\Scripts\ShootingGallery\ShootingTarget.cs" />
-     <Compile Include="Assets\VRSampleScenes\Scripts\ShootingGallery\UIController.cs" />
-     <Compile Include="Assets\VRSampleScenes\Scripts\Utils\GUIArrows.cs" />
-     <Compile Include="Assets\VRSampleScenes\Scripts\Utils\InputWarnings.cs" />
-     <Compile Include="Assets\VRSampleScenes\Scripts\Utils\ObjectPool.cs" />
-     <Compile Include="Assets\VRSampleScenes\Scripts\Utils\PlatformDependentText.cs" />
-     <Compile Include="Assets\VRSampleScenes\Scripts\Utils\Reticle.cs" />
-     <Compile Include="Assets\VRSampleScenes\Scripts\Utils\ReturnToMainMenu.cs" />
-     <Compile Include="Assets\VRSampleScenes\Scripts\Utils\SelectionRadial.cs" />
-     <Compile Include="Assets\VRSampleScenes\Scripts\Utils\SelectionSlider.cs" />
-     <Compile Include="Assets\VRSampleScenes\Scripts\Utils\UIFader.cs" />
-     <Compile Include="Assets\VRSampleScenes\Scripts\Utils\UIMovement.cs" />
-     <Compile Include="Assets\VRSampleScenes\Scripts\Utils\UITint.cs" />
-     <Compile Include="Assets\VRSampleScenes\Scripts\Utils\VRCameraFade.cs" />
-     <Compile Include="Assets\VRSampleScenes\Scripts\Utils\VRCameraUI.cs" />
-     <Compile Include="Assets\VRStandardAssets\Scripts\VRDeviceManager.cs" />
-     <Compile Include="Assets\VRStandardAssets\Scripts\VREyeRaycaster.cs" />
-     <Compile Include="Assets\VRStandardAssets\Scripts\VRFPSCounter.cs" />
-     <Compile Include="Assets\VRStandardAssets\Scripts\VRInput.cs" />
-     <Compile Include="Assets\VRStandardAssets\Scripts\VRInteractiveItem.cs" />
-     <Compile Include="Assets\VRStandardAssets\Scripts\VRTrackingReset.cs" />
      <Compile Include="Assets\WaypointFollow.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlendOneOne.shader" />
@@ -423,7 +357,6 @@
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\Contrast Stretch\MinMaxReduction.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\SSAA.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\RadialBlur.shader" />
-     <None Include="Assets\VRSampleScenes\Shaders\UnlitTransparentParam.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\DepthOfFieldDX11.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Readme.txt" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ContrastComposite.shader" />
@@ -438,12 +371,10 @@
      <None Include="Assets\Plugins\Android\Assets\OSIG_Readme.txt" />
      <None Include="Assets\Standard Assets\Vehicles\Aircraft\AircraftGuidelines.txt" />
      <None Include="Assets\Plugins\release_history.txt" />
-     <None Include="Assets\VRSampleScenes\Shaders\UIOverlay.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAA2.shader" />
      <None Include="Assets\Standard Assets\Vehicles\Car\Shaders\ReflectiveDiffuseSpecTransp.shader" />
      <None Include="Assets\GoogleVR\Demos\Environment\DemoEnvUnlitGrayscale.shader" />
      <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
-     <None Include="Assets\VRSampleScenes\Shaders\PriorityParticleAlpha.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\DepthOfField34.shader" />
      <None Include="Assets\Standard Assets\Vehicles\Car\Shaders\ReflectiveDiffuseSpec.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\MobileBlur.shader" />
@@ -461,7 +392,6 @@
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ChromaticAberrationShader.shader" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\GlobalFog.shader" />
-     <None Include="Assets\VRSampleScenes\Shaders\SlidingUV.shader" />
      <None Include="Assets\Photon Unity Networking\Demos\DemoBoxes\Resources\eurof_tt.txt" />
      <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAddSoft.shader" />
      <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />
@@ -476,7 +406,6 @@
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\SeparableBlurPlus.shader" />
      <None Include="Assets\Standard Assets\Effects\Projectors\Shaders\ProjectorLight.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\MultiPassHollywoodFlares.shader" />
-     <None Include="Assets\VRSampleScenes\Shaders\SeparableAlpha.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\BlurEffectConeTaps.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\CameraMotionBlur.shader" />
      <None Include="Assets\GoogleVR\Shaders\GvrControllerReticle.shader" />
@@ -484,7 +413,6 @@
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\DLAA.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\NoiseAndGrainDX11.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BrightPassFilter2.shader" />
-     <None Include="Assets\VRSampleScenes\Fonts\LICENSE.txt" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\SeparableBlur.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\MotionBlurClear.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ColorCorrectionEffect.shader" />
@@ -527,7 +455,6 @@
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\FXAA3Console.shader" />
      <None Include="Assets\GoogleVR\Plugins\Android\proguard-gvr.txt" />
      <None Include="Assets\Photon Unity Networking\changelog.txt" />
-     <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\FXAAPreset2.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlendForBloom.shader" />
@@ -559,13 +486,13 @@
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
  </Reference>
  <Reference Include="Google.ProtocolBuffers">
- <HintPath>/Users/vdu/workspace/experiments/udacity_vr_capstone/Assets/GoogleVR/Plugins/Google.ProtocolBuffers.dll</HintPath>
+ <HintPath>/Users/vdu/Desktop/udacity_vr_capstone/Assets/GoogleVR/Plugins/Google.ProtocolBuffers.dll</HintPath>
  </Reference>
  <Reference Include="Photon3Unity3D">
- <HintPath>/Users/vdu/workspace/experiments/udacity_vr_capstone/Assets/Plugins/Photon3Unity3D.dll</HintPath>
+ <HintPath>/Users/vdu/Desktop/udacity_vr_capstone/Assets/Plugins/Photon3Unity3D.dll</HintPath>
  </Reference>
  <Reference Include="websocket-sharp">
- <HintPath>/Users/vdu/workspace/experiments/udacity_vr_capstone/Assets/Plugins/WebSocket/websocket-sharp.dll</HintPath>
+ <HintPath>/Users/vdu/Desktop/udacity_vr_capstone/Assets/Plugins/WebSocket/websocket-sharp.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Analytics">
  <HintPath>/Users/vdu/Library/Unity/cache/packages/packages.unity.com/com.unity.analytics@1.0.1/UnityEngine.Analytics.dll</HintPath>

@@ -11,6 +11,9 @@ public class MenuService : Photon.PunBehaviour {
 	public GameObject startingPoint;
 	private GameServer gameServer;
 	private GameObject[] characters;
+	private GameObject[] controls;
+
+	Vector3 menuCameraBuffer = new Vector3(0.0f, 0.5f, 3.25f);
 
 	// Use this for initialization
 	void Start () {
@@ -18,6 +21,7 @@ public class MenuService : Photon.PunBehaviour {
 			gameServer = gameController.GetComponent<GameServer> ();
 		}
 		characters = GameObject.FindGameObjectsWithTag ("Character");
+		controls = GameObject.FindGameObjectsWithTag ("Controls");
 	}
 	
 	// Update is called once per frame
@@ -30,15 +34,22 @@ public class MenuService : Photon.PunBehaviour {
 		}
 	}
 
+	private void reactivateAllControls() {
+		foreach (GameObject control in controls) {
+			control.SetActive (true);
+		}
+	}
+
 	public void closeMenu() {
 		reactivateAllCharacters ();
+		reactivateAllControls();
 		messageMenu.SetActive (false);
 	}
 
 	public void StartGame() {
 		mainMenu.SetActive (false);
 		messageMenu.SetActive (true);
-		messageMenu.transform.position = player.transform.position + new Vector3(0.0f, 0.5f, 3.25f);
+		messageMenu.transform.position = player.transform.position + menuCameraBuffer;
 		gameServer.StartGame ();
 		player.transform.position = startingPoint.transform.position;
 	}

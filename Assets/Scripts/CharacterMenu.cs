@@ -13,10 +13,14 @@ public class CharacterMenu : MonoBehaviour {
 	//public GameObject camera;
 	//public GameObject character;
 
-	GameObject message;
-	GameObject messageMenu;
-	GameObject player;
-	GameObject camera;
+	private GameObject[] controls;
+	private GameObject[] characters;
+	private GameObject message;
+	private GameObject messageMenu;
+	private GameObject player;
+	private GameObject camera;
+
+	Vector3 menuCameraBuffer = new Vector3(0.0f, 1.0f, 1.0f);
 
 	int distance = 5;
 
@@ -35,7 +39,7 @@ public class CharacterMenu : MonoBehaviour {
 
 	private void MovePlayerAndMessageMenu() {
 		messageMenu.SetActive (true);
-		messageMenu.transform.position = camera.transform.position + new Vector3(0.0f, 0.0f, 2.0f) + camera.transform.forward * distance;
+		messageMenu.transform.position = camera.transform.position + menuCameraBuffer + camera.transform.forward * distance;
 		messageMenu.transform.rotation = new Quaternion (0.0f, camera.transform.rotation.y, 0.0f, camera.transform.rotation.w);
 	}
 
@@ -56,11 +60,18 @@ public class CharacterMenu : MonoBehaviour {
 	}
 
 	private void DisableAllCharacters() {
-		GameObject[] characters = GameObject.FindGameObjectsWithTag ("Character");
+		characters = GameObject.FindGameObjectsWithTag ("Character");
 
 		foreach (GameObject character in characters) {
-			Debug.Log (character.ToString ());
 			character.SetActive (false);
+		}
+	}
+
+	private void DisableControls() {
+		controls = GameObject.FindGameObjectsWithTag ("Controls");
+
+		foreach (GameObject control in controls) {
+			control.SetActive (false);
 		}
 	}
 
@@ -69,6 +80,7 @@ public class CharacterMenu : MonoBehaviour {
 		ModifyMenuMessage ();
 		ActivateMenuBtns ();
 		DisableAllCharacters ();
+		DisableControls ();
 		LookAtPlayer ();
 	}
 }

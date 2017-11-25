@@ -1,0 +1,20 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/AIFollow.cs">
+    <Files>
+      <File FileName="Assets/Scripts/CharacterMenu.cs" Line="1" Column="1" />
+      <File FileName="Assets/AIFollow.cs" Line="16" Column="5" />
+      <File FileName="Assets/WaypointFollow.cs" Line="1" Column="1" />
+      <File FileName="Assets/MoveToTarget.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GameEnvironment/MenuService.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GameEnvironment/GameState.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GameEnvironment/GameServer.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GameEnvironment/MovementService.cs" Line="1" Column="1" />
+      <File FileName="Assets/Photon Unity Networking/UtilityScripts/ConnectAndJoinRandom.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

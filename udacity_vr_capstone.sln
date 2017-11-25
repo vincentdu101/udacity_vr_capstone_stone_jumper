@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "udacity_vr_capstone", "Assembly-CSharp.csproj", "{136D1E92-7EF2-4882-7CB0-E1B139FDA9B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "udacity_vr_capstone", "Assembly-CSharp-firstpass.csproj", "{8DAFA012-FBDF-80CC-A2BA-F69160B589F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "udacity_vr_capstone", "Assembly-CSharp-Editor.csproj", "{87B4E9B4-5AE3-6883-6BA3-AB79D3534759}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{136D1E92-7EF2-4882-7CB0-E1B139FDA9B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{136D1E92-7EF2-4882-7CB0-E1B139FDA9B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{136D1E92-7EF2-4882-7CB0-E1B139FDA9B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{136D1E92-7EF2-4882-7CB0-E1B139FDA9B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DAFA012-FBDF-80CC-A2BA-F69160B589F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DAFA012-FBDF-80CC-A2BA-F69160B589F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DAFA012-FBDF-80CC-A2BA-F69160B589F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DAFA012-FBDF-80CC-A2BA-F69160B589F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87B4E9B4-5AE3-6883-6BA3-AB79D3534759}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87B4E9B4-5AE3-6883-6BA3-AB79D3534759}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87B4E9B4-5AE3-6883-6BA3-AB79D3534759}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87B4E9B4-5AE3-6883-6BA3-AB79D3534759}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal

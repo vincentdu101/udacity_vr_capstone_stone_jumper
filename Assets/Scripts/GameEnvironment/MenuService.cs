@@ -26,7 +26,6 @@ public class MenuService : Photon.PunBehaviour {
 
 	private void reactivateAllCharacters() {
 		foreach (GameObject character in characters) {
-			Debug.Log (character.ToString ());
 			character.SetActive (true);
 		}
 	}

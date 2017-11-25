@@ -6,18 +6,26 @@ using UnityEngine.UI;
 
 public class CharacterMenu : MonoBehaviour {
 
-	public GameObject message;
-	public GameObject messageMenu;
+	// public GameObject message;
+	// public GameObject messageMenu;
 	public GameObject[] activeMenuBtns;
-	public GameObject player;
-	public GameObject camera;
-	public GameObject character;
+	//public GameObject player;
+	//public GameObject camera;
+	//public GameObject character;
+
+	GameObject message;
+	GameObject messageMenu;
+	GameObject player;
+	GameObject camera;
 
 	int distance = 5;
 
 	// Use this for initialization
 	void Start () {
-		
+		message = GameObject.FindGameObjectWithTag ("Dialogue");
+		messageMenu = GameObject.FindGameObjectWithTag ("MessageMenu");
+		player = GameObject.FindGameObjectWithTag ("Player");
+		camera = GameObject.FindGameObjectWithTag ("MainCamera");
 	}
 	
 	// Update is called once per frame
@@ -47,11 +55,20 @@ public class CharacterMenu : MonoBehaviour {
 		this.transform.LookAt (player.transform.position);
 	}
 
+	private void DisableAllCharacters() {
+		GameObject[] characters = GameObject.FindGameObjectsWithTag ("Character");
+
+		foreach (GameObject character in characters) {
+			Debug.Log (character.ToString ());
+			character.SetActive (false);
+		}
+	}
+
 	public void PlayerContactStart() {
 		MovePlayerAndMessageMenu ();
 		ModifyMenuMessage ();
 		ActivateMenuBtns ();
-		character.SetActive (false);
+		DisableAllCharacters ();
 		LookAtPlayer ();
 	}
 }

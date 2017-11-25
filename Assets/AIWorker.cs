@@ -11,6 +11,15 @@ public class AIWorker : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		SetupWorkerAndGoal ();
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		CheckForTransitionToLumbering ();
+	}
+
+	private void SetupWorkerAndGoal() {
 		goalLocations = GameObject.FindGameObjectsWithTag ("WorkerGoal");
 		animation = this.GetComponent<Animation> ();
 		agent = this.GetComponent<NavMeshAgent> ();
@@ -18,13 +27,11 @@ public class AIWorker : MonoBehaviour {
 		agent.speed = Random.Range (1, 2);
 		agent.acceleration = Random.Range (1, 8);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		Debug.Log ("remaining distance " + agent.remainingDistance);
+
+	private void CheckForTransitionToLumbering() {
 		if (agent.remainingDistance < 1) {
-			Debug.Log ("playing lumbering");
-			animation.PlayQueued ("Lumbering");
+			agent.SetDestination (agent.transform.position);
+			animation.Play ("Lumbering");
 		}
 	}
 }

@@ -51,7 +51,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\AIWorker.cs" />
      <Compile Include="Assets\GoogleVR\Demos\Scripts\DemoInputManager.cs" />
      <Compile Include="Assets\GoogleVR\Demos\Scripts\DemoSceneManager.cs" />
      <Compile Include="Assets\GoogleVR\Demos\Scripts\GVRDemo\GVRDemoManager.cs" />
@@ -168,9 +167,7 @@
      <Compile Include="Assets\GoogleVR\Scripts\Utilities\GvrMathHelpers.cs" />
      <Compile Include="Assets\GoogleVR\Scripts\Utilities\GvrUIHelpers.cs" />
      <Compile Include="Assets\GoogleVR\Scripts\Video\GvrVideoPlayerTexture.cs" />
-     <Compile Include="Assets\LumberJackController.cs" />
      <Compile Include="Assets\Mountain Terrain\Misc\CameraDefault.cs" />
-     <Compile Include="Assets\MoveToTarget.cs" />
      <Compile Include="Assets\Photon Unity Networking\Demos\Demo2DJumpAndRunWithPhysics\Scripts\Demo2DJumpAndRun.cs" />
      <Compile Include="Assets\Photon Unity Networking\Demos\Demo2DJumpAndRunWithPhysics\Scripts\JumpAndRunMovement.cs" />
      <Compile Include="Assets\Photon Unity Networking\Demos\DemoBoxes\ColorPerPlayer.cs" />
@@ -316,22 +313,28 @@
      <Compile Include="Assets\PhotonChatApi\ChatUserStatus.cs" />
      <Compile Include="Assets\PhotonChatApi\IChatClientListener.cs" />
      <Compile Include="Assets\Scripts\AIFollow.cs" />
+     <Compile Include="Assets\Scripts\AIWorker.cs" />
+     <Compile Include="Assets\Scripts\CharacterDataService.cs" />
      <Compile Include="Assets\Scripts\CharacterMenu.cs" />
+     <Compile Include="Assets\Scripts\CharacterModel.cs" />
      <Compile Include="Assets\Scripts\ControlSwitch.cs" />
      <Compile Include="Assets\Scripts\FlyingRigidbodyFirstPersonController.cs" />
      <Compile Include="Assets\Scripts\ForceToAcessibleVolume.cs" />
      <Compile Include="Assets\Scripts\FreeCamera.cs" />
+     <Compile Include="Assets\Scripts\GameDataModel.cs" />
      <Compile Include="Assets\Scripts\GameEnvironment\GameServer.cs" />
      <Compile Include="Assets\Scripts\GameEnvironment\GameState.cs" />
      <Compile Include="Assets\Scripts\GameEnvironment\MenuService.cs" />
      <Compile Include="Assets\Scripts\GameEnvironment\MovementService.cs" />
      <Compile Include="Assets\Scripts\GameEnvironment\Stone.cs" />
+     <Compile Include="Assets\Scripts\LumberJackController.cs" />
      <Compile Include="Assets\Scripts\MouseLock.cs" />
+     <Compile Include="Assets\Scripts\MoveToTarget.cs" />
      <Compile Include="Assets\Scripts\QualitySetup.cs" />
      <Compile Include="Assets\Scripts\SkyboxReplacer.cs" />
      <Compile Include="Assets\Scripts\twinkle.cs" />
+     <Compile Include="Assets\Scripts\WaypointFollow.cs" />
      <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
-     <Compile Include="Assets\WaypointFollow.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\NoiseEffectShaderRGB.shader" />

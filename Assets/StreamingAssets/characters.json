@@ -1,0 +1,83 @@
+{
+	"names": [
+		"Beiner",
+		"Svipdaysson",
+		"Gæda",
+		"Ragisson",
+		"Hafgrim",
+		"Iricsson",
+		"Gunnlæif",
+		"Erlingsson",
+		"Griotgard",
+		"Autisson",
+		"Ingimund",
+		"Eidsson",
+		"Amundi",
+		"Arnorsson",
+		"Adils",
+		"Gnupasson",
+		"Ingolf",
+		"Thorfinnsson",
+		"Blann",
+		"Suitsson",
+		"Botulf",
+		"Herlaugsson",
+		"Alrik",
+		"Sweinsson",
+		"Var",
+		"Geirleifsson",
+		"Alfgeir",
+		"Selkollrsson",
+		"Sigegar",
+		"Sigfastsson",
+		"Sven",
+		"Iorthrsson",
+		"Alfketill",
+		"Thorleifsson",
+		"Valbrand",
+		"Stigandisson",
+		"Onem",
+		"Iarlsson",
+		"Sverting",
+		"Kjartansson"
+	],
+	"choices": [{
+			"id": "VC1S0-0",
+			"text": "Hi, how can I help you?",
+			"btns": ["positive", "negative", "close"],
+			"positiveText": "How do I find someone who can help me?",
+			"negativeText": "Where am I?",
+			"close": "Nothing, thanks.",
+			"nextPositiveSequence": "VC1S1-1",
+			"nextNegativeSequence": "VC1S1-2"
+		},
+		{
+			"id": "VC1S0-1",
+			"text": "You can talk to our chief Erik the Red he is in the town square.",
+			"btns": ["negative", "close"],
+			"negativeText": "I see. Where am I?",
+			"close": "OK, thanks.",
+			"nextNegativeSequence": "VC1S1-2"
+		},
+		{
+			"id": "VC1S0-2",
+			"text": "You are in Grœnland. We are establishing our first fort here under our chief Erik the Red",
+			"btns": ["positive", "close"],
+			"positiveText": "How do I find someone who can help me?",
+			"close": "Ok, thanks.",
+			"nextPositiveSequence": "VC1S1-1"
+		},
+		{
+			"id": "VC1S1-0",
+			"text": "Stop bothering me I need to get going.",
+			"btns": ["close"],
+			"close": "Ok, thanks."
+		},
+		{
+			"id": "VC1S2-0",
+			"text": "Sorry I need to get going.",
+			"btns": ["close"],
+			"close": "Ok, thanks."
+		}
+	]
+}

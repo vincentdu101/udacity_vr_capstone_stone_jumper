@@ -592,7 +592,6 @@ GameObject:
   - component: {fileID: 20328634}
   - component: {fileID: 20328643}
   - component: {fileID: 20328642}
-  - component: {fileID: 20328641}
   - component: {fileID: 20328640}
   - component: {fileID: 20328639}
   - component: {fileID: 20328638}
@@ -674,8 +673,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc6b36211aeb64a1fb334b8db32d67d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeMenuBtns:
-  - {fileID: 377342720}
+  closeBtn: {fileID: 377342720}
+  positiveBtn: {fileID: 758874475}
+  negativeBtn: {fileID: 1445031524}
 --- !u!111 &20328637
 Animation:
   m_ObjectHideFlags: 0
@@ -738,39 +738,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &20328641
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 20328633}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Hi I am Ethan
 --- !u!222 &20328642
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2099,8 +2066,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc6b36211aeb64a1fb334b8db32d67d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeMenuBtns:
-  - {fileID: 377342720}
+  closeBtn: {fileID: 377342720}
+  positiveBtn: {fileID: 758874475}
+  negativeBtn: {fileID: 1445031524}
 --- !u!114 &76636761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3279,7 +3247,6 @@ GameObject:
   - component: {fileID: 125397845}
   - component: {fileID: 125397854}
   - component: {fileID: 125397853}
-  - component: {fileID: 125397852}
   - component: {fileID: 125397851}
   - component: {fileID: 125397850}
   - component: {fileID: 125397849}
@@ -3361,8 +3328,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc6b36211aeb64a1fb334b8db32d67d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeMenuBtns:
-  - {fileID: 377342720}
+  closeBtn: {fileID: 377342720}
+  positiveBtn: {fileID: 758874475}
+  negativeBtn: {fileID: 1445031524}
 --- !u!111 &125397848
 Animation:
   m_ObjectHideFlags: 0
@@ -3425,39 +3393,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &125397852
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 125397844}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Hi I am Ethan
 --- !u!222 &125397853
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5330,7 +5265,6 @@ GameObject:
   - component: {fileID: 197159646}
   - component: {fileID: 197159655}
   - component: {fileID: 197159654}
-  - component: {fileID: 197159653}
   - component: {fileID: 197159652}
   - component: {fileID: 197159651}
   - component: {fileID: 197159650}
@@ -5412,8 +5346,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc6b36211aeb64a1fb334b8db32d67d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeMenuBtns:
-  - {fileID: 377342720}
+  closeBtn: {fileID: 377342720}
+  positiveBtn: {fileID: 758874475}
+  negativeBtn: {fileID: 1445031524}
 --- !u!111 &197159649
 Animation:
   m_ObjectHideFlags: 0
@@ -5476,39 +5411,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &197159653
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 197159645}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Hi I am Ethan
 --- !u!222 &197159654
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5671,7 +5573,7 @@ RectTransform:
   - {fileID: 126369470}
   - {fileID: 203051108}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6397,7 +6299,6 @@ GameObject:
   - component: {fileID: 241582214}
   - component: {fileID: 241582223}
   - component: {fileID: 241582222}
-  - component: {fileID: 241582221}
   - component: {fileID: 241582220}
   - component: {fileID: 241582219}
   - component: {fileID: 241582218}
@@ -6479,8 +6380,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc6b36211aeb64a1fb334b8db32d67d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeMenuBtns:
-  - {fileID: 377342720}
+  closeBtn: {fileID: 377342720}
+  positiveBtn: {fileID: 758874475}
+  negativeBtn: {fileID: 1445031524}
 --- !u!111 &241582217
 Animation:
   m_ObjectHideFlags: 0
@@ -6543,39 +6445,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &241582221
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 241582213}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Hi I am Ethan
 --- !u!222 &241582222
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7782,8 +7651,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc6b36211aeb64a1fb334b8db32d67d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeMenuBtns:
-  - {fileID: 377342720}
+  closeBtn: {fileID: 377342720}
+  positiveBtn: {fileID: 758874475}
+  negativeBtn: {fileID: 1445031524}
 --- !u!114 &269701298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7929,7 +7799,6 @@ GameObject:
   - component: {fileID: 272455924}
   - component: {fileID: 272455933}
   - component: {fileID: 272455932}
-  - component: {fileID: 272455931}
   - component: {fileID: 272455930}
   - component: {fileID: 272455929}
   - component: {fileID: 272455928}
@@ -8011,8 +7880,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc6b36211aeb64a1fb334b8db32d67d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeMenuBtns:
-  - {fileID: 377342720}
+  closeBtn: {fileID: 377342720}
+  positiveBtn: {fileID: 758874475}
+  negativeBtn: {fileID: 1445031524}
 --- !u!111 &272455927
 Animation:
   m_ObjectHideFlags: 0
@@ -8075,39 +7945,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &272455931
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 272455923}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Hi I am Ethan
 --- !u!222 &272455932
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8907,7 +8744,6 @@ GameObject:
   - component: {fileID: 293639140}
   - component: {fileID: 293639149}
   - component: {fileID: 293639148}
-  - component: {fileID: 293639147}
   - component: {fileID: 293639146}
   - component: {fileID: 293639145}
   - component: {fileID: 293639144}
@@ -8989,8 +8825,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc6b36211aeb64a1fb334b8db32d67d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeMenuBtns:
-  - {fileID: 377342720}
+  closeBtn: {fileID: 377342720}
+  positiveBtn: {fileID: 758874475}
+  negativeBtn: {fileID: 1445031524}
 --- !u!111 &293639143
 Animation:
   m_ObjectHideFlags: 0
@@ -9053,39 +8890,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &293639147
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 293639139}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Hi I am Ethan
 --- !u!222 &293639148
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10445,8 +10249,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc6b36211aeb64a1fb334b8db32d67d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeMenuBtns:
-  - {fileID: 377342720}
+  closeBtn: {fileID: 377342720}
+  positiveBtn: {fileID: 758874475}
+  negativeBtn: {fileID: 1445031524}
 --- !u!114 &328567561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10674,7 +10479,6 @@ GameObject:
   - component: {fileID: 337459362}
   - component: {fileID: 337459371}
   - component: {fileID: 337459370}
-  - component: {fileID: 337459369}
   - component: {fileID: 337459368}
   - component: {fileID: 337459367}
   - component: {fileID: 337459366}
@@ -10756,8 +10560,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc6b36211aeb64a1fb334b8db32d67d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeMenuBtns:
-  - {fileID: 377342720}
+  closeBtn: {fileID: 377342720}
+  positiveBtn: {fileID: 758874475}
+  negativeBtn: {fileID: 1445031524}
 --- !u!111 &337459365
 Animation:
   m_ObjectHideFlags: 0
@@ -10820,39 +10625,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &337459369
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 337459361}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Hi I am Ethan
 --- !u!222 &337459370
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11742,7 +11514,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc6b36211aeb64a1fb334b8db32d67d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeMenuBtns: []
+  closeBtn: {fileID: 0}
+  positiveBtn: {fileID: 0}
+  negativeBtn: {fileID: 0}
 --- !u!114 &356556824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15870,7 +15644,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400316, guid: b235179bd2a63d1468dd430670338c55, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 516380517}
-  m_LocalRotation: {x: 0.53267515, y: 0.07034045, z: 0.83613265, w: -0.11041513}
+  m_LocalRotation: {x: 0.5326752, y: 0.070340455, z: 0.83613276, w: -0.110415146}
   m_LocalPosition: {x: 0.000022271464, y: -0.00006150465, z: 0.026027026}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -16308,7 +16082,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4812649496966186, guid: 730cfb5045b464c91a459ba89846b7fb, type: 2}
       propertyPath: m_RootOrder
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 114084494935448322, guid: 730cfb5045b464c91a459ba89846b7fb,
         type: 2}
@@ -16522,7 +16296,6 @@ GameObject:
   - component: {fileID: 537996022}
   - component: {fileID: 537996031}
   - component: {fileID: 537996030}
-  - component: {fileID: 537996029}
   - component: {fileID: 537996028}
   - component: {fileID: 537996027}
   - component: {fileID: 537996026}
@@ -16604,8 +16377,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc6b36211aeb64a1fb334b8db32d67d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeMenuBtns:
-  - {fileID: 377342720}
+  closeBtn: {fileID: 377342720}
+  positiveBtn: {fileID: 758874475}
+  negativeBtn: {fileID: 1445031524}
 --- !u!111 &537996025
 Animation:
   m_ObjectHideFlags: 0
@@ -16668,39 +16442,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &537996029
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 537996021}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Hi I am Ethan
 --- !u!222 &537996030
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -17469,8 +17210,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc6b36211aeb64a1fb334b8db32d67d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeMenuBtns:
-  - {fileID: 377342720}
+  closeBtn: {fileID: 377342720}
+  positiveBtn: {fileID: 758874475}
+  negativeBtn: {fileID: 1445031524}
 --- !u!114 &549179246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18547,8 +18289,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc6b36211aeb64a1fb334b8db32d67d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeMenuBtns:
-  - {fileID: 377342720}
+  closeBtn: {fileID: 377342720}
+  positiveBtn: {fileID: 758874475}
+  negativeBtn: {fileID: 1445031524}
 --- !u!114 &581963876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18963,7 +18706,6 @@ GameObject:
   - component: {fileID: 598630448}
   - component: {fileID: 598630457}
   - component: {fileID: 598630456}
-  - component: {fileID: 598630455}
   - component: {fileID: 598630454}
   - component: {fileID: 598630453}
   - component: {fileID: 598630452}
@@ -19045,8 +18787,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc6b36211aeb64a1fb334b8db32d67d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeMenuBtns:
-  - {fileID: 377342720}
+  closeBtn: {fileID: 377342720}
+  positiveBtn: {fileID: 758874475}
+  negativeBtn: {fileID: 1445031524}
 --- !u!111 &598630451
 Animation:
   m_ObjectHideFlags: 0
@@ -19109,39 +18852,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &598630455
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 598630447}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Hi I am Ethan
 --- !u!222 &598630456
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -19552,7 +19262,6 @@ GameObject:
   - component: {fileID: 609046704}
   - component: {fileID: 609046713}
   - component: {fileID: 609046712}
-  - component: {fileID: 609046711}
   - component: {fileID: 609046710}
   - component: {fileID: 609046709}
   - component: {fileID: 609046708}
@@ -19634,8 +19343,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc6b36211aeb64a1fb334b8db32d67d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeMenuBtns:
-  - {fileID: 377342720}
+  closeBtn: {fileID: 377342720}
+  positiveBtn: {fileID: 758874475}
+  negativeBtn: {fileID: 1445031524}
 --- !u!111 &609046707
 Animation:
   m_ObjectHideFlags: 0
@@ -19698,39 +19408,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &609046711
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 609046703}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Hi I am Ethan
 --- !u!222 &609046712
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -20010,7 +19687,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc6b36211aeb64a1fb334b8db32d67d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeMenuBtns: []
+  closeBtn: {fileID: 0}
+  positiveBtn: {fileID: 0}
+  negativeBtn: {fileID: 0}
 --- !u!114 &619027833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20305,7 +19984,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc6b36211aeb64a1fb334b8db32d67d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeMenuBtns: []
+  closeBtn: {fileID: 0}
+  positiveBtn: {fileID: 0}
+  negativeBtn: {fileID: 0}
 --- !u!114 &625822951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21721,7 +21402,6 @@ GameObject:
   - component: {fileID: 670233826}
   - component: {fileID: 670233835}
   - component: {fileID: 670233834}
-  - component: {fileID: 670233833}
   - component: {fileID: 670233832}
   - component: {fileID: 670233831}
   - component: {fileID: 670233830}
@@ -21803,8 +21483,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc6b36211aeb64a1fb334b8db32d67d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeMenuBtns:
-  - {fileID: 377342720}
+  closeBtn: {fileID: 377342720}
+  positiveBtn: {fileID: 758874475}
+  negativeBtn: {fileID: 1445031524}
 --- !u!111 &670233829
 Animation:
   m_ObjectHideFlags: 0
@@ -21867,39 +21548,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &670233833
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 670233825}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Hi I am Ethan
 --- !u!222 &670233834
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -23410,7 +23058,6 @@ GameObject:
   - component: {fileID: 736811311}
   - component: {fileID: 736811320}
   - component: {fileID: 736811319}
-  - component: {fileID: 736811318}
   - component: {fileID: 736811317}
   - component: {fileID: 736811316}
   - component: {fileID: 736811315}
@@ -23492,8 +23139,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc6b36211aeb64a1fb334b8db32d67d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeMenuBtns:
-  - {fileID: 377342720}
+  closeBtn: {fileID: 377342720}
+  positiveBtn: {fileID: 758874475}
+  negativeBtn: {fileID: 1445031524}
 --- !u!111 &736811314
 Animation:
   m_ObjectHideFlags: 0
@@ -23556,39 +23204,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &736811318
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 736811310}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Hi I am Ethan
 --- !u!222 &736811319
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -24113,6 +23728,145 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3ba18024abdc5834ebb6ca252e273790, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &758874475
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 758874476}
+  - component: {fileID: 758874480}
+  - component: {fileID: 758874479}
+  - component: {fileID: 758874478}
+  - component: {fileID: 758874477}
+  m_Layer: 5
+  m_Name: PositiveBtn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &758874476
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 758874475}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.000022888184, y: -41, z: 0}
+  m_LocalScale: {x: 1.0003216, y: 1.0003216, z: 1.0003216}
+  m_Children:
+  - {fileID: 2143898868}
+  m_Father: {fileID: 1564112041}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.000022888184, y: -41}
+  m_SizeDelta: {x: 80, y: 25}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &758874477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 758874475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 905c35d67245a4a829774c2730db68f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameController: {fileID: 539915264}
+  mainMenu: {fileID: 1999656209}
+  messageMenu: {fileID: 1901265198}
+  player: {fileID: 308300950}
+  startingPoint: {fileID: 77547030}
+--- !u!114 &758874478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 758874475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 758874479}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 758874477}
+        m_MethodName: closeMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &758874479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 758874475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &758874480
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 758874475}
 --- !u!1 &759001642
 GameObject:
   m_ObjectHideFlags: 0
@@ -24792,8 +24546,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc6b36211aeb64a1fb334b8db32d67d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeMenuBtns:
-  - {fileID: 377342720}
+  closeBtn: {fileID: 377342720}
+  positiveBtn: {fileID: 758874475}
+  negativeBtn: {fileID: 1445031524}
 --- !u!114 &771464735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25710,7 +25465,7 @@ RectTransform:
   - {fileID: 619027828}
   - {fileID: 356556820}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -25784,7 +25539,6 @@ GameObject:
   - component: {fileID: 809759356}
   - component: {fileID: 809759365}
   - component: {fileID: 809759364}
-  - component: {fileID: 809759363}
   - component: {fileID: 809759362}
   - component: {fileID: 809759361}
   - component: {fileID: 809759360}
@@ -25866,8 +25620,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc6b36211aeb64a1fb334b8db32d67d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeMenuBtns:
-  - {fileID: 377342720}
+  closeBtn: {fileID: 377342720}
+  positiveBtn: {fileID: 758874475}
+  negativeBtn: {fileID: 1445031524}
 --- !u!111 &809759359
 Animation:
   m_ObjectHideFlags: 0
@@ -25930,39 +25685,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &809759363
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 809759355}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Hi I am Ethan
 --- !u!222 &809759364
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -27256,7 +26978,6 @@ GameObject:
   - component: {fileID: 862951925}
   - component: {fileID: 862951934}
   - component: {fileID: 862951933}
-  - component: {fileID: 862951932}
   - component: {fileID: 862951931}
   - component: {fileID: 862951930}
   - component: {fileID: 862951929}
@@ -27338,8 +27059,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc6b36211aeb64a1fb334b8db32d67d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeMenuBtns:
-  - {fileID: 377342720}
+  closeBtn: {fileID: 377342720}
+  positiveBtn: {fileID: 758874475}
+  negativeBtn: {fileID: 1445031524}
 --- !u!111 &862951928
 Animation:
   m_ObjectHideFlags: 0
@@ -27402,39 +27124,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &862951932
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 862951924}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Hi I am Ethan
 --- !u!222 &862951933
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -27495,7 +27184,7 @@ Transform:
   - {fileID: 1939429606}
   - {fileID: 164051191}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &864377408
 GameObject:
@@ -27930,7 +27619,6 @@ GameObject:
   - component: {fileID: 869510162}
   - component: {fileID: 869510171}
   - component: {fileID: 869510170}
-  - component: {fileID: 869510169}
   - component: {fileID: 869510168}
   - component: {fileID: 869510167}
   - component: {fileID: 869510166}
@@ -28012,8 +27700,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc6b36211aeb64a1fb334b8db32d67d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeMenuBtns:
-  - {fileID: 377342720}
+  closeBtn: {fileID: 377342720}
+  positiveBtn: {fileID: 758874475}
+  negativeBtn: {fileID: 1445031524}
 --- !u!111 &869510165
 Animation:
   m_ObjectHideFlags: 0
@@ -28076,39 +27765,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &869510169
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 869510161}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Hi I am Ethan
 --- !u!222 &869510170
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -28248,7 +27904,7 @@ Transform:
   m_Children:
   - {fileID: 441411836}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &876322046
 GameObject:
@@ -30863,7 +30519,6 @@ GameObject:
   - component: {fileID: 961735054}
   - component: {fileID: 961735063}
   - component: {fileID: 961735062}
-  - component: {fileID: 961735061}
   - component: {fileID: 961735060}
   - component: {fileID: 961735059}
   - component: {fileID: 961735058}
@@ -30945,8 +30600,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc6b36211aeb64a1fb334b8db32d67d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeMenuBtns:
-  - {fileID: 377342720}
+  closeBtn: {fileID: 377342720}
+  positiveBtn: {fileID: 758874475}
+  negativeBtn: {fileID: 1445031524}
 --- !u!111 &961735057
 Animation:
   m_ObjectHideFlags: 0
@@ -31009,39 +30665,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &961735061
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 961735053}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Hi I am Ethan
 --- !u!222 &961735062
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -32881,8 +32504,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc6b36211aeb64a1fb334b8db32d67d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeMenuBtns:
-  - {fileID: 377342720}
+  closeBtn: {fileID: 377342720}
+  positiveBtn: {fileID: 758874475}
+  negativeBtn: {fileID: 1445031524}
 --- !u!114 &1017278965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32968,7 +32592,6 @@ GameObject:
   - component: {fileID: 1020937481}
   - component: {fileID: 1020937490}
   - component: {fileID: 1020937489}
-  - component: {fileID: 1020937488}
   - component: {fileID: 1020937487}
   - component: {fileID: 1020937486}
   - component: {fileID: 1020937485}
@@ -33050,8 +32673,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc6b36211aeb64a1fb334b8db32d67d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeMenuBtns:
-  - {fileID: 377342720}
+  closeBtn: {fileID: 377342720}
+  positiveBtn: {fileID: 758874475}
+  negativeBtn: {fileID: 1445031524}
 --- !u!111 &1020937484
 Animation:
   m_ObjectHideFlags: 0
@@ -33114,39 +32738,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &1020937488
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1020937480}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Hi I am Ethan
 --- !u!222 &1020937489
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -33669,8 +33260,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc6b36211aeb64a1fb334b8db32d67d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeMenuBtns:
-  - {fileID: 377342720}
+  closeBtn: {fileID: 377342720}
+  positiveBtn: {fileID: 758874475}
+  negativeBtn: {fileID: 1445031524}
 --- !u!114 &1027537850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34846,6 +34438,52 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0d998acdcb880824e92697c2f3ee2147, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1072188420
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1072188422}
+  - component: {fileID: 1072188421}
+  m_Layer: 14
+  m_Name: GameDataService
+  m_TagString: GameData
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1072188421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1072188420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c19a02f25f2546dd94ae408026ec02b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  names: []
+--- !u!224 &1072188422
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1072188420}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.4559937, y: 3.4799957, z: 7.84}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 5.4559937, y: 3.4799957}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1073129645
 GameObject:
   m_ObjectHideFlags: 0
@@ -35473,8 +35111,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc6b36211aeb64a1fb334b8db32d67d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeMenuBtns:
-  - {fileID: 377342720}
+  closeBtn: {fileID: 377342720}
+  positiveBtn: {fileID: 758874475}
+  negativeBtn: {fileID: 1445031524}
 --- !u!114 &1082521317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36499,8 +36138,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc6b36211aeb64a1fb334b8db32d67d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeMenuBtns:
-  - {fileID: 377342720}
+  closeBtn: {fileID: 377342720}
+  positiveBtn: {fileID: 758874475}
+  negativeBtn: {fileID: 1445031524}
 --- !u!114 &1117530516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36656,7 +36296,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc6b36211aeb64a1fb334b8db32d67d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeMenuBtns: []
+  closeBtn: {fileID: 0}
+  positiveBtn: {fileID: 0}
+  negativeBtn: {fileID: 0}
 --- !u!114 &1120601852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37270,7 +36912,6 @@ GameObject:
   - component: {fileID: 1148773806}
   - component: {fileID: 1148773815}
   - component: {fileID: 1148773814}
-  - component: {fileID: 1148773813}
   - component: {fileID: 1148773812}
   - component: {fileID: 1148773811}
   - component: {fileID: 1148773810}
@@ -37352,8 +36993,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc6b36211aeb64a1fb334b8db32d67d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeMenuBtns:
-  - {fileID: 377342720}
+  closeBtn: {fileID: 377342720}
+  positiveBtn: {fileID: 758874475}
+  negativeBtn: {fileID: 1445031524}
 --- !u!111 &1148773809
 Animation:
   m_ObjectHideFlags: 0
@@ -37416,39 +37058,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &1148773813
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1148773805}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Hi I am Ethan
 --- !u!222 &1148773814
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -39447,8 +39056,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc6b36211aeb64a1fb334b8db32d67d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeMenuBtns:
-  - {fileID: 377342720}
+  closeBtn: {fileID: 377342720}
+  positiveBtn: {fileID: 758874475}
+  negativeBtn: {fileID: 1445031524}
 --- !u!114 &1204494441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39562,7 +39172,6 @@ GameObject:
   - component: {fileID: 1206864134}
   - component: {fileID: 1206864139}
   - component: {fileID: 1206864138}
-  - component: {fileID: 1206864137}
   - component: {fileID: 1206864136}
   - component: {fileID: 1206864135}
   - component: {fileID: 1206864141}
@@ -39635,39 +39244,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &1206864137
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1206864133}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Hi I am Ethan
 --- !u!222 &1206864138
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -39703,8 +39279,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc6b36211aeb64a1fb334b8db32d67d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeMenuBtns:
-  - {fileID: 377342720}
+  closeBtn: {fileID: 377342720}
+  positiveBtn: {fileID: 758874475}
+  negativeBtn: {fileID: 1445031524}
 --- !u!136 &1206864141
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -42377,8 +41954,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc6b36211aeb64a1fb334b8db32d67d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeMenuBtns:
-  - {fileID: 377342720}
+  closeBtn: {fileID: 377342720}
+  positiveBtn: {fileID: 758874475}
+  negativeBtn: {fileID: 1445031524}
 --- !u!114 &1297546043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43671,8 +43249,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc6b36211aeb64a1fb334b8db32d67d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeMenuBtns:
-  - {fileID: 377342720}
+  closeBtn: {fileID: 377342720}
+  positiveBtn: {fileID: 758874475}
+  negativeBtn: {fileID: 1445031524}
 --- !u!114 &1334425458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44133,8 +43712,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc6b36211aeb64a1fb334b8db32d67d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeMenuBtns:
-  - {fileID: 377342720}
+  closeBtn: {fileID: 377342720}
+  positiveBtn: {fileID: 758874475}
+  negativeBtn: {fileID: 1445031524}
 --- !u!114 &1340475238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47030,6 +46610,145 @@ Transform:
   m_Father: {fileID: 125397845}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1445031524
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1445031525}
+  - component: {fileID: 1445031529}
+  - component: {fileID: 1445031528}
+  - component: {fileID: 1445031527}
+  - component: {fileID: 1445031526}
+  m_Layer: 5
+  m_Name: NegativeBtn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1445031525
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1445031524}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.000022888184, y: -41, z: 0}
+  m_LocalScale: {x: 1.0003216, y: 1.0003216, z: 1.0003216}
+  m_Children:
+  - {fileID: 1560028699}
+  m_Father: {fileID: 1564112041}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.000022888184, y: -41}
+  m_SizeDelta: {x: 80, y: 25}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1445031526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1445031524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 905c35d67245a4a829774c2730db68f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameController: {fileID: 539915264}
+  mainMenu: {fileID: 1999656209}
+  messageMenu: {fileID: 1901265198}
+  player: {fileID: 308300950}
+  startingPoint: {fileID: 77547030}
+--- !u!114 &1445031527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1445031524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1445031528}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1445031526}
+        m_MethodName: closeMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &1445031528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1445031524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1445031529
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1445031524}
 --- !u!1001 &1445604507
 Prefab:
   m_ObjectHideFlags: 0
@@ -48686,7 +48405,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400316, guid: b235179bd2a63d1468dd430670338c55, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1499295477}
-  m_LocalRotation: {x: 0.53267515, y: 0.07034045, z: 0.83613265, w: -0.11041513}
+  m_LocalRotation: {x: 0.5326752, y: 0.070340455, z: 0.83613276, w: -0.110415146}
   m_LocalPosition: {x: 0.000022271464, y: -0.00006150465, z: 0.026027026}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -49431,7 +49150,6 @@ GameObject:
   - component: {fileID: 1522046819}
   - component: {fileID: 1522046828}
   - component: {fileID: 1522046827}
-  - component: {fileID: 1522046826}
   - component: {fileID: 1522046825}
   - component: {fileID: 1522046824}
   - component: {fileID: 1522046823}
@@ -49513,8 +49231,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc6b36211aeb64a1fb334b8db32d67d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeMenuBtns:
-  - {fileID: 377342720}
+  closeBtn: {fileID: 377342720}
+  positiveBtn: {fileID: 758874475}
+  negativeBtn: {fileID: 1445031524}
 --- !u!111 &1522046822
 Animation:
   m_ObjectHideFlags: 0
@@ -49577,39 +49296,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &1522046826
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1522046818}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Hi I am Ethan
 --- !u!222 &1522046827
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -49842,7 +49528,6 @@ GameObject:
   - component: {fileID: 1529998241}
   - component: {fileID: 1529998250}
   - component: {fileID: 1529998249}
-  - component: {fileID: 1529998248}
   - component: {fileID: 1529998247}
   - component: {fileID: 1529998246}
   - component: {fileID: 1529998245}
@@ -49924,8 +49609,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc6b36211aeb64a1fb334b8db32d67d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeMenuBtns:
-  - {fileID: 377342720}
+  closeBtn: {fileID: 377342720}
+  positiveBtn: {fileID: 758874475}
+  negativeBtn: {fileID: 1445031524}
 --- !u!111 &1529998244
 Animation:
   m_ObjectHideFlags: 0
@@ -49988,39 +49674,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &1529998248
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1529998240}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Hi I am Ethan
 --- !u!222 &1529998249
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -50792,6 +50445,80 @@ Transform:
   m_Father: {fileID: 2134008473}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1560028698
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1560028699}
+  - component: {fileID: 1560028701}
+  - component: {fileID: 1560028700}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1560028699
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1560028698}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1445031525}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1560028700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1560028698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 10
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 1
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: OK
+--- !u!222 &1560028701
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1560028698}
 --- !u!1 &1561474342
 GameObject:
   m_ObjectHideFlags: 0
@@ -50995,6 +50722,8 @@ RectTransform:
   - {fileID: 220996782}
   - {fileID: 377342721}
   - {fileID: 163266472}
+  - {fileID: 758874476}
+  - {fileID: 1445031525}
   m_Father: {fileID: 1901265199}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -54018,8 +53747,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc6b36211aeb64a1fb334b8db32d67d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeMenuBtns:
-  - {fileID: 377342720}
+  closeBtn: {fileID: 377342720}
+  positiveBtn: {fileID: 758874475}
+  negativeBtn: {fileID: 1445031524}
 --- !u!114 &1664239358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57715,8 +57445,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc6b36211aeb64a1fb334b8db32d67d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeMenuBtns:
-  - {fileID: 377342720}
+  closeBtn: {fileID: 377342720}
+  positiveBtn: {fileID: 758874475}
+  negativeBtn: {fileID: 1445031524}
 --- !u!114 &1758063768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61075,7 +60806,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1894460720
 MonoBehaviour:
@@ -63374,8 +63105,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc6b36211aeb64a1fb334b8db32d67d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeMenuBtns:
-  - {fileID: 377342720}
+  closeBtn: {fileID: 377342720}
+  positiveBtn: {fileID: 758874475}
+  negativeBtn: {fileID: 1445031524}
 --- !u!114 &1969958814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66691,7 +66423,6 @@ GameObject:
   - component: {fileID: 2074118119}
   - component: {fileID: 2074118128}
   - component: {fileID: 2074118127}
-  - component: {fileID: 2074118126}
   - component: {fileID: 2074118125}
   - component: {fileID: 2074118124}
   - component: {fileID: 2074118123}
@@ -66773,8 +66504,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc6b36211aeb64a1fb334b8db32d67d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeMenuBtns:
-  - {fileID: 377342720}
+  closeBtn: {fileID: 377342720}
+  positiveBtn: {fileID: 758874475}
+  negativeBtn: {fileID: 1445031524}
 --- !u!111 &2074118122
 Animation:
   m_ObjectHideFlags: 0
@@ -66837,39 +66569,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &2074118126
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2074118118}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Hi I am Ethan
 --- !u!222 &2074118127
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -68092,7 +67791,6 @@ GameObject:
   - component: {fileID: 2134008473}
   - component: {fileID: 2134008482}
   - component: {fileID: 2134008481}
-  - component: {fileID: 2134008480}
   - component: {fileID: 2134008479}
   - component: {fileID: 2134008478}
   - component: {fileID: 2134008477}
@@ -68174,8 +67872,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc6b36211aeb64a1fb334b8db32d67d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeMenuBtns:
-  - {fileID: 377342720}
+  closeBtn: {fileID: 377342720}
+  positiveBtn: {fileID: 758874475}
+  negativeBtn: {fileID: 1445031524}
 --- !u!111 &2134008476
 Animation:
   m_ObjectHideFlags: 0
@@ -68238,39 +67937,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &2134008480
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2134008472}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Hi I am Ethan
 --- !u!222 &2134008481
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -68663,6 +68329,80 @@ Transform:
   m_Father: {fileID: 2034846825}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2143898867
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2143898868}
+  - component: {fileID: 2143898870}
+  - component: {fileID: 2143898869}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2143898868
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2143898867}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 758874476}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2143898869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2143898867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 10
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 1
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: OK
+--- !u!222 &2143898870
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2143898867}
 --- !u!1 &2145320350
 GameObject:
   m_ObjectHideFlags: 0
@@ -68989,8 +68729,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc6b36211aeb64a1fb334b8db32d67d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeMenuBtns:
-  - {fileID: 377342720}
+  closeBtn: {fileID: 377342720}
+  positiveBtn: {fileID: 758874475}
+  negativeBtn: {fileID: 1445031524}
 --- !u!114 &2146928573
 MonoBehaviour:
   m_ObjectHideFlags: 0

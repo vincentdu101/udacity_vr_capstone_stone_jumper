@@ -19,6 +19,8 @@ TagManager:
   - Waypoints
   - Goal
   - WorkerGoal
+  - Fire
+  - GameData
   layers:
   - Default
   - TransparentFX

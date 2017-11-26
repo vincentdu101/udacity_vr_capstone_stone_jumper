@@ -6,13 +6,12 @@ using UnityEngine.UI;
 
 public class CharacterMenu : MonoBehaviour {
 
-	// public GameObject message;
-	// public GameObject messageMenu;
-	public GameObject[] activeMenuBtns;
-	//public GameObject player;
-	//public GameObject camera;
-	//public GameObject character;
+	public GameObject closeBtn;
+	public GameObject positiveBtn;
+	public GameObject negativeBtn;
 
+	private GameDataModel.CharacterChoice activeChoice;
+	private GameObject gameDataService;
 	private GameObject[] controls;
 	private GameObject[] characters;
 	private GameObject message;
@@ -30,6 +29,8 @@ public class CharacterMenu : MonoBehaviour {
 		messageMenu = GameObject.FindGameObjectWithTag ("MessageMenu");
 		player = GameObject.FindGameObjectWithTag ("Player");
 		camera = GameObject.FindGameObjectWithTag ("MainCamera");
+		gameDataService = GameObject.FindGameObjectWithTag ("GameData");
+		activeChoice = gameDataService.GetComponent<CharacterDataService> ().GetRandomChoice();
 	}
 	
 	// Update is called once per frame
@@ -44,14 +45,19 @@ public class CharacterMenu : MonoBehaviour {
 	}
 
 	private void ModifyMenuMessage() {
-		message.GetComponent<Text>().text = this.GetComponent<Text> ().text;
+		message.GetComponent<Text>().text = activeChoice.text;
 	}
 
 	private void ActivateMenuBtns() {
-		foreach (GameObject btn in activeMenuBtns) {
-			if (btn) {
-				btn.SetActive (true);
-			}
+		if (Array.IndexOf(activeChoice.btns, "close") != -1) {
+			closeBtn.GetComponentInChildren<Text>().text = activeChoice.close;
+			closeBtn.SetActive (true);
+		} else if (Array.IndexOf(activeChoice.btns, "positive") != -1) {
+			positiveBtn.GetComponentInChildren<Text>().text = activeChoice.positiveText;
+			positiveBtn.SetActive (true);
+		} else if (Array.IndexOf(activeChoice.btns, "negative") != -1) {
+			negativeBtn.GetComponentInChildren<Text>().text = activeChoice.negativeText;
+			negativeBtn.SetActive (true);
 		}
 	}
 

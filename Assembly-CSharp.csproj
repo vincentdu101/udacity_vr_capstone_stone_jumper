@@ -314,6 +314,7 @@
      <Compile Include="Assets\PhotonChatApi\IChatClientListener.cs" />
      <Compile Include="Assets\Scripts\AIFollow.cs" />
      <Compile Include="Assets\Scripts\AIWorker.cs" />
+     <Compile Include="Assets\Scripts\CharacterChoiceService.cs" />
      <Compile Include="Assets\Scripts\CharacterDataService.cs" />
      <Compile Include="Assets\Scripts\CharacterMenu.cs" />
      <Compile Include="Assets\Scripts\CharacterModel.cs" />
@@ -328,6 +329,7 @@
      <Compile Include="Assets\Scripts\GameEnvironment\MovementService.cs" />
      <Compile Include="Assets\Scripts\GameEnvironment\Stone.cs" />
      <Compile Include="Assets\Scripts\LumberJackController.cs" />
+     <Compile Include="Assets\Scripts\MenuDataService.cs" />
      <Compile Include="Assets\Scripts\MouseLock.cs" />
      <Compile Include="Assets\Scripts\MoveToTarget.cs" />
      <Compile Include="Assets\Scripts\QualitySetup.cs" />

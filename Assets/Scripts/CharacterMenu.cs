@@ -18,10 +18,9 @@ public class CharacterMenu : MonoBehaviour {
 	private GameObject messageMenu;
 	private GameObject player;
 	private GameObject camera;
-
-	Vector3 menuCameraBuffer = new Vector3(0.0f, 1.0f, 1.0f);
-
-	int distance = 3;
+	private GameObject gameData;
+	private MenuDataService menuDataService;
+	private CharacterDataService characterDataService;
 
 	// Use this for initialization
 	void Start () {
@@ -30,6 +29,8 @@ public class CharacterMenu : MonoBehaviour {
 		player = GameObject.FindGameObjectWithTag ("Player");
 		camera = GameObject.FindGameObjectWithTag ("MainCamera");
 		gameDataService = GameObject.FindGameObjectWithTag ("GameData");
+		menuDataService = gameDataService.GetComponent<MenuDataService> ();
+		characterDataService = gameDataService.GetComponent<CharacterDataService> ();
 	}
 	
 	// Update is called once per frame
@@ -37,36 +38,14 @@ public class CharacterMenu : MonoBehaviour {
 		
 	}
 
-	private void MovePlayerAndMessageMenu() {
-		messageMenu.SetActive (true);
-		messageMenu.transform.position = camera.transform.position + menuCameraBuffer + camera.transform.forward * distance;
-		messageMenu.transform.rotation = new Quaternion (0.0f, camera.transform.rotation.y, 0.0f, camera.transform.rotation.w);
-	}
-
-	private void ModifyMenuMessage() {
-		message.GetComponent<Text>().text = activeChoice.text;
-	}
-
-	private void ActivateOrDeactivateBtn(GameObject btn, Boolean activate, 
-										 GameDataModel.CharacterChoice choice, 
-										 string text) {
-		if (activate) {
-			btn.GetComponentInChildren<Text> ().text = text;
-			btn.SetActive (true);
-			btn.GetComponentInChildren<GameDataModel.CharacterChoice>().clone(choice);
-		} else {
-			btn.SetActive (false);
-		}
-	}
-
-	private Boolean IsBtnActive(string btn) {
+	public Boolean IsBtnActive(string btn) {
 		return Array.IndexOf(activeChoice.btns, btn) != -1;
 	}
-
+		
 	private void ActivateMenuBtns() {
-		ActivateOrDeactivateBtn (closeBtn, IsBtnActive("close"), activeChoice, activeChoice.close);
-		ActivateOrDeactivateBtn (positiveBtn, IsBtnActive("positive"), activeChoice, activeChoice.positiveText);
-		ActivateOrDeactivateBtn (negativeBtn, IsBtnActive("negative"), activeChoice, activeChoice.negativeText);                         
+		menuDataService.ActivateOrDeactivateBtn (closeBtn, IsBtnActive("close"), activeChoice, activeChoice.close);
+		menuDataService.ActivateOrDeactivateBtn (positiveBtn, IsBtnActive("positive"), activeChoice, activeChoice.positiveText);
+		menuDataService.ActivateOrDeactivateBtn (negativeBtn, IsBtnActive("negative"), activeChoice, activeChoice.negativeText);                         
 	}
 
 	private void LookAtPlayer() {
@@ -90,9 +69,9 @@ public class CharacterMenu : MonoBehaviour {
 	}
 
 	public void PlayerContactStart() {
-		activeChoice = gameDataService.GetComponent<CharacterDataService> ().GetRandomChoice();
-		MovePlayerAndMessageMenu ();
-		ModifyMenuMessage ();
+		activeChoice = characterDataService.GetRandomChoice();
+		menuDataService.MoveMessageMenu (camera);
+		menuDataService.ModifyMenuMessage (activeChoice);
 		ActivateMenuBtns ();
 		DisableAllCharacters ();
 		DisableControls ();

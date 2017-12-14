@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,8 +13,9 @@ public class MenuService : Photon.PunBehaviour {
 	private GameServer gameServer;
 	private GameObject[] characters;
 	private GameObject[] controls;
-
-	Vector3 menuCameraBuffer = new Vector3(0.0f, 0.5f, 2.25f);
+	private GameObject gameData;
+	private GameDataModel.CharacterChoice nextChoice;
+	private MenuDataService menuDataService;
 
 	// Use this for initialization
 	void Start () {
@@ -22,6 +24,8 @@ public class MenuService : Photon.PunBehaviour {
 		}
 		characters = GameObject.FindGameObjectsWithTag ("Character");
 		controls = GameObject.FindGameObjectsWithTag ("Controls");
+		gameData = GameObject.FindGameObjectWithTag ("GameData");
+		menuDataService = gameData.GetComponent<MenuDataService> ();
 	}
 	
 	// Update is called once per frame
@@ -46,12 +50,27 @@ public class MenuService : Photon.PunBehaviour {
 		messageMenu.SetActive (false);
 	}
 
+	public Boolean IsBtnActive(string btn) {
+		return Array.IndexOf(nextChoice.btns, btn) != -1;
+	}
+
+	public void nonCloseResponse() {
+		nextChoice = this.GetComponentInParent<CharacterChoiceService>().GetChoice();
+		GameObject closeBtn = GameObject.Find ("OkBtn");
+		GameObject positiveBtn = GameObject.Find ("PositiveBtn");
+		GameObject negativeBtn = GameObject.Find ("NegativeBtn");
+
+		menuDataService.ActivateOrDeactivateBtn (closeBtn, IsBtnActive("close"), nextChoice, nextChoice.close);
+		menuDataService.ActivateOrDeactivateBtn (positiveBtn, IsBtnActive("positive"), nextChoice, nextChoice.positiveText);
+		menuDataService.ActivateOrDeactivateBtn (negativeBtn, IsBtnActive("negative"), nextChoice, nextChoice.negativeText);
+	}
+
 	public void StartGame() {
-		mainMenu.SetActive (false);
-		messageMenu.SetActive (true);
-		messageMenu.transform.position = player.transform.position + menuCameraBuffer;
+		menuDataService.StartGame (player);
 		gameServer.StartGame ();
 		player.transform.position = startingPoint.transform.position;
 	}
+
+
 
 }

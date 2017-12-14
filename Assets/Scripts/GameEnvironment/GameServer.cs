@@ -15,7 +15,7 @@ public class GameServer : Photon.PunBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log (PhotonNetwork.connectionStateDetailed);
+//		Debug.Log (PhotonNetwork.connectionStateDetailed);
 		Connect ();
 	}
 

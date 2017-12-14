@@ -26,6 +26,7 @@ public class CharacterDataService : MonoBehaviour {
 		foreach (GameDataModel.CharacterChoice choice in inputChoices) {
 			if (!choices.ContainsKey (choice.id)) {
 				Debug.Log (choice.id);
+				Debug.Log (choice);
 				choices.Add (choice.id, choice);
 			}
 		}
@@ -55,7 +56,9 @@ public class CharacterDataService : MonoBehaviour {
 	public GameDataModel.CharacterChoice GetRandomChoice() {
 		int randomChoice = Random.Range (0, 2);
 		string key = "VC" + stage + "S" + randomChoice + "-" + sequence;
-		return choices [key];
+		GameDataModel.CharacterChoice character;
+		choices.TryGetValue(key, out character);
+		return character;
 	}
 
 }

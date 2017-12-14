@@ -13,7 +13,7 @@ public class MenuService : Photon.PunBehaviour {
 	private GameObject[] characters;
 	private GameObject[] controls;
 
-	Vector3 menuCameraBuffer = new Vector3(0.0f, 0.5f, 3.25f);
+	Vector3 menuCameraBuffer = new Vector3(0.0f, 0.5f, 2.25f);
 
 	// Use this for initialization
 	void Start () {

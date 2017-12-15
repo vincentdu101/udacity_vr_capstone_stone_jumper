@@ -68,8 +68,18 @@ public class CharacterMenu : MonoBehaviour {
 		}
 	}
 
+	private void DetermineCharacterChoice() {
+		Debug.Log(this.name);
+		if (this.name == "EricTheRed") {
+			characterDataService.StartEricQuest (1);
+			activeChoice = characterDataService.GetKeyFigureChoice ("EricTheRed");
+		} else {
+			activeChoice = characterDataService.GetRandomChoice();
+		}
+	}
+
 	public void PlayerContactStart() {
-		activeChoice = characterDataService.GetRandomChoice();
+		DetermineCharacterChoice();
 		menuDataService.MoveMessageMenu (camera);
 		menuDataService.ModifyMenuMessage (activeChoice);
 		ActivateMenuBtns ();

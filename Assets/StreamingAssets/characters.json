@@ -78,6 +78,24 @@
 			"text": "Sorry I need to get going.",
 			"btns": ["close"],
 			"close": "Ok, thanks."
+		},
+		{
+			"id": "VC1S0-0A",
+			"text": "RWARRR IM HUNGRY",
+			"btns": ["close"],
+			"close": "Ok, thanks."
+		},
+		{
+			"id": "VC1S1-0A",
+			"text": "I am ERIC THE RED",
+			"btns": ["close"],
+			"close": "Ok, thanks."
+		},
+				{
+			"id": "VC1S2-0A",
+			"text": "ORBS ORBS",
+			"btns": ["close"],
+			"close": "Ok, thanks."
 		}
 	]
 }

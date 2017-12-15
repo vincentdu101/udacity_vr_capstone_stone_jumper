@@ -7,7 +7,7 @@ public class CharacterDataService : MonoBehaviour {
 
 	private string gameDataFileName = "characters.json";
 	private int stage = 1;
-	private int sequence = 0;
+	private string sequence = "0";
 	public string[] names;
 	public Dictionary<string, GameDataModel.CharacterChoice> choices;
 
@@ -70,6 +70,29 @@ public class CharacterDataService : MonoBehaviour {
 	public GameDataModel.CharacterChoice GetNextNegativeChoice(GameDataModel.CharacterChoice choice) {
 		GameDataModel.CharacterChoice character;
 		choices.TryGetValue (choice.nextNegativeSequence, out character);
+		return character;
+	}
+
+	public void StartEricQuest(int path) {
+		sequence += "A";
+	}
+
+	public string GetKeyFigureSequence(string figure) {
+		switch (figure) {
+		case "EricTheRed":
+		{
+			return "A";
+		}
+		default:	
+			return "0";
+		}
+	}
+
+	public GameDataModel.CharacterChoice GetKeyFigureChoice(string figure) {
+		int randomChoice = Random.Range (0, 2);
+		string key = "VC" + stage + "S" + randomChoice + "-0" + GetKeyFigureSequence(figure);
+		GameDataModel.CharacterChoice character;
+		choices.TryGetValue(key, out character);
 		return character;
 	}
 }

@@ -74,7 +74,6 @@ public class CharacterMenu : MonoBehaviour {
 		menuDataService.ModifyMenuMessage (activeChoice);
 		ActivateMenuBtns ();
 		DisableAllCharacters ();
-		//DisableControls ();
 		LookAtPlayer ();
 	}
 }

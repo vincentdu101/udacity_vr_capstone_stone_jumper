@@ -41,15 +41,16 @@ public class MenuDataService : MonoBehaviour {
 
 	public void ActivateOrDeactivateBtn(GameObject btn, Boolean activate, 
 										GameDataModel.CharacterChoice choice, string text) {
-		Debug.Log ("activated " + activate);
+		if (btn == null) {
+			return;
+		}
+
 		if (activate == true) {
 			characterChoiceService = btn.GetComponentInChildren<CharacterChoiceService>();
 			btn.GetComponentInChildren<Text> ().text = text;
 			btn.SetActive (true);
-			Debug.Log ("activated?");
 			characterChoiceService.SetChoice (choice);
 		} else {
-			Debug.Log ("deactivated");
 			btn.SetActive (false);
 		}
 	}

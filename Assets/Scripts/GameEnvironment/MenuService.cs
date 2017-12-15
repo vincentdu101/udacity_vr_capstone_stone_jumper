@@ -76,8 +76,6 @@ public class MenuService : Photon.PunBehaviour {
 		menuDataService.ActivateOrDeactivateBtn (closeBtn, IsBtnActive("close"), nextChoice, nextChoice.close);
 		menuDataService.ActivateOrDeactivateBtn (positiveBtn, IsBtnActive("positive"), nextChoice, nextChoice.positiveText);
 		menuDataService.ActivateOrDeactivateBtn (negativeBtn, IsBtnActive("negative"), nextChoice, nextChoice.negativeText);
-
-		Debug.Log (nextChoice.text);
 		menuDataService.ModifyMenuMessage (nextChoice);
 	}
 

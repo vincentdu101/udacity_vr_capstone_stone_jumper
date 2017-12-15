@@ -48,8 +48,8 @@
 			"positiveText": "How do I find someone who can help me?",
 			"negativeText": "Where am I?",
 			"close": "Nothing, thanks.",
-			"nextPositiveSequence": "VC1S1-1",
-			"nextNegativeSequence": "VC1S1-2"
+			"nextPositiveSequence": "VC1S0-1",
+			"nextNegativeSequence": "VC1S0-2"
 		},
 		{
 			"id": "VC1S0-1",
@@ -57,7 +57,7 @@
 			"btns": ["negative", "close"],
 			"negativeText": "I see. Where am I?",
 			"close": "OK, thanks.",
-			"nextNegativeSequence": "VC1S1-2"
+			"nextNegativeSequence": "VC1S0-2"
 		},
 		{
 			"id": "VC1S0-2",
@@ -65,7 +65,7 @@
 			"btns": ["positive", "close"],
 			"positiveText": "How do I find someone who can help me?",
 			"close": "Ok, thanks.",
-			"nextPositiveSequence": "VC1S1-1"
+			"nextPositiveSequence": "VC1S0-1"
 		},
 		{
 			"id": "VC1S1-0",

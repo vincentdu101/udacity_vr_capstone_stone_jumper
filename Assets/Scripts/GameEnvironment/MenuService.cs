@@ -16,6 +16,7 @@ public class MenuService : Photon.PunBehaviour {
 	private GameObject gameData;
 	private GameDataModel.CharacterChoice nextChoice;
 	private MenuDataService menuDataService;
+	private CharacterDataService characterDataService;
 
 	// Use this for initialization
 	void Start () {
@@ -26,6 +27,7 @@ public class MenuService : Photon.PunBehaviour {
 		controls = GameObject.FindGameObjectsWithTag ("Controls");
 		gameData = GameObject.FindGameObjectWithTag ("GameData");
 		menuDataService = gameData.GetComponent<MenuDataService> ();
+		characterDataService = gameData.GetComponent <CharacterDataService> ();
 	}
 	
 	// Update is called once per frame
@@ -54,8 +56,19 @@ public class MenuService : Photon.PunBehaviour {
 		return Array.IndexOf(nextChoice.btns, btn) != -1;
 	}
 
-	public void nonCloseResponse() {
-		nextChoice = this.GetComponentInParent<CharacterChoiceService>().GetChoice();
+	private GameDataModel.CharacterChoice GetNextChoice(GameDataModel.CharacterChoice current, String choice) {
+		if (choice == "positive") {
+			return characterDataService.GetNextPositiveChoice (current);
+		} else {
+			return characterDataService.GetNextNegativeChoice (current);
+		}
+	}
+
+	public void nonCloseResponse(string choice) {
+		GameDataModel.CharacterChoice currentChoice = this.GetComponentInParent<CharacterChoiceService>().GetChoice();
+
+		nextChoice = GetNextChoice (currentChoice, choice);
+
 		GameObject closeBtn = GameObject.Find ("OkBtn");
 		GameObject positiveBtn = GameObject.Find ("PositiveBtn");
 		GameObject negativeBtn = GameObject.Find ("NegativeBtn");
@@ -63,6 +76,9 @@ public class MenuService : Photon.PunBehaviour {
 		menuDataService.ActivateOrDeactivateBtn (closeBtn, IsBtnActive("close"), nextChoice, nextChoice.close);
 		menuDataService.ActivateOrDeactivateBtn (positiveBtn, IsBtnActive("positive"), nextChoice, nextChoice.positiveText);
 		menuDataService.ActivateOrDeactivateBtn (negativeBtn, IsBtnActive("negative"), nextChoice, nextChoice.negativeText);
+
+		Debug.Log (nextChoice.text);
+		menuDataService.ModifyMenuMessage (nextChoice);
 	}
 
 	public void StartGame() {

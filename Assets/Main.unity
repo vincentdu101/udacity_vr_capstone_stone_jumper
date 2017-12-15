@@ -12320,7 +12320,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 377342720}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2929b0c95eac64ecb962f17259ae4a4f, type: 3}
+  m_Script: {fileID: 11500000, guid: cb3ea62cdfc04499d8713b393ea1f0ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &377937029
@@ -23761,14 +23761,14 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 758874477}
-        m_MethodName: closeMenu
-        m_Mode: 1
+        m_MethodName: nonCloseResponse
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: positive
           m_BoolArgument: 0
         m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -23814,7 +23814,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 758874475}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2929b0c95eac64ecb962f17259ae4a4f, type: 3}
+  m_Script: {fileID: 11500000, guid: cb3ea62cdfc04499d8713b393ea1f0ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &759001642
@@ -46667,14 +46667,14 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1445031526}
-        m_MethodName: closeMenu
-        m_Mode: 1
+        m_MethodName: nonCloseResponse
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: negative
           m_BoolArgument: 0
         m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -46720,7 +46720,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1445031524}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2929b0c95eac64ecb962f17259ae4a4f, type: 3}
+  m_Script: {fileID: 11500000, guid: cb3ea62cdfc04499d8713b393ea1f0ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1445604507

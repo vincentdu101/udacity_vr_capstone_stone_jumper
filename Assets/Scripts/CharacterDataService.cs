@@ -61,4 +61,15 @@ public class CharacterDataService : MonoBehaviour {
 		return character;
 	}
 
+	public GameDataModel.CharacterChoice GetNextPositiveChoice(GameDataModel.CharacterChoice choice) {
+		GameDataModel.CharacterChoice character;
+		choices.TryGetValue (choice.nextPositiveSequence, out character);
+		return character;
+	}
+
+	public GameDataModel.CharacterChoice GetNextNegativeChoice(GameDataModel.CharacterChoice choice) {
+		GameDataModel.CharacterChoice character;
+		choices.TryGetValue (choice.nextNegativeSequence, out character);
+		return character;
+	}
 }

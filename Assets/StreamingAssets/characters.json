@@ -81,21 +81,77 @@
 		},
 		{
 			"id": "VC1S0-0A",
-			"text": "RWARRR IM HUNGRY",
-			"btns": ["close"],
-			"close": "Ok, thanks."
+			"text": "Greetings Warrior, I am Lord Eric the Red.",
+			"btns": ["positive", "negative", "close"],
+			"positiveText": "Greetings your lordship, can you tell me if you've seen any glowing stones?",
+			"negativeText": "Greetings your lordship, can I help you with anything?",
+			"close": "It is an honor to meet you sir, good day.",
+			"nextPositiveSequence": "VC1S1-0A",
+			"nextNegativeSequence": "VC1S2-0A"
 		},
 		{
 			"id": "VC1S1-0A",
-			"text": "I am ERIC THE RED",
-			"btns": ["close"],
-			"close": "Ok, thanks."
+			"text": "Yes I have heard of a report of this from our workers to the east of the village.",
+			"btns": ["negative", "close"],
+			"negativeText": "I see, I was wondering can I help you with anything?",
+			"close": "Thank your your lordship for the news. Good day.",
+			"nextNegativeSequence": "VC1S2-0A"
 		},
-				{
+		{
 			"id": "VC1S2-0A",
-			"text": "ORBS ORBS",
+			"text": "Yes actually, I need someone to deliver this message to our ship captain near the river to the west of the village. 
+					 Once you deliver it, come back and I will reward you with an ax.",
 			"btns": ["close"],
-			"close": "Ok, thanks."
-		}
+			"close": "Yes sire your wish is my command."
+		},
+		{
+			"id": "VC1S0-1A",
+			"text": "Greetings again Warrior.",
+			"btns": ["positive", "negative", "close"],
+			"positiveText": "Greetings your lordship, can you tell me if you've seen any glowing stones?",
+			"negativeText": "Greetings your lordship, can I help you with anything?",
+			"close": "It is an honor to meet you again sir, good day.",
+			"nextPositiveSequence": "VC1S1-0A",
+			"nextNegativeSequence": "VC1S2-0A"
+		},
+		{
+			"id": "VC1S1-1A",
+			"text": "Greetings Warrior again.",
+			"btns": ["positive", "negative", "close"],
+			"positiveText": "Greetings your lordship, can you tell me again where you saw the glowing stones?",
+			"negativeText": "Greetings your lordship, can I help you with anything?",
+			"close": "It is an honor to meet you again sir, good day.",
+			"nextPositiveSequence": "VC1S1-0A",
+			"nextNegativeSequence": "VC1S2-0A"
+		},		
+		{
+			"id": "VC1S2-1A",
+			"text": "Greetings again Warrior, have you done the task I asked?",
+			"btns": ["positive", "negative", "close"],
+			"positiveText": "Yes sire I have delivered it as promised",
+			"negativeText": "Not yet sire, I wanted to ask again where your ship captain was?",
+			"close": "Not yet sire, I will get to it at haste.",
+			"nextPositiveSequence": "VC1S3-1A",
+			"nextNegativeSequence": "VC1S2-0A"
+		},
+		{
+			"id": "VC1S3-1A",
+			"text": "Good job warrior, here is your gift as promised.",
+			"btns": ["positive", "negative", "close"],
+			"negativeText": "Not yet sire, I wanted to ask again where your ship captain was?",
+			"close": "Thank you sire.",
+			"nextNegativeSequence": "VC1S4-1A",
+			"rewardGranted": ["axe"]
+		},
+		{
+			"id": "VC1S2-1A",
+			"text": "Greetings again Warrior, have you done the task I asked?",
+			"btns": ["positive", "negative", "close"],
+			"positiveText": "Yes sire I have delivered it as promised",
+			"negativeText": "Not yet sire, I wanted to ask again where your ship captain was?",
+			"close": "Not yet sire, I will get to it at haste.",
+			"nextPositiveSequence": "VC1S3-1A",
+			"nextNegativeSequence": "VC1S2-0A"
+		},		
 	]
 }

@@ -21,6 +21,7 @@ public class CharacterMenu : MonoBehaviour {
 	private GameObject gameData;
 	private MenuDataService menuDataService;
 	private CharacterDataService characterDataService;
+	private string characterName;
 
 	// Use this for initialization
 	void Start () {
@@ -71,6 +72,7 @@ public class CharacterMenu : MonoBehaviour {
 	private void DetermineCharacterChoice() {
 		Debug.Log(this.name);
 		if (this.name == "EricTheRed") {
+			characterName = "Eric The Red";
 			characterDataService.StartEricQuest (1);
 			activeChoice = characterDataService.GetKeyFigureChoice ("EricTheRed");
 		} else {
@@ -78,10 +80,18 @@ public class CharacterMenu : MonoBehaviour {
 		}
 	}
 
+	private void SetCharacterName() {
+		if (characterName == null) {
+			characterName = characterDataService.GetCharacterName ();
+		}
+	}
+
 	public void PlayerContactStart() {
 		DetermineCharacterChoice();
+		SetCharacterName ();
 		menuDataService.MoveMessageMenu (camera);
 		menuDataService.ModifyMenuMessage (activeChoice);
+		menuDataService.SetCharacterName (characterName);
 		ActivateMenuBtns ();
 		DisableAllCharacters ();
 		LookAtPlayer ();

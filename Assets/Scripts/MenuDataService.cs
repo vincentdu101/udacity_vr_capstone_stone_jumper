@@ -9,6 +9,7 @@ public class MenuDataService : MonoBehaviour {
 	private GameObject mainMenu;
 	private GameObject messageMenu;
 	private GameObject message;
+	private GameObject name;
 	private CharacterChoiceService characterChoiceService;
 	Vector3 menuStartBuffer = new Vector3(0.0f, 0.5f, 2.25f);
 	Vector3 menuCameraBuffer = new Vector3(0.0f, 1.0f, 1.0f);
@@ -17,6 +18,7 @@ public class MenuDataService : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		name = GameObject.FindGameObjectWithTag ("Name");
 		message = GameObject.FindGameObjectWithTag ("Dialogue");
 		mainMenu = GameObject.FindGameObjectWithTag ("MainMenu");
 		messageMenu = GameObject.FindGameObjectWithTag ("MessageMenu");
@@ -57,6 +59,10 @@ public class MenuDataService : MonoBehaviour {
 
 	public void ModifyMenuMessage(GameDataModel.CharacterChoice nextChoice) {
 		message.GetComponent<Text>().text = nextChoice.text;
+	}
+
+	public void SetCharacterName(string characterName) {
+		name.GetComponent<Text> ().text = characterName + ":";
 	}
 
 }

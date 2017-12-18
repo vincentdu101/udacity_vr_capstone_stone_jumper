@@ -45,8 +45,8 @@ public class CharacterDataService : MonoBehaviour {
 			GameDataModel.GameData data = JsonUtility.FromJson<GameDataModel.GameData>(dataAsJson);
 
 			// Retrieve the names and choices property of data
+			Debug.Log("names " + data.names.ToString());
 			names = data.names;
-			Debug.Log (names);
 			LoadChoicesIntoDictionary (data.choices);
 		} else {
 			Debug.LogError("Cannot load game data!");
@@ -94,5 +94,13 @@ public class CharacterDataService : MonoBehaviour {
 		GameDataModel.CharacterChoice character;
 		choices.TryGetValue(key, out character);
 		return character;
+	}
+
+	public string GetCharacterName() {
+		foreach (string name in names) {
+			Debug.Log (name);
+		}
+		int random = Random.Range (0, names.Length - 1);
+		return names[random];
 	}
 }

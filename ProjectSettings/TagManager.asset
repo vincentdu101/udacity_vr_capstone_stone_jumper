@@ -21,6 +21,7 @@ TagManager:
   - WorkerGoal
   - Fire
   - GameData
+  - Name
   layers:
   - Default
   - TransparentFX

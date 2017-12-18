@@ -8,6 +8,7 @@ public class CharacterDataService : MonoBehaviour {
 	private string gameDataFileName = "characters.json";
 	private int stage = 1;
 	private string sequence = "0";
+	private Dictionary<string, GameDataModel.CharacterChoice> keyFigureProgress;
 	public string[] names;
 	public Dictionary<string, GameDataModel.CharacterChoice> choices;
 
@@ -89,7 +90,7 @@ public class CharacterDataService : MonoBehaviour {
 	}
 
 	public GameDataModel.CharacterChoice GetKeyFigureChoice(string figure) {
-		int randomChoice = Random.Range (0, 2);
+		int prevFigureChoice = Random.Range (0, 2);
 		string key = "VC" + stage + "S" + randomChoice + "-0" + GetKeyFigureSequence(figure);
 		GameDataModel.CharacterChoice character;
 		choices.TryGetValue(key, out character);

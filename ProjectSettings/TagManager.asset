@@ -22,6 +22,7 @@ TagManager:
   - Fire
   - GameData
   - Name
+  - Traitors
   layers:
   - Default
   - TransparentFX

@@ -10,11 +10,13 @@ public class CharacterDataService : MonoBehaviour {
 	private string sequence = "0";
 	private Dictionary<string, GameDataModel.CharacterChoice> keyFigureProgress;
 	public string[] names;
+	public Dictionary<string, GameDataModel.CharacterChoice> previousChoices;
 	public Dictionary<string, GameDataModel.CharacterChoice> choices;
 
 	// Use this for initialization
 	void Start () {
 		choices = new Dictionary<string, GameDataModel.CharacterChoice> ();
+		previousChoices = new Dictionary<string, GameDataModel.CharacterChoice> ();
 		LoadDataFromFile ();
 	}
 	
@@ -80,9 +82,17 @@ public class CharacterDataService : MonoBehaviour {
 
 	public string GetKeyFigureSequence(string figure) {
 		switch (figure) {
-		case "EricTheRed":
-		{
+		case "EricTheRed": {
 			return "A";
+		}
+		case "Illugi": {
+				return "A";
+		}
+		case "ShipCaptain": {
+				return "A";
+		}
+		case "Glaumur": {
+				return "A";
 		}
 		default:	
 			return "0";
@@ -90,11 +100,19 @@ public class CharacterDataService : MonoBehaviour {
 	}
 
 	public GameDataModel.CharacterChoice GetKeyFigureChoice(string figure) {
-		int prevFigureChoice = Random.Range (0, 2);
-		string key = "VC" + stage + "S" + randomChoice + "-0" + GetKeyFigureSequence(figure);
-		GameDataModel.CharacterChoice character;
-		choices.TryGetValue(key, out character);
-		return character;
+		GameDataModel.CharacterChoice previousChoice;
+		GameDataModel.CharacterChoice nextChoice;
+		string key; 
+		previousChoices.TryGetValue(figure, out previousChoice);
+		if (previousChoice == null) {
+			key = "VC" + stage + "S0" + "-0" + GetKeyFigureSequence(figure);
+		} else {
+			key = previousChoice.resetChoice;
+		}
+		choices.TryGetValue(key, out nextChoice);
+		previousChoices.Remove (figure);
+		previousChoices.Add (figure, nextChoice);
+		return nextChoice;
 	}
 
 	public string GetCharacterName() {

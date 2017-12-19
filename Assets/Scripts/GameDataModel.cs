@@ -20,6 +20,7 @@ public class GameDataModel : MonoBehaviour
 		public string close;
 		public string nextPositiveSequence;
 		public string nextNegativeSequence;
+		public string resetChoice;
 		public void clone(CharacterChoice choice) {
 			this.id = choice.id;
 			this.text = choice.text;

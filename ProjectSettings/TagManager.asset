@@ -23,6 +23,7 @@ TagManager:
   - GameData
   - Name
   - Traitors
+  - TraitorGoal
   layers:
   - Default
   - TransparentFX

@@ -336,6 +336,7 @@
      <Compile Include="Assets\Scripts\SkyboxReplacer.cs" />
      <Compile Include="Assets\Scripts\twinkle.cs" />
      <Compile Include="Assets\Scripts\WaypointFollow.cs" />
+     <Compile Include="Assets\TraitorAI.cs" />
      <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlendOneOne.shader" />

@@ -24,6 +24,8 @@ TagManager:
   - Name
   - Traitors
   - TraitorGoal
+  - Orbs
+  - Life
   layers:
   - Default
   - TransparentFX

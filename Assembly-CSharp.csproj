@@ -312,6 +312,8 @@
      <Compile Include="Assets\PhotonChatApi\ChatState.cs" />
      <Compile Include="Assets\PhotonChatApi\ChatUserStatus.cs" />
      <Compile Include="Assets\PhotonChatApi\IChatClientListener.cs" />
+     <Compile Include="Assets\PlayerLifeService.cs" />
+     <Compile Include="Assets\PlayerService.cs" />
      <Compile Include="Assets\Scripts\AIFollow.cs" />
      <Compile Include="Assets\Scripts\AIWorker.cs" />
      <Compile Include="Assets\Scripts\CharacterChoiceService.cs" />

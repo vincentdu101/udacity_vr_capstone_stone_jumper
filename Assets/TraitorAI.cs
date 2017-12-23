@@ -11,7 +11,7 @@ public class TraitorAI : MonoBehaviour {
 	Animation animations;
 	GameObject player;
 	float chaseDistance = 5.0f;
-	float attackDistance = 1.0f;
+	float attackDistance = 2.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -41,10 +41,14 @@ public class TraitorAI : MonoBehaviour {
 
 		if (playerDirection.magnitude < chaseDistance) {
 			agent.SetDestination (player.transform.position);
-		} else if (playerDirection.magnitude < attackDistance) {
-			animations.PlayQueued ("Lumbering");
+		}
+
+		if (playerDirection.magnitude < attackDistance) {
+			animations.clip = animations.GetClip ("Lumbering");
+			animations.Play ();
 		} else {
-			animations.PlayQueued ("Walk");
+			animations.clip = animations.GetClip ("Walk");
+			animations.Play ();
 		}
 	}
 }

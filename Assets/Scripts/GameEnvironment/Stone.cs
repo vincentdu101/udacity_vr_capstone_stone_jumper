@@ -4,13 +4,25 @@ using UnityEngine;
 
 public class Stone : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
+	public string itemRequired;
+	public string orbColor;
+
+	private GameObject gameData;
+	private InventoryDataService inventoryDataService;
+
+	void Start() {
+		gameData = GameObject.FindGameObjectWithTag ("GameData");
+		inventoryDataService = gameData.GetComponent<InventoryDataService> ();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+
+	void Update() {
+
+	}
+
+	public void TryCollectingOrb() {
+		if (inventoryDataService.IsItemFound (itemRequired)) {
+			inventoryDataService.OrbFound (orbColor);
+			this.gameObject.SetActive (false);
+		}
 	}
 }

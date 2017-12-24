@@ -18,7 +18,9 @@ public class PlayerService : MonoBehaviour {
 		
 	}
 
-	void OnTrigger() {
-
+	void OnTriggerEnter(Collider collider) {
+		if (collider.gameObject.tag == "Traitors") {
+			playerLifeService.lifeTakingHit ();
+		}
 	}
 }

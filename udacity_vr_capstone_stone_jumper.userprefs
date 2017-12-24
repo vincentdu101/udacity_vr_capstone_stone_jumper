@@ -1,15 +1,17 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/TraitorAI.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MenuDataService.cs">
     <Files>
       <File FileName="Assets/Scripts/CharacterDataService.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/AIFollow.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/GameEnvironment/GameServer.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/CharacterMenu.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/MenuDataService.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/CharacterMenu.cs" Line="77" Column="26" />
+      <File FileName="Assets/Scripts/MenuDataService.cs" Line="22" Column="48" />
       <File FileName="Assets/Scripts/GameEnvironment/MenuService.cs" Line="1" Column="1" />
-      <File FileName="Assets/TraitorAI.cs" Line="45" Column="3" />
-      <File FileName="Assets/Scripts/WaypointFollow.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="Assets/TraitorAI.cs" Line="51" Column="23" />
+      <File FileName="Assets/PlayerService.cs" Line="18" Column="3" />
+      <File FileName="Assets/Scripts/WaypointFollow.cs" Line="29" Column="2" NotebookId="1" />
+      <File FileName="Assets/PlayerLifeService.cs" Line="26" Column="31" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -769,6 +769,7 @@ GameObject:
   - component: {fileID: 8626196}
   - component: {fileID: 8626195}
   - component: {fileID: 8626199}
+  - component: {fileID: 8626203}
   m_Layer: 14
   m_Name: Lumberjack1Crowd
   m_TagString: Traitors
@@ -871,7 +872,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 8626193}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 1
@@ -933,6 +934,21 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!54 &8626203
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 8626193}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &9963863
 GameObject:
   m_ObjectHideFlags: 0
@@ -17510,7 +17526,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5
+  m_Radius: 1
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -19899,6 +19915,7 @@ GameObject:
   - component: {fileID: 348805117}
   - component: {fileID: 348805116}
   - component: {fileID: 348805120}
+  - component: {fileID: 348805124}
   m_Layer: 14
   m_Name: Lumberjack1Crowd (1)
   m_TagString: Traitors
@@ -20001,7 +20018,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 348805114}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 1
@@ -20063,6 +20080,21 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!54 &348805124
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 348805114}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &348993688
 GameObject:
   m_ObjectHideFlags: 0
@@ -21552,6 +21584,7 @@ GameObject:
   - component: {fileID: 369066255}
   - component: {fileID: 369066254}
   - component: {fileID: 369066258}
+  - component: {fileID: 369066262}
   m_Layer: 14
   m_Name: Lumberjack1Crowd (2)
   m_TagString: Traitors
@@ -21654,7 +21687,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 369066252}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 1
@@ -21716,6 +21749,21 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!54 &369066262
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 369066252}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &370146661
 GameObject:
   m_ObjectHideFlags: 0
@@ -29137,6 +29185,7 @@ GameObject:
   - component: {fileID: 524233965}
   - component: {fileID: 524233964}
   - component: {fileID: 524233968}
+  - component: {fileID: 524233972}
   m_Layer: 14
   m_Name: Lumberjack1Crowd (9)
   m_TagString: Traitors
@@ -29239,7 +29288,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 524233962}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 1
@@ -29301,6 +29350,21 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!54 &524233972
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 524233962}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &524574888
 GameObject:
   m_ObjectHideFlags: 0
@@ -29538,7 +29602,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4812649496966186, guid: 730cfb5045b464c91a459ba89846b7fb, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.27
       objectReference: {fileID: 0}
     - target: {fileID: 4812649496966186, guid: 730cfb5045b464c91a459ba89846b7fb, type: 2}
       propertyPath: m_LocalRotation.x
@@ -31504,6 +31568,7 @@ GameObject:
   - component: {fileID: 557716033}
   - component: {fileID: 557716032}
   - component: {fileID: 557716036}
+  - component: {fileID: 557716040}
   m_Layer: 14
   m_Name: Lumberjack1Crowd (7)
   m_TagString: Traitors
@@ -31606,7 +31671,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 557716030}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 1
@@ -31668,6 +31733,21 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!54 &557716040
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 557716030}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &558581182
 GameObject:
   m_ObjectHideFlags: 0
@@ -35342,6 +35422,7 @@ GameObject:
   - component: {fileID: 623727205}
   - component: {fileID: 623727204}
   - component: {fileID: 623727208}
+  - component: {fileID: 623727212}
   m_Layer: 14
   m_Name: Lumberjack1Crowd (15)
   m_TagString: Traitors
@@ -35444,7 +35525,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 623727202}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 1
@@ -35506,6 +35587,21 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!54 &623727212
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 623727202}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &624096416
 Prefab:
   m_ObjectHideFlags: 0
@@ -46601,6 +46697,7 @@ GameObject:
   - component: {fileID: 837469417}
   - component: {fileID: 837469416}
   - component: {fileID: 837469420}
+  - component: {fileID: 837469424}
   m_Layer: 14
   m_Name: Lumberjack1Crowd (17)
   m_TagString: Traitors
@@ -46703,7 +46800,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 837469414}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 1
@@ -46765,6 +46862,21 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!54 &837469424
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 837469414}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &838547785
 GameObject:
   m_ObjectHideFlags: 0
@@ -48816,6 +48928,7 @@ GameObject:
   - component: {fileID: 870438340}
   - component: {fileID: 870438339}
   - component: {fileID: 870438343}
+  - component: {fileID: 870438347}
   m_Layer: 14
   m_Name: Lumberjack1Crowd (4)
   m_TagString: Traitors
@@ -48918,7 +49031,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 870438337}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 1
@@ -48980,6 +49093,21 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!54 &870438347
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 870438337}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &870691918
 GameObject:
   m_ObjectHideFlags: 0
@@ -63505,31 +63633,13 @@ GameObject:
   - component: {fileID: 1132303079}
   - component: {fileID: 1132303078}
   - component: {fileID: 1132303077}
-  - component: {fileID: 1132303076}
   m_Layer: 5
   m_Name: PlayerMenu
-  m_TagString: MainMenu
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1132303076
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1132303075}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 739800cd36aba44e9b04ce977e5784bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  drawDebugRays: 0
-  ignoreReversedGraphics: 1
-  blockingObjects: 0
-  blockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!114 &1132303077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63559,8 +63669,8 @@ Canvas:
   m_GameObject: {fileID: 1132303075}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
-  m_Camera: {fileID: 0}
+  m_RenderMode: 0
+  m_Camera: {fileID: 1698238034}
   m_PlaneDistance: 10
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -79667,6 +79777,7 @@ GameObject:
   - component: {fileID: 1444517708}
   - component: {fileID: 1444517707}
   - component: {fileID: 1444517711}
+  - component: {fileID: 1444517715}
   m_Layer: 14
   m_Name: Lumberjack1Crowd (13)
   m_TagString: Traitors
@@ -79769,7 +79880,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1444517705}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 1
@@ -79831,6 +79942,21 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!54 &1444517715
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1444517705}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1444887943
 GameObject:
   m_ObjectHideFlags: 0
@@ -82460,6 +82586,7 @@ GameObject:
   - component: {fileID: 1484418265}
   - component: {fileID: 1484418264}
   - component: {fileID: 1484418268}
+  - component: {fileID: 1484418272}
   m_Layer: 14
   m_Name: Lumberjack1Crowd (16)
   m_TagString: Traitors
@@ -82562,7 +82689,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1484418262}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 1
@@ -82624,6 +82751,21 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!54 &1484418272
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1484418262}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1484661528
 GameObject:
   m_ObjectHideFlags: 0
@@ -82873,6 +83015,7 @@ GameObject:
   - component: {fileID: 1491595772}
   - component: {fileID: 1491595771}
   - component: {fileID: 1491595775}
+  - component: {fileID: 1491595779}
   m_Layer: 14
   m_Name: Lumberjack1Crowd (6)
   m_TagString: Traitors
@@ -82975,7 +83118,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1491595769}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 1
@@ -83037,6 +83180,21 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!54 &1491595779
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1491595769}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1492081566
 GameObject:
   m_ObjectHideFlags: 0
@@ -84881,6 +85039,7 @@ GameObject:
   - component: {fileID: 1525688506}
   - component: {fileID: 1525688505}
   - component: {fileID: 1525688509}
+  - component: {fileID: 1525688513}
   m_Layer: 14
   m_Name: Lumberjack1Crowd (14)
   m_TagString: Traitors
@@ -84983,7 +85142,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1525688503}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 1
@@ -85045,6 +85204,21 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!54 &1525688513
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1525688503}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &1527270590
 Prefab:
   m_ObjectHideFlags: 0
@@ -94017,6 +94191,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4935882871814408, guid: 7f3ed28755306714c8c5308e9f757276,
     type: 2}
   m_PrefabInternal: {fileID: 1887907435}
+--- !u!20 &1698238034 stripped
+Camera:
+  m_PrefabParentObject: {fileID: 20888097661382062, guid: 730cfb5045b464c91a459ba89846b7fb,
+    type: 2}
+  m_PrefabInternal: {fileID: 527746499}
 --- !u!4 &1698711914 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4935882871814408, guid: 7f3ed28755306714c8c5308e9f757276,
@@ -96646,6 +96825,7 @@ GameObject:
   - component: {fileID: 1754906935}
   - component: {fileID: 1754906934}
   - component: {fileID: 1754906938}
+  - component: {fileID: 1754906942}
   m_Layer: 14
   m_Name: Lumberjack1Crowd (19)
   m_TagString: Traitors
@@ -96748,7 +96928,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1754906932}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 1
@@ -96810,6 +96990,21 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!54 &1754906942
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1754906932}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1755822472
 GameObject:
   m_ObjectHideFlags: 0
@@ -100294,6 +100489,7 @@ GameObject:
   - component: {fileID: 1818533704}
   - component: {fileID: 1818533703}
   - component: {fileID: 1818533707}
+  - component: {fileID: 1818533711}
   m_Layer: 14
   m_Name: Lumberjack1Crowd (3)
   m_TagString: Traitors
@@ -100396,7 +100592,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1818533701}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 1
@@ -100458,6 +100654,21 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!54 &1818533711
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1818533701}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1818693654
 GameObject:
   m_ObjectHideFlags: 0
@@ -102281,6 +102492,7 @@ GameObject:
   - component: {fileID: 1853033729}
   - component: {fileID: 1853033728}
   - component: {fileID: 1853033732}
+  - component: {fileID: 1853033736}
   m_Layer: 14
   m_Name: Lumberjack1Crowd (12)
   m_TagString: Traitors
@@ -102383,7 +102595,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1853033726}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 1
@@ -102445,6 +102657,21 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!54 &1853033736
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1853033726}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1854886441
 GameObject:
   m_ObjectHideFlags: 0
@@ -103794,6 +104021,7 @@ GameObject:
   - component: {fileID: 1889078794}
   - component: {fileID: 1889078793}
   - component: {fileID: 1889078797}
+  - component: {fileID: 1889078801}
   m_Layer: 14
   m_Name: Lumberjack1Crowd (11)
   m_TagString: Traitors
@@ -103896,7 +104124,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1889078791}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 1
@@ -103958,6 +104186,21 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!54 &1889078801
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1889078791}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1890040627
 GameObject:
   m_ObjectHideFlags: 0
@@ -105141,6 +105384,7 @@ GameObject:
   - component: {fileID: 1921383087}
   - component: {fileID: 1921383086}
   - component: {fileID: 1921383090}
+  - component: {fileID: 1921383094}
   m_Layer: 14
   m_Name: Lumberjack1Crowd (8)
   m_TagString: Traitors
@@ -105243,7 +105487,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1921383084}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 1
@@ -105305,6 +105549,21 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!54 &1921383094
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1921383084}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1922950939
 GameObject:
   m_ObjectHideFlags: 0
@@ -106334,6 +106593,7 @@ GameObject:
   - component: {fileID: 1944235376}
   - component: {fileID: 1944235375}
   - component: {fileID: 1944235379}
+  - component: {fileID: 1944235383}
   m_Layer: 14
   m_Name: Lumberjack1Crowd (5)
   m_TagString: Traitors
@@ -106436,7 +106696,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1944235373}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 1
@@ -106498,6 +106758,21 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!54 &1944235383
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1944235373}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1944412401
 GameObject:
   m_ObjectHideFlags: 0
@@ -111269,6 +111544,7 @@ GameObject:
   - component: {fileID: 2034140032}
   - component: {fileID: 2034140031}
   - component: {fileID: 2034140035}
+  - component: {fileID: 2034140039}
   m_Layer: 14
   m_Name: Lumberjack1Crowd (10)
   m_TagString: Traitors
@@ -111371,7 +111647,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2034140029}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 1
@@ -111433,6 +111709,21 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!54 &2034140039
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2034140029}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2034846824
 GameObject:
   m_ObjectHideFlags: 0
@@ -116596,6 +116887,7 @@ GameObject:
   - component: {fileID: 2135797855}
   - component: {fileID: 2135797854}
   - component: {fileID: 2135797858}
+  - component: {fileID: 2135797862}
   m_Layer: 14
   m_Name: Lumberjack1Crowd (18)
   m_TagString: Traitors
@@ -116698,7 +116990,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2135797852}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 1
@@ -116760,6 +117052,21 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!54 &2135797862
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2135797852}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2137226415
 GameObject:
   m_ObjectHideFlags: 0

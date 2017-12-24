@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class PlayerLifeService : MonoBehaviour {
 
 	private double defaultLifeCount = 100.0;
 	private double currentLife = 0.0;
-	private double recoverRate = 0.001;
+	private double recoverRate = 0.01;
 	private bool damageTaken = false;
 	private GameObject playerLifeText;
 
@@ -20,11 +21,16 @@ public class PlayerLifeService : MonoBehaviour {
 		if (currentLife < defaultLifeCount && currentLife != 0.0) {
 			currentLife += recoverRate;
 		}
-		playerLifeText.GetComponent<Text> ().text = currentLife + " / " + defaultLifeCount;
+		playerLifeText.GetComponent<Text> ().text = OutputLifeInfo ();
+	}
+
+	private string OutputLifeInfo() {
+		string formatCurrent = currentLife.ToString("F");
+		return "Life: " + formatCurrent + " / " + defaultLifeCount;
 	}
 
 	public void lifeTakingHit() {
-		currentLife -= 1.0;
+		currentLife -= 0.03;
 		damageTaken = true;
 	}
 

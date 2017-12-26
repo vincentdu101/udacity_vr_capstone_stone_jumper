@@ -7,7 +7,6 @@ public class CharacterDataService : MonoBehaviour {
 
 	private string gameDataFileName = "characters.json";
 	private int stage = 1;
-	private string sequence = "0";
 	private Dictionary<string, GameDataModel.CharacterChoice> keyFigureProgress;
 	public string[] names;
 	public Dictionary<string, GameDataModel.CharacterChoice> previousChoices;
@@ -38,7 +37,6 @@ public class CharacterDataService : MonoBehaviour {
 	private void LoadDataFromFile() {
 		// Path.Combine combines strings into a file path
 		// Application.StreamingAssets points to Assets/StreamingAssets in the Editor, and the StreamingAssets folder in a build
-		Debug.Log(Application.streamingAssetsPath);
 		string filePath = Path.Combine(Application.streamingAssetsPath, gameDataFileName);
 
 		if(File.Exists(filePath)) {
@@ -48,7 +46,6 @@ public class CharacterDataService : MonoBehaviour {
 			GameDataModel.GameData data = JsonUtility.FromJson<GameDataModel.GameData>(dataAsJson);
 
 			// Retrieve the names and choices property of data
-			Debug.Log("names " + data.names.ToString());
 			names = data.names;
 			LoadChoicesIntoDictionary (data.choices);
 		} else {
@@ -58,7 +55,7 @@ public class CharacterDataService : MonoBehaviour {
 
 	public GameDataModel.CharacterChoice GetRandomChoice() {
 		int randomChoice = Random.Range (0, 2);
-		string key = "VC" + stage + "S" + randomChoice + "-" + sequence;
+		string key = "VC" + stage + "S" + randomChoice + "-0";
 		GameDataModel.CharacterChoice character;
 		choices.TryGetValue(key, out character);
 		return character;
@@ -76,23 +73,19 @@ public class CharacterDataService : MonoBehaviour {
 		return character;
 	}
 
-	public void StartEricQuest(int path) {
-		sequence += "A";
-	}
-
 	public string GetKeyFigureSequence(string figure) {
 		switch (figure) {
 		case "EricTheRed": {
 			return "A";
 		}
 		case "Illugi": {
-				return "A";
+				return "B";
 		}
 		case "ShipCaptain": {
-				return "A";
+				return "C";
 		}
 		case "Glaumur": {
-				return "A";
+				return "D";
 		}
 		default:	
 			return "0";

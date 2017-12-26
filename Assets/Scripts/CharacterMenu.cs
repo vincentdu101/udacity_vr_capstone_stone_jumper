@@ -70,11 +70,18 @@ public class CharacterMenu : MonoBehaviour {
 	}
 
 	private void DetermineCharacterChoice() {
-		Debug.Log(this.name);
 		if (this.name == "EricTheRed") {
 			characterName = "Eric The Red";
-			characterDataService.StartEricQuest (1);
 			activeChoice = characterDataService.GetKeyFigureChoice ("EricTheRed");
+		} else if (this.name == "Illugi") {
+			characterName = "Illugi";
+			activeChoice = characterDataService.GetKeyFigureChoice ("Illugi");
+		} else if (this.name == "ShipCaptain") {
+			characterName = "Ship Captain";
+			activeChoice = characterDataService.GetKeyFigureChoice ("ShipCaptain");
+		} else if (this.name == "Glaumur") {
+			characterName = "Glaumur";
+			activeChoice = characterDataService.GetKeyFigureChoice ("Glaumur");
 		} else {
 			activeChoice = characterDataService.GetRandomChoice();
 		}

@@ -103,6 +103,7 @@
 			"id": "VC1S2-0A",
 			"text": "Yes actually, I need someone to deliver this message to our ship captain near the river to the west of the village. Once you deliver it, come back and I will reward you with an ax.",
 			"btns": ["close"],
+			"itemGranted": "message",
 			"close": "Yes sire your wish is my command.",
 			"resetChoice": "VC1S2-1A"
 		},
@@ -146,7 +147,7 @@
 			"negativeText": "Not yet sire, I wanted to ask again where your ship captain was?",
 			"close": "Thank you sire.",
 			"nextNegativeSequence": "VC1S4-1A",
-			"itemGranted": ["axe"],
+			"itemGranted": "axe",
 			"resetChoice": "VC1S5-1A"
 		},
 		{
@@ -282,7 +283,7 @@
 			"negativeText": "Thank you sir, have you seen any glowing orbs today?",
 			"close": "It is nice to meet you again sir, have a good day.",
 			"nextNegativeSequence": "VC1S2-1C",
-			"itemGranted": ["net"],
+			"itemGranted": "net",
 			"resetChoice": "VC1S3-1D"
 		},
 		{

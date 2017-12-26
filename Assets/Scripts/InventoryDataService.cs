@@ -8,15 +8,25 @@ public class InventoryDataService : MonoBehaviour {
 	private Dictionary<string, bool> orbsCollected;
 	private Dictionary<string, bool> itemsCollected;
 	private GameObject orbText;
+	private GameObject inventoryText;
 
 	void Start() {
 		orbsCollected = new Dictionary<string, bool> ();
 		itemsCollected = new Dictionary<string, bool> ();
 		orbText = GameObject.FindGameObjectWithTag ("Orbs");
+		inventoryText = GameObject.FindGameObjectWithTag ("Inventory");
 	}
 
 	private string GetOrbCount() {
 		return orbsCollected.Keys.Count + "/3";
+	}
+
+	private string GetInventoryList() {
+		string items = "";
+		foreach (string item in itemsCollected.Keys) {
+			items += item + ", ";
+		}
+		return items.Remove(items.Length - 2);
 	}
 
 	public void OrbFound(string color) {
@@ -30,6 +40,7 @@ public class InventoryDataService : MonoBehaviour {
 
 	public void ItemFound(string item) {
 		itemsCollected.Add (item, true);
+		inventoryText.GetComponent<Text> ().text = "Inventory\n " + GetInventoryList();
 	}
 
 	public bool IsItemFound(string item) {

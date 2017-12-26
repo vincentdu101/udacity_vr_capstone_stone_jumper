@@ -21,6 +21,7 @@ public class GameDataModel : MonoBehaviour
 		public string nextPositiveSequence;
 		public string nextNegativeSequence;
 		public string resetChoice;
+		public string itemGranted;
 		public void clone(CharacterChoice choice) {
 			this.id = choice.id;
 			this.text = choice.text;

@@ -26,6 +26,9 @@ TagManager:
   - TraitorGoal
   - Orbs
   - Life
+  - Item
+  - Inventory
+  - GameMessage
   layers:
   - Default
   - TransparentFX

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MenuService : Photon.PunBehaviour {
 
@@ -14,9 +15,11 @@ public class MenuService : Photon.PunBehaviour {
 	private GameObject[] characters;
 	private GameObject[] controls;
 	private GameObject gameData;
+	private GameObject gameMessage;
 	private GameDataModel.CharacterChoice nextChoice;
 	private MenuDataService menuDataService;
 	private CharacterDataService characterDataService;
+	private InventoryDataService inventoryDataService;
 
 	// Use this for initialization
 	void Start () {
@@ -26,8 +29,10 @@ public class MenuService : Photon.PunBehaviour {
 		characters = GameObject.FindGameObjectsWithTag ("Character");
 		controls = GameObject.FindGameObjectsWithTag ("Controls");
 		gameData = GameObject.FindGameObjectWithTag ("GameData");
+		gameMessage = GameObject.FindGameObjectWithTag ("GameMessage");
 		menuDataService = gameData.GetComponent<MenuDataService> ();
 		characterDataService = gameData.GetComponent <CharacterDataService> ();
+		inventoryDataService = gameData.GetComponent<InventoryDataService> ();
 	}
 	
 	// Update is called once per frame
@@ -66,7 +71,6 @@ public class MenuService : Photon.PunBehaviour {
 
 	public void nonCloseResponse(string choice) {
 		GameDataModel.CharacterChoice currentChoice = this.GetComponentInParent<CharacterChoiceService>().GetChoice();
-
 		nextChoice = GetNextChoice (currentChoice, choice);
 
 		GameObject closeBtn = GameObject.Find ("OkBtn");
@@ -77,6 +81,12 @@ public class MenuService : Photon.PunBehaviour {
 		menuDataService.ActivateOrDeactivateBtn (positiveBtn, IsBtnActive("positive"), nextChoice, nextChoice.positiveText);
 		menuDataService.ActivateOrDeactivateBtn (negativeBtn, IsBtnActive("negative"), nextChoice, nextChoice.negativeText);
 		menuDataService.ModifyMenuMessage (nextChoice);
+
+		if (nextChoice.itemGranted != null) {
+			string item = nextChoice.itemGranted;
+			inventoryDataService.ItemFound (nextChoice.itemGranted);
+			gameMessage.GetComponent<Text>().text = "You are given a " + item + ".";
+		}
 	}
 
 	public void StartGame() {

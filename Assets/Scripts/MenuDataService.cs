@@ -11,7 +11,9 @@ public class MenuDataService : MonoBehaviour {
 	private GameObject message;
 	private GameObject name;
 	private GameObject item;
+	private GameObject gameData;
 	private CharacterChoiceService characterChoiceService;
+	private InventoryDataService inventoryDataService;
 	Vector3 menuStartBuffer = new Vector3(0.0f, 0.5f, 2.25f);
 	Vector3 menuCameraBuffer = new Vector3(0.0f, 1.0f, 1.0f);
 
@@ -24,11 +26,21 @@ public class MenuDataService : MonoBehaviour {
 		item = GameObject.FindGameObjectWithTag ("Item");
 		mainMenu = GameObject.FindGameObjectWithTag ("MainMenu");
 		messageMenu = GameObject.FindGameObjectWithTag ("MessageMenu");
+		gameData = GameObject.FindGameObjectWithTag ("GameData");
+		inventoryDataService = gameData.GetComponent<InventoryDataService> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
+	}
+
+	private bool isPositiveRequirementMet(GameDataModel.CharacterChoice choice) {
+		bool requirementMet = false;
+		if (choice.positiveRequirement != null) {
+			return inventoryDataService.IsItemFound (choice.positiveRequirement);
+		}
+		return requirementMet;
 	}
 
 	public void StartGame(GameObject player) {
@@ -49,7 +61,7 @@ public class MenuDataService : MonoBehaviour {
 			return;
 		}
 
-		if (activate == true) {
+		if (activate == true && !isPositiveRequirementMet(choice)) {
 			characterChoiceService = btn.GetComponentInChildren<CharacterChoiceService>();
 			btn.GetComponentInChildren<Text> ().text = text;
 			btn.SetActive (true);

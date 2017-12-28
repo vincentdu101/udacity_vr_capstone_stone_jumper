@@ -49,55 +49,62 @@
 			"negativeText": "Where am I?",
 			"close": "Nothing, thanks.",
 			"nextPositiveSequence": "VC1S0-1",
-			"nextNegativeSequence": "VC1S0-2"
+			"nextNegativeSequence": "VC1S0-2",
+			"character": "Soldier"
 		},
 		{
 			"id": "VC1S0-1",
-			"text": "You can talk to our Earl Erik the Red he is in the town square.",
+			"text": "You can talk to our lord Earl Erik the Red he is in the town square.",
 			"btns": ["negative", "close"],
 			"negativeText": "I see. Where am I?",
 			"close": "OK, thanks.",
-			"nextNegativeSequence": "VC1S0-2"
+			"nextNegativeSequence": "VC1S0-2",
+			"character": "Soldier"
 		},
 		{
 			"id": "VC1S0-2",
-			"text": "You are in Grœnland. We are establishing our first fort here under our Earl Erik the Red",
+			"text": "You are in Grœnland. We are establishing our first fort here under our lord Earl Erik the Red",
 			"btns": ["positive", "close"],
 			"positiveText": "How do I find someone who can help me?",
 			"close": "Ok, thanks.",
-			"nextPositiveSequence": "VC1S0-1"
+			"nextPositiveSequence": "VC1S0-1",
+			"character": "Soldier"
 		},
 		{
 			"id": "VC1S1-0",
 			"text": "Stop bothering me I need to get going.",
 			"btns": ["close"],
-			"close": "Ok, thanks."
+			"close": "Ok, thanks.",
+			"character": "Soldier"
 		},
 		{
 			"id": "VC1S2-0",
 			"text": "Sorry I need to get going.",
 			"btns": ["close"],
-			"close": "Ok, thanks."
+			"close": "Ok, thanks.",
+			"character": "Soldier"
 		},
 		{
 			"id": "VC1S0-0A",
-			"text": "Greetings Warrior, I am Lord Eric the Red.",
+			"text": "Greetings Warrior, I am Earl Eric the Red.",
 			"btns": ["positive", "negative", "close"],
 			"positiveText": "Greetings your lordship, can you tell me if you've seen any glowing stones?",
 			"negativeText": "Greetings your lordship, can I help you with anything?",
 			"close": "It is an honor to meet you sir, good day.",
 			"nextPositiveSequence": "VC1S1-0A",
 			"nextNegativeSequence": "VC1S2-0A",
-			"resetChoice": "VC1S0-1A"
+			"resetChoice": "VC1S0-1A",
+			"character": "EricTheRed"
 		},
 		{
 			"id": "VC1S1-0A",
-			"text": "Yes I have heard of a report of this from our workers to the east of the village. You can talk to the lead worker there Illugi about more it if you like.",
+			"text": "Yes I have heard of a report of this from our workers to the east of the village. You can talk to the lead worker there Illugi about it more if you like.",
 			"btns": ["negative", "close"],
-			"negativeText": "I see, I was wondering can I help you with anything?",
+			"negativeText": "I see, I was wondering if I can help you with anything?",
 			"close": "Thank your your lordship for the news. Good day.",
 			"nextNegativeSequence": "VC1S2-0A",
-			"resetChoice": "VC1S0-1A"
+			"resetChoice": "VC1S0-1A",
+			"character": "EricTheRed"
 		},
 		{
 			"id": "VC1S2-0A",
@@ -105,7 +112,8 @@
 			"btns": ["close"],
 			"itemGranted": "message",
 			"close": "Yes sire your wish is my command.",
-			"resetChoice": "VC1S2-1A"
+			"resetChoice": "VC1S1-1A",
+			"character": "EricTheRed"
 		},
 		{
 			"id": "VC1S0-1A",
@@ -116,54 +124,49 @@
 			"close": "It is an honor to meet you again sir, good day.",
 			"nextPositiveSequence": "VC1S1-0A",
 			"nextNegativeSequence": "VC1S2-0A",
-			"resetChoice": "VC1S0-1A"
+			"resetChoice": "VC1S0-1A",
+			"character": "EricTheRed"
 		},
 		{
 			"id": "VC1S1-1A",
-			"text": "Greetings Warrior again.",
-			"btns": ["positive", "negative", "close"],
-			"positiveText": "Greetings your lordship, can you tell me again where you saw the glowing stones?",
-			"negativeText": "Greetings your lordship, can I help you with anything?",
-			"close": "It is an honor to meet you again sir, good day.",
-			"nextPositiveSequence": "VC1S1-0A",
-			"nextNegativeSequence": "VC1S2-0A",
-			"resetChoice": "VC1S0-1A"
-		},
-		{
-			"id": "VC1S2-1A",
 			"text": "Greetings again Warrior, have you done the task I asked?",
 			"btns": ["positive", "negative", "close"],
 			"positiveText": "Yes sire I have delivered it as promised",
 			"negativeText": "Not yet sire, I wanted to ask again where your ship captain was?",
 			"close": "Not yet sire, I will get to it at haste.",
-			"nextPositiveSequence": "VC1S3-1A",
-			"nextNegativeSequence": "VC1S2-0A",
-			"resetChoice": "VC1S2-1A"
+			"nextPositiveSequence": "VC1S2-1A",
+			"nextNegativeSequence": "VC1S3-1A",
+			"resetChoice": "VC1S1-1A",
+			"character": "EricTheRed"
+		},
+		{
+			"id": "VC1S2-1A",
+			"text": "Good job warrior, here is your gift as promised.",
+			"btns": ["negative", "close"],
+			"negativeText": "Not yet sire, I wanted to ask again where your ship captain was?",
+			"close": "Thank you sire.",
+			"nextNegativeSequence": "VC1S3-1A",
+			"itemGranted": "axe",
+			"resetChoice": "VC1S4-1A",
+			"character": "EricTheRed"
 		},
 		{
 			"id": "VC1S3-1A",
-			"text": "Good job warrior, here is your gift as promised.",
-			"btns": ["positive", "negative", "close"],
-			"negativeText": "Not yet sire, I wanted to ask again where your ship captain was?",
-			"close": "Thank you sire.",
-			"nextNegativeSequence": "VC1S4-1A",
-			"itemGranted": "axe",
-			"resetChoice": "VC1S5-1A"
-		},
-		{
-			"id": "VC1S4-1A",
 			"text": "He is located to the west of the village near the river.",
 			"btns": ["close"],
 			"close": "Thank you sire, I will get to the task at haste.",
-			"resetChoice": "VC1S2-1A"
+			"resetChoice": "VC1S1-1A",
+			"character": "EricTheRed"
 		},
 		{
-			"id": "VC1S5-1A",
+			"id": "VC1S4-1A",
 			"text": "Greetings again warrior.",
 			"btns": ["positive", "close"],
 			"positiveText": "Greetings your lordship, can you tell me again where you saw the glowing stones?",
 			"close": "Greetings again sire. Have a good day.",
-			"resetChoice": "VC1S5-1A"
+			"nextPositiveSequence": "VC1S1-0A",
+			"resetChoice": "VC1S4-1A",
+			"character": "EricTheRed"
 		},
 		{
 			"id": "VC1S0-0B",
@@ -172,7 +175,8 @@
 			"positiveText": "Greetings sir, can you tell me if you've seen any glowing stones?",
 			"close": "It is an honor to meet you again sir, good day.",
 			"nextPositiveSequence": "VC1S1-1B",
-			"resetChoice": "VC1S3-1B"
+			"resetChoice": "VC1S3-1B",
+			"character": "Illugi"
 		},
 		{
 			"id": "VC1S1-1B",
@@ -181,14 +185,16 @@
 			"positiveText": "I see, can you tell me where I can get an axe?",
 			"close": "It is an honor to meet you sir, thank you for the info good day.",
 			"nextPositiveSequence": "VC1S2-1B",
-			"resetChoice": "VC1S3-1B"
+			"resetChoice": "VC1S3-1B",
+			"character": "Illugi"
 		},
 		{
 			"id": "VC1S2-1B",
-			"text": "You can ask our Earl he may be able to give you one if you deliver a message for him.",
+			"text": "You can ask our Earl Erik the Red, he may be able to give you one if you deliver a message for him.",
 			"btns": ["close"],
 			"close": "It is an honor to meet you sir, thank you for the info good day.",
-			"resetChoice": "VC1S3-1B"
+			"resetChoice": "VC1S3-1B",
+			"character": "Illugi"
 		},
 		{
 			"id": "VC1S3-1B",
@@ -196,9 +202,10 @@
 			"btns": ["positive", "negative", "close"],
 			"positiveText": "Greetings again sir, can you tell me again if you've seen any glowing stones?",
 			"negativeText": "Greetings again sir, can you tell me again where I can get an axe?",
-			"nextPositiveSequence": "VC1S3-1B",
+			"nextPositiveSequence": "VC1S4-1B",
 			"nextNegativeSequence": "VC1S2-1B",
-			"resetChoice": "VC1S3-1B"
+			"resetChoice": "VC1S3-1B",
+			"character": "Illugi"
 		},
 		{
 			"id": "VC1S4-1B",
@@ -206,19 +213,21 @@
 			"btns": ["negative", "close"],
 			"negativeText": "Greetings again sir, can you tell me again where I can get an axe?",
 			"nextNegativeSequence": "VC1S2-1B",
-			"resetChoice": "VC1S3-1B"
+			"resetChoice": "VC1S3-1B",
+			"character": "Illugi"
 		},
 		{
 			"id": "VC1S0-0C",
 			"text": "Greetings Warrior, how may I be of assistance",
 			"btns": ["positive", "negative", "close"],
-			"positiveText": "Greetings sir, I have a message for you from our Earl Eric the Red.",
+			"positiveText": "Greetings sir, I have a message for you from our Earl Erik the Red.",
 			"negativeText": "Greetings sir, have you seen any glowing orbs today?",
 			"close": "It is nice to meet you sir, have a good day.",
 			"nextPositiveSequence": "VC1S1-1C",
 			"nextNegativeSequence": "VC1S2-1C",
+			"resetChoice": "VC1S4-1C",
 			"positiveRequirement": "message",
-			"resetChoice": "VC1S3-1B"
+			"character": "ShipCaptain"
 		},
 		{
 			"id": "VC1S1-1C",
@@ -226,27 +235,32 @@
 			"btns": ["positive", "negative", "close"],
 			"negativeText": "Greetings sir, have you seen any glowing orbs today?",
 			"close": "That is all sir thank you, have a good day.",
-			"nextNegativeSequence": "VC1S2-1C"
+			"resetChoice": "VC1S5-1C",
+			"nextNegativeSequence": "VC1S2-1C",
+			"character": "ShipCaptain"
 		},
 		{
 			"id": "VC1S2-1C",
 			"text": "Yes I saw one near the edge of the river South of here. However, you probably need a net to pick it up from the water. You can grab one from Glaumur. He is in charge of supplies near the village center.",
 			"btns": ["positive", "close"],
-			"positiveText": "Thank you sir, I also have a message for you from our Earl Eric the Red.",
+			"positiveText": "Thank you sir, I also have a message for you from our Earl Erik the Red.",
 			"close": "Thank you again sir, have a good day.",
-			"positiveRequirement": "message"
+			"resetChoice": "VC1S4-1C",
+			"positiveRequirement": "message",
+			"character": "ShipCaptain"
 		},
 		{
 			"id": "VC1S4-1C",
 			"text": "Greetings again Warrior, how may I be of assistance",
 			"btns": ["positive", "negative", "close"],
-			"positiveText": "Greetings sir, I have a message for you from our Earl Eric the Red.",
-			"negativeText": "Greetings sir, have you seen any glowing orbs today?",
+			"positiveText": "Greetings again sir, I have a message for you from our Earl Erik the Red.",
+			"negativeText": "Greetings again sir, have you seen any glowing orbs today?",
 			"close": "It is nice to meet you sir, have a good day.",
 			"nextPositiveSequence": "VC1S1-1C",
 			"nextNegativeSequence": "VC1S2-1C",
 			"positiveRequirement": "message",
-			"resetChoice": "VC1S4-1C"
+			"resetChoice": "VC1S4-1C",
+			"character": "ShipCaptain"
 		},
 		{
 			"id": "VC1S5-1C",
@@ -255,15 +269,16 @@
 			"negativeText": "Greetings sir, have you seen any glowing orbs today?",
 			"close": "It is nice to meet you sir, have a good day.",
 			"nextNegativeSequence": "VC1S6-1C",
-			"positiveRequirement": "message",
-			"resetChoice": "VC1S5-1C"
+			"resetChoice": "VC1S5-1C",
+			"character": "ShipCaptain"
 		},	
 		{
 			"id": "VC1S6-1C",
 			"text": "Yes I saw one near the edge of the river South of here. However, you probably need a net to pick it up from the water. You can grab one from Glaumur. He is in charge of supplies near the village center.",
 			"btns": ["close"],
 			"close": "Thank you again sir, have a good day.",
-			"resetChoice": "VC1S5-1C"
+			"resetChoice": "VC1S5-1C",
+			"character": "ShipCaptain"
 		},			
 		{
 			"id": "VC1S0-0D",
@@ -274,7 +289,8 @@
 			"close": "It is nice to meet you sir, have a good day.",
 			"nextPositiveSequence": "VC1S1-1D",
 			"nextNegativeSequence": "VC1S2-1D",
-			"resetChoice": "VC1S0-0D"
+			"resetChoice": "VC1S3-1D",
+			"character": "Glaumur"
 		},
 		{
 			"id": "VC1S1-1D",
@@ -282,9 +298,10 @@
 			"btns": ["negative", "close"],
 			"negativeText": "Thank you sir, have you seen any glowing orbs today?",
 			"close": "It is nice to meet you again sir, have a good day.",
-			"nextNegativeSequence": "VC1S2-1C",
+			"nextNegativeSequence": "VC1S2-1D",
 			"itemGranted": "net",
-			"resetChoice": "VC1S3-1D"
+			"resetChoice": "VC1S3-1D",
+			"character": "Glaumur"
 		},
 		{
 			"id": "VC1S2-1D",
@@ -293,8 +310,8 @@
 			"positiveText": "Greetings sir, may I have a net from you.",
 			"close": "Thank you for the info again sir, have a good day.",
 			"nextPositiveSequence": "VC1S1-1D",
-			"positiveRequirement": "net",
-			"resetChoice": "VC1S0-0D"
+			"resetChoice": "VC1S0-0D",
+			"character": "Glaumur"
 		},
 		{
 			"id": "VC1S3-1D",
@@ -302,8 +319,17 @@
 			"btns": ["negative", "close"],
 			"negativeText": "Greetings sir, have you seen any glowing orbs today?",
 			"close": "It is nice to meet you sir, have a good day.",
-			"nextNegativeSequence": "VC1S2-1D",
-			"resetChoice": "VC1S3-1D"
-		}		
+			"nextNegativeSequence": "VC1S4-1D",
+			"resetChoice": "VC1S3-1D",
+			"character": "Glaumur"
+		},
+		{
+			"id": "VC1S4-1D",
+			"text": "Yes I have heard that Grettir and his band of traitors has found one to the North of the village near the forests. If you go to get it beware they may be hostile.",
+			"btns": ["close"],
+			"close": "Thank you for the info again sir, have a good day.",
+			"resetChoice": "VC1S3-1D",
+			"character": "Glaumur"
+		}	
 	]
 }

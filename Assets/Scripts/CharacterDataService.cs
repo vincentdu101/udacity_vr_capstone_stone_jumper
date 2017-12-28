@@ -64,12 +64,18 @@ public class CharacterDataService : MonoBehaviour {
 	public GameDataModel.CharacterChoice GetNextPositiveChoice(GameDataModel.CharacterChoice choice) {
 		GameDataModel.CharacterChoice character;
 		choices.TryGetValue (choice.nextPositiveSequence, out character);
+		if (character.resetChoice != null) {
+			UpdateResetChoice (character);
+		}
 		return character;
 	}
 
 	public GameDataModel.CharacterChoice GetNextNegativeChoice(GameDataModel.CharacterChoice choice) {
 		GameDataModel.CharacterChoice character;
 		choices.TryGetValue (choice.nextNegativeSequence, out character);
+		if (character.resetChoice != null) {
+			UpdateResetChoice (character);
+		}
 		return character;
 	}
 
@@ -114,5 +120,18 @@ public class CharacterDataService : MonoBehaviour {
 		}
 		int random = Random.Range (0, names.Length - 1);
 		return names[random];
+	}
+
+	public void UpdateResetChoice(GameDataModel.CharacterChoice choice) {
+		GameDataModel.CharacterChoice previousChoice;
+		string key; 
+		previousChoices.TryGetValue(choice.character, out previousChoice);
+		if (previousChoice == null) {
+			key = "VC" + stage + "S0" + "-0" + GetKeyFigureSequence(choice.character);
+		} else {
+			key = previousChoice.resetChoice;
+		}
+		previousChoices.Remove (choice.character);
+		previousChoices.Add (choice.character, choice);
 	}
 }

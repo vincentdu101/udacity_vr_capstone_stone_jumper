@@ -24,6 +24,8 @@ public class GameDataModel : MonoBehaviour
 		public string itemGranted;
 		public string positiveRequirement;
 		public string character;
+		public string positiveItemGone;
+		public string removeItem;
 		public void clone(CharacterChoice choice) {
 			this.id = choice.id;
 			this.text = choice.text;

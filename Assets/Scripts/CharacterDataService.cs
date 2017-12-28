@@ -6,6 +6,8 @@ using System.IO;
 public class CharacterDataService : MonoBehaviour {
 
 	private string gameDataFileName = "characters.json";
+	private GameObject gameData;
+	private InventoryDataService inventoryDataService;
 	private int stage = 1;
 	private Dictionary<string, GameDataModel.CharacterChoice> keyFigureProgress;
 	public string[] names;
@@ -16,6 +18,8 @@ public class CharacterDataService : MonoBehaviour {
 	void Start () {
 		choices = new Dictionary<string, GameDataModel.CharacterChoice> ();
 		previousChoices = new Dictionary<string, GameDataModel.CharacterChoice> ();
+		gameData = GameObject.FindGameObjectWithTag ("GameData");
+		inventoryDataService = gameData.GetComponent<InventoryDataService> ();
 		LoadDataFromFile ();
 	}
 	
@@ -67,6 +71,9 @@ public class CharacterDataService : MonoBehaviour {
 		if (character.resetChoice != null) {
 			UpdateResetChoice (character);
 		}
+		if (choice.removeItem != null) {
+			inventoryDataService.RemoveItem (choice.removeItem);
+		}
 		return character;
 	}
 
@@ -75,6 +82,9 @@ public class CharacterDataService : MonoBehaviour {
 		choices.TryGetValue (choice.nextNegativeSequence, out character);
 		if (character.resetChoice != null) {
 			UpdateResetChoice (character);
+		}
+		if (choice.removeItem != null) {
+			inventoryDataService.RemoveItem (choice.removeItem);
 		}
 		return character;
 	}
@@ -115,9 +125,6 @@ public class CharacterDataService : MonoBehaviour {
 	}
 
 	public string GetCharacterName() {
-		foreach (string name in names) {
-			Debug.Log (name);
-		}
 		int random = Random.Range (0, names.Length - 1);
 		return names[random];
 	}

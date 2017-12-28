@@ -29,6 +29,7 @@ TagManager:
   - Item
   - Inventory
   - GameMessage
+  - GameState
   layers:
   - Default
   - TransparentFX

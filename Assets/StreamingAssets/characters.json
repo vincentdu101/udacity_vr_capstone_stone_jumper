@@ -137,7 +137,8 @@
 			"nextPositiveSequence": "VC1S2-1A",
 			"nextNegativeSequence": "VC1S3-1A",
 			"resetChoice": "VC1S1-1A",
-			"character": "EricTheRed"
+			"character": "EricTheRed",
+			"positiveItemGone": "message"
 		},
 		{
 			"id": "VC1S2-1A",
@@ -237,7 +238,8 @@
 			"close": "That is all sir thank you, have a good day.",
 			"resetChoice": "VC1S5-1C",
 			"nextNegativeSequence": "VC1S2-1C",
-			"character": "ShipCaptain"
+			"character": "ShipCaptain",
+			"removeItem": "message"
 		},
 		{
 			"id": "VC1S2-1C",

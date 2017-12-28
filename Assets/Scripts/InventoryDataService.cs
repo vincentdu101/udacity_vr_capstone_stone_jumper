@@ -31,7 +31,7 @@ public class InventoryDataService : MonoBehaviour {
 
 	public void OrbFound(string color) {
 		orbsCollected.Add (color, true);
-		orbText.GetComponent<Text> ().text = "Orbs Collected: " + GetOrbCount ();
+		orbText.GetComponent<Text> ().text = "Orbs Collected: " + GetOrbCount (); 
 	}
 
 	public bool HaveAllOrbsBeenFound() {
@@ -51,5 +51,16 @@ public class InventoryDataService : MonoBehaviour {
 		} else {
 			return true;
 		}
+	}
+
+	public void ClearAllItems() {
+		orbsCollected.Clear ();
+		itemsCollected.Clear ();
+		orbText.GetComponent<Text> ().text = "Orbs Collected: 0/3";
+		inventoryText.GetComponent<Text> ().text = "Inventory\n 0 Items";
+	}
+
+	public void RemoveItem(string item) {
+		itemsCollected.Remove (item);
 	}
 }

@@ -43,6 +43,15 @@ public class MenuDataService : MonoBehaviour {
 		return requirementMet;
 	}
 
+	private bool isPositiveItemGone(GameDataModel.CharacterChoice choice, GameObject btn) {
+		bool itemGone = true;
+		bool isPositive = btn.name.Contains ("Positive");
+		if (choice.positiveItemGone != null && isPositive) {
+			return !inventoryDataService.IsItemFound (choice.positiveItemGone);
+		}
+		return itemGone;
+	}
+
 	public void StartGame(GameObject player) {
 		mainMenu.SetActive (false);
 		messageMenu.SetActive (true);
@@ -61,7 +70,7 @@ public class MenuDataService : MonoBehaviour {
 			return;
 		}
 
-		if (activate == true && !isPositiveRequirementMet(choice)) {
+		if (activate == true && !isPositiveRequirementMet(choice) && isPositiveItemGone(choice, btn)) {
 			characterChoiceService = btn.GetComponentInChildren<CharacterChoiceService>();
 			btn.GetComponentInChildren<Text> ().text = text;
 			btn.SetActive (true);

@@ -36,6 +36,7 @@ public class PlayerLifeService : MonoBehaviour {
 
 	public void resetLife() {
 		currentLife = 100.0;
+		playerLifeText.GetComponent<Text> ().text = OutputLifeInfo ();
 	}
 
 	public double getLife() {

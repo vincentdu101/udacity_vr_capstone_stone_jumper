@@ -71,8 +71,8 @@ public class CharacterDataService : MonoBehaviour {
 		if (character.resetChoice != null) {
 			UpdateResetChoice (character);
 		}
-		if (choice.removeItem != null) {
-			inventoryDataService.RemoveItem (choice.removeItem);
+		if (character.removeItem != null) {
+			inventoryDataService.RemoveItem (character.removeItem);
 		}
 		return character;
 	}
@@ -83,8 +83,8 @@ public class CharacterDataService : MonoBehaviour {
 		if (character.resetChoice != null) {
 			UpdateResetChoice (character);
 		}
-		if (choice.removeItem != null) {
-			inventoryDataService.RemoveItem (choice.removeItem);
+		if (character.removeItem != null) {
+			inventoryDataService.RemoveItem (character.removeItem);
 		}
 		return character;
 	}

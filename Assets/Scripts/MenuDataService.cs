@@ -43,13 +43,26 @@ public class MenuDataService : MonoBehaviour {
 		return requirementMet;
 	}
 
-	private bool isPositiveItemGone(GameDataModel.CharacterChoice choice, GameObject btn) {
+	private bool isPositiveItemGone(GameDataModel.CharacterChoice choice) {
 		bool itemGone = true;
-		bool isPositive = btn.name.Contains ("Positive");
-		if (choice.positiveItemGone != null && isPositive) {
+		if (choice.positiveItemGone != null) {
 			return !inventoryDataService.IsItemFound (choice.positiveItemGone);
 		}
 		return itemGone;
+	}
+
+	private bool CheckPositiveItems(GameDataModel.CharacterChoice choice, GameObject btn) {
+		bool isPositive = btn.name.Contains ("Positive");
+
+		if (!isPositive) {
+			return true;
+		} else if (choice.positiveRequirement != null) {
+			return isPositiveRequirementMet (choice);
+		} else if (choice.positiveItemGone != null) {
+			return isPositiveItemGone (choice);
+		} else {
+			return true;
+		}
 	}
 
 	public void StartGame(GameObject player) {
@@ -70,7 +83,7 @@ public class MenuDataService : MonoBehaviour {
 			return;
 		}
 
-		if (activate == true && !isPositiveRequirementMet(choice) && isPositiveItemGone(choice, btn)) {
+		if (activate == true && CheckPositiveItems(choice, btn)) {
 			characterChoiceService = btn.GetComponentInChildren<CharacterChoiceService>();
 			btn.GetComponentInChildren<Text> ().text = text;
 			btn.SetActive (true);

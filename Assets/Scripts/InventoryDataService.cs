@@ -61,6 +61,11 @@ public class InventoryDataService : MonoBehaviour {
 	}
 
 	public void RemoveItem(string item) {
-		itemsCollected.Remove (item);
+		if (itemsCollected.ContainsKey (item)) {
+			itemsCollected.Remove (item);
+			Debug.Log ("Remove Item " + item);
+			Debug.Log ("Remove " + GetInventoryList());
+			inventoryText.GetComponent<Text> ().text = "Inventory\n " + GetInventoryList();
+		}
 	}
 }

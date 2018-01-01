@@ -225,7 +225,7 @@
 			"negativeText": "Greetings sir, have you seen any glowing orbs today?",
 			"close": "It is nice to meet you sir, have a good day.",
 			"nextPositiveSequence": "VC1S1-1C",
-			"nextNegativeSequence": "VC1S2-1C",
+			"nextNegativeSequence": "VC1S3-1C",
 			"resetChoice": "VC1S4-1C",
 			"positiveRequirement": "message",
 			"character": "ShipCaptain"
@@ -233,7 +233,7 @@
 		{
 			"id": "VC1S1-1C",
 			"text": "Thank you warrior, please report back to the Earl that I have received it. How else can I be of assistance?",
-			"btns": ["positive", "negative", "close"],
+			"btns": ["negative", "close"],
 			"negativeText": "Greetings sir, have you seen any glowing orbs today?",
 			"close": "That is all sir thank you, have a good day.",
 			"resetChoice": "VC1S5-1C",
@@ -243,6 +243,15 @@
 		},
 		{
 			"id": "VC1S2-1C",
+			"text": "Yes I saw one near the edge of the river South of here. However, you probably need a net to pick it up from the water. You can grab one from Glaumur. He is in charge of supplies near the village center.",
+			"btns": ["close"],
+			"close": "Thank you again sir, have a good day.",
+			"resetChoice": "VC1S4-1C",
+			"positiveRequirement": "message",
+			"character": "ShipCaptain"
+		},
+		{
+			"id": "VC1S3-1C",
 			"text": "Yes I saw one near the edge of the river South of here. However, you probably need a net to pick it up from the water. You can grab one from Glaumur. He is in charge of supplies near the village center.",
 			"btns": ["positive", "close"],
 			"positiveText": "Thank you sir, I also have a message for you from our Earl Erik the Red.",

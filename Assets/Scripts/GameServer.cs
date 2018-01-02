@@ -16,12 +16,12 @@ public class GameServer : Photon.PunBehaviour {
 	// Update is called once per frame
 	void Update () {
 //		Debug.Log (PhotonNetwork.connectionStateDetailed);
-		Connect ();
+		//Connect ();
 	}
 
 	void Awake() {
-		PhotonNetwork.autoJoinLobby = false;
-		PhotonNetwork.automaticallySyncScene = true;
+		//PhotonNetwork.autoJoinLobby = false;
+		//PhotonNetwork.automaticallySyncScene = true;
 	}
 
 	public void Connect() {
@@ -32,9 +32,9 @@ public class GameServer : Photon.PunBehaviour {
 
 	public void StartGame() {
 		gameState.StartGame ();
-		RoomOptions roomOptions = new RoomOptions ();
-		roomOptions.maxPlayers = 4;
-		PhotonNetwork.JoinOrCreateRoom ("viking-lands", roomOptions, null);
+		//RoomOptions roomOptions = new RoomOptions ();
+		//roomOptions.maxPlayers = 4;
+		//PhotonNetwork.JoinOrCreateRoom ("viking-lands", roomOptions, null);
 	}
 
 	public void OnJoinedRoom() {

@@ -16,13 +16,14 @@ public class GameState : MonoBehaviour {
 	private InventoryDataService inventoryDataService;
 	private Timer timeLeft;
 	private int totalTime = 1000000;
+	private Dictionary<string, bool> tasksAccomplished;
 
 	void Start() {
 		mainMenu = GameObject.FindGameObjectWithTag ("MainMenu");
 		player = GameObject.FindGameObjectWithTag ("Player");
 		gameData = GameObject.FindGameObjectWithTag ("GameData");
 		gameMessage = GameObject.FindGameObjectWithTag ("GameMessage");
-	
+		tasksAccomplished = new Dictionary <string, bool> ();
 		playerLifeService = gameData.GetComponent<PlayerLifeService> ();
 		inventoryDataService = gameData.GetComponent<InventoryDataService> ();
 	}
@@ -44,6 +45,16 @@ public class GameState : MonoBehaviour {
 		"you've collected all 3 orbs!";
 		gameMessage.GetComponent<Text> ().text = "You've Won!";
 		player.transform.position = mainMenu.transform.position;
+	}
+
+	public void FinishTask(string task) {
+		tasksAccomplished.Add (task, true);
+	}
+
+	public bool IsTaskDone(string task) {
+		bool state = false;
+		tasksAccomplished.TryGetValue (task, out state);
+		return state == true;
 	}
 
 }

@@ -12,6 +12,8 @@ public class MenuDataService : MonoBehaviour {
 	private GameObject name;
 	private GameObject item;
 	private GameObject gameData;
+	private GameObject gameStateObj;
+	private GameState gameState;
 	private CharacterChoiceService characterChoiceService;
 	private InventoryDataService inventoryDataService;
 	Vector3 menuStartBuffer = new Vector3(0.0f, 0.5f, 2.25f);
@@ -27,6 +29,8 @@ public class MenuDataService : MonoBehaviour {
 		mainMenu = GameObject.FindGameObjectWithTag ("MainMenu");
 		messageMenu = GameObject.FindGameObjectWithTag ("MessageMenu");
 		gameData = GameObject.FindGameObjectWithTag ("GameData");
+		gameStateObj = GameObject.FindGameObjectWithTag ("GameState");
+		gameState = gameStateObj.GetComponent<GameState> ();
 		inventoryDataService = gameData.GetComponent<InventoryDataService> ();
 	}
 	
@@ -51,15 +55,19 @@ public class MenuDataService : MonoBehaviour {
 		return itemGone;
 	}
 
+	private bool TaskNotCompleted(string task) {
+		return !gameState.IsTaskDone (task);
+	}
+
 	private bool CheckPositiveItems(GameDataModel.CharacterChoice choice, GameObject btn) {
 		bool isPositive = btn.name.Contains ("Positive");
 
 		if (!isPositive) {
 			return true;
 		} else if (choice.positiveRequirement != null) {
-			return isPositiveRequirementMet (choice);
+			return isPositiveRequirementMet (choice) && TaskNotCompleted(choice.positiveRequirement);
 		} else if (choice.positiveItemGone != null) {
-			return isPositiveItemGone (choice);
+			return isPositiveItemGone (choice) && TaskNotCompleted(choice.positiveItemGone);
 		} else {
 			return true;
 		}

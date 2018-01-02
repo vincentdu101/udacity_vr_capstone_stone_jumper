@@ -149,6 +149,7 @@
 			"nextNegativeSequence": "VC1S3-1A",
 			"itemGranted": "axe",
 			"resetChoice": "VC1S4-1A",
+			"finishTask": "message",
 			"character": "EricTheRed"
 		},
 		{
@@ -257,6 +258,7 @@
 			"positiveText": "Thank you sir, I also have a message for you from our Earl Erik the Red.",
 			"close": "Thank you again sir, have a good day.",
 			"resetChoice": "VC1S4-1C",
+			"nextPositiveSequence": "VC1S1-1C",
 			"positiveRequirement": "message",
 			"character": "ShipCaptain"
 		},

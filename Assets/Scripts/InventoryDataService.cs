@@ -23,10 +23,14 @@ public class InventoryDataService : MonoBehaviour {
 
 	private string GetInventoryList() {
 		string items = "";
-		foreach (string item in itemsCollected.Keys) {
-			items += item + ", ";
+		if (itemsCollected.Keys.Count == 0) {
+			return items;
+		} else {
+			foreach (string item in itemsCollected.Keys) {
+				items += item + ", ";
+			}
+			return items.Remove(items.Length - 2);
 		}
-		return items.Remove(items.Length - 2);
 	}
 
 	public void OrbFound(string color) {

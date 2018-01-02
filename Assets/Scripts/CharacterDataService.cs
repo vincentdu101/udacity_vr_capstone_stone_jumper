@@ -7,6 +7,8 @@ public class CharacterDataService : MonoBehaviour {
 
 	private string gameDataFileName = "characters.json";
 	private GameObject gameData;
+	private GameObject gameStateObj;
+	private GameState gameState;
 	private InventoryDataService inventoryDataService;
 	private int stage = 1;
 	private Dictionary<string, GameDataModel.CharacterChoice> keyFigureProgress;
@@ -20,6 +22,8 @@ public class CharacterDataService : MonoBehaviour {
 		previousChoices = new Dictionary<string, GameDataModel.CharacterChoice> ();
 		gameData = GameObject.FindGameObjectWithTag ("GameData");
 		inventoryDataService = gameData.GetComponent<InventoryDataService> ();
+		gameStateObj = GameObject.FindGameObjectWithTag ("GameState");
+		gameState = gameStateObj.GetComponent<GameState> ();
 		LoadDataFromFile ();
 	}
 	
@@ -74,6 +78,9 @@ public class CharacterDataService : MonoBehaviour {
 		if (character.removeItem != null) {
 			inventoryDataService.RemoveItem (character.removeItem);
 		}
+		if (character.finishTask != null) {	
+			gameState.FinishTask (character.finishTask);
+		}
 		return character;
 	}
 
@@ -85,6 +92,9 @@ public class CharacterDataService : MonoBehaviour {
 		}
 		if (character.removeItem != null) {
 			inventoryDataService.RemoveItem (character.removeItem);
+		}
+		if (character.finishTask != null) {	
+			gameState.FinishTask (character.finishTask);
 		}
 		return character;
 	}

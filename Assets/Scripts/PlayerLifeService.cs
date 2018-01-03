@@ -30,7 +30,7 @@ public class PlayerLifeService : MonoBehaviour {
 	}
 
 	public void lifeTakingHit() {
-		currentLife -= 0.03;
+		currentLife -= 0.5;
 		damageTaken = true;
 	}
 

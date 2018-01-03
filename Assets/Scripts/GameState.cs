@@ -8,10 +8,14 @@ public class GameState : MonoBehaviour {
 
 	public enum STATE {STARTED, STOPPED, RESETTED}; 
 	private STATE startState;
+	private GameObject resetPoint;
 	private GameObject mainMenu;
+	private GameObject menuTitle;
+	private GameObject menuWhere;
 	private GameObject gameData;
 	private GameObject player;
 	private GameObject gameMessage;
+	private GameObject messageMenu;
 	private PlayerLifeService playerLifeService;
 	private InventoryDataService inventoryDataService;
 	private Timer timeLeft;
@@ -23,6 +27,10 @@ public class GameState : MonoBehaviour {
 		player = GameObject.FindGameObjectWithTag ("Player");
 		gameData = GameObject.FindGameObjectWithTag ("GameData");
 		gameMessage = GameObject.FindGameObjectWithTag ("GameMessage");
+		messageMenu = GameObject.FindGameObjectWithTag ("MessageMenu");
+		resetPoint = GameObject.Find ("ResetPoint");
+		menuTitle = GameObject.Find ("Title");
+		menuWhere = GameObject.Find ("Where");
 		tasksAccomplished = new Dictionary <string, bool> ();
 		playerLifeService = gameData.GetComponent<PlayerLifeService> ();
 		inventoryDataService = gameData.GetComponent<InventoryDataService> ();
@@ -37,14 +45,32 @@ public class GameState : MonoBehaviour {
 	}
 
 	public void EndGame() {
+		mainMenu.SetActive (true);
 		playerLifeService.resetLife ();
 		inventoryDataService.ClearAllItems ();
 		startState = STATE.RESETTED;
 		timeLeft = null;
-		mainMenu.GetComponentInChildren<Text> ().text = "Yay you've won the game\n" +
-		"you've collected all 3 orbs!";
+		menuTitle.GetComponent<Text> ().text = "You Win!!!"; 
+		menuWhere.GetComponent<Text>().text = "Yay you've won the game " +
+		"you've collected all 3 orbs!\nPlay Again?";
 		gameMessage.GetComponent<Text> ().text = "You've Won!";
-		player.transform.position = mainMenu.transform.position;
+		player.transform.position = resetPoint.transform.position;
+		tasksAccomplished.Clear ();
+		messageMenu.SetActive (false);
+	}
+
+	public void PlayerDied() {
+		mainMenu.SetActive (true);
+		playerLifeService.resetLife ();
+		inventoryDataService.ClearAllItems ();
+		startState = STATE.RESETTED;
+		timeLeft = null;
+		menuTitle.GetComponent<Text> ().text = "You Lost!";
+		menuWhere.GetComponent<Text>().text = "Oh no you died. Play Again?";
+		gameMessage.GetComponent<Text> ().text = "You've Lost!";
+		player.transform.position = resetPoint.transform.position;
+		tasksAccomplished.Clear ();
+		messageMenu.SetActive (false);
 	}
 
 	public void FinishTask(string task) {

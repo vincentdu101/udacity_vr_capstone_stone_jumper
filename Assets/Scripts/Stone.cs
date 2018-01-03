@@ -7,6 +7,8 @@ public class Stone : MonoBehaviour {
 
 	public string itemRequired;
 	public string orbColor;
+	public Material lightUpMaterial;
+	public Material defaultMaterial;
 
 	private GameObject gameData;
 	private GameObject gameMessage;
@@ -25,7 +27,15 @@ public class Stone : MonoBehaviour {
 	}
 
 	void Update() {
+		
+	}
 
+	public void HoverOverOrb() {
+		this.GetComponent<MeshRenderer> ().material = lightUpMaterial;
+	}
+
+	public void BackToDefault() {
+		this.GetComponent<MeshRenderer> ().material = defaultMaterial;
 	}
 
 	public void TryCollectingOrb() {

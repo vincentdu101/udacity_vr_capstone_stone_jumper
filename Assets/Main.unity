@@ -28964,7 +28964,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400316, guid: b235179bd2a63d1468dd430670338c55, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 516380517}
-  m_LocalRotation: {x: 0.53267515, y: 0.07034045, z: 0.83613265, w: -0.11041513}
+  m_LocalRotation: {x: 0.5326752, y: 0.070340455, z: 0.83613276, w: -0.110415146}
   m_LocalPosition: {x: 0.000022271464, y: -0.00006150465, z: 0.026027026}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -41763,6 +41763,24 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!1 &736957877 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: bfffe6f87b5561b4bbb7e7bedc02ded6, type: 2}
+  m_PrefabInternal: {fileID: 1445604507}
+--- !u!111 &736957879
+Animation:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 736957877}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 96e9d39ed5992492698ae557640f07d5, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &737442689
 GameObject:
   m_ObjectHideFlags: 0
@@ -60722,6 +60740,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemRequired: axe
   orbColor: green
+  lightUpMaterial: {fileID: 2100000, guid: 8d034628a1766f64bb892b8e4aea38ae, type: 2}
+  defaultMaterial: {fileID: 2100000, guid: 9b406d527c89e4724a237dc365c342fc, type: 2}
 --- !u!23 &1082337111
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -60808,6 +60828,40 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1082337110}
           m_MethodName: TryCollectingOrb
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1082337110}
+          m_MethodName: HoverOverOrb
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1082337110}
+          m_MethodName: BackToDefault
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -64121,8 +64175,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1132303075}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 355.5, y: 170.5, z: 0}
-  m_LocalScale: {x: 0.88875, y: 0.88875, z: 0.88875}
+  m_LocalPosition: {x: 679, y: 321, z: 0}
+  m_LocalScale: {x: 1.6975, y: 1.6975, z: 1.6975}
   m_Children:
   - {fileID: 1685909644}
   m_Father: {fileID: 0}
@@ -67259,6 +67313,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemRequired: none
   orbColor: blue
+  lightUpMaterial: {fileID: 2100000, guid: daad62324deb0cf448e5c805c8459bff, type: 2}
+  defaultMaterial: {fileID: 2100000, guid: 52b7d70b1de7c4ce09662b77c14d9fda, type: 2}
 --- !u!23 &1193807840
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -67330,6 +67386,40 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1193807839}
           m_MethodName: TryCollectingOrb
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1193807839}
+          m_MethodName: HoverOverOrb
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1193807839}
+          m_MethodName: BackToDefault
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -84157,7 +84247,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400316, guid: b235179bd2a63d1468dd430670338c55, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1499295477}
-  m_LocalRotation: {x: 0.53267515, y: 0.07034045, z: 0.83613265, w: -0.11041513}
+  m_LocalRotation: {x: 0.5326752, y: 0.070340455, z: 0.83613276, w: -0.110415146}
   m_LocalPosition: {x: 0.000022271464, y: -0.00006150465, z: 0.026027026}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -93242,6 +93332,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemRequired: net
   orbColor: red
+  lightUpMaterial: {fileID: 2100000, guid: 409bf720e9924426b9f253cf037a8f4e, type: 2}
+  defaultMaterial: {fileID: 2100000, guid: 28498b9ebcb776a46b3c9479a664bfc7, type: 2}
 --- !u!23 &1666913962
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -93328,6 +93420,40 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1666913961}
           m_MethodName: TryCollectingOrb
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1666913961}
+          m_MethodName: HoverOverOrb
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1666913961}
+          m_MethodName: BackToDefault
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

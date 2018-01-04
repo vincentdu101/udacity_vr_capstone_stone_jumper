@@ -59,6 +59,24 @@ public class CharacterDataService : MonoBehaviour {
 		} else {
 			Debug.LogError("Cannot load game data!");
 		}
+		filePath = Path.Combine("jar:file://" + Application.dataPath + "!/assets/", gameDataFileName);
+		StartCoroutine (GetDataInAndroid (filePath));
+	}
+
+	private IEnumerator GetDataInAndroid(string url) {
+		WWW www = new WWW(url);
+		yield return www;
+		if (www.text != null) {
+
+			string dataAsJson = www.text;
+			GameDataModel.GameData data = JsonUtility.FromJson<GameDataModel.GameData>(dataAsJson);
+
+			// Retrieve the names and choices property of data
+			names = data.names;
+			LoadChoicesIntoDictionary (data.choices);
+		} else {
+			Debug.LogError ("Cannot load game data!");
+		}
 	}
 
 	public GameDataModel.CharacterChoice GetRandomChoice() {

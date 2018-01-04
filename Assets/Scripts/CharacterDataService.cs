@@ -58,9 +58,9 @@ public class CharacterDataService : MonoBehaviour {
 			LoadChoicesIntoDictionary (data.choices);
 		} else {
 			Debug.LogError("Cannot load game data!");
+			filePath = Path.Combine("jar:file://" + Application.dataPath + "!/assets/", gameDataFileName);
+			StartCoroutine (GetDataInAndroid (filePath));
 		}
-		filePath = Path.Combine("jar:file://" + Application.dataPath + "!/assets/", gameDataFileName);
-		StartCoroutine (GetDataInAndroid (filePath));
 	}
 
 	private IEnumerator GetDataInAndroid(string url) {

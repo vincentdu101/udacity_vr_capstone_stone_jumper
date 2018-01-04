@@ -71,7 +71,7 @@ public class CharacterMenu : MonoBehaviour {
 
 	private void DetermineCharacterChoice() {
 		if (this.name == "EricTheRed") {
-			characterName = "Eric The Red";
+			characterName = "Erik The Red";
 			activeChoice = characterDataService.GetKeyFigureChoice ("EricTheRed");
 		} else if (this.name == "Illugi") {
 			characterName = "Illugi";

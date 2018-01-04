@@ -86,7 +86,7 @@
 		},
 		{
 			"id": "VC1S0-0A",
-			"text": "Greetings Warrior, I am Earl Eric the Red.",
+			"text": "Greetings Warrior, I am Earl Erik the Red.",
 			"btns": ["positive", "negative", "close"],
 			"positiveText": "Greetings your lordship, can you tell me if you've seen any glowing stones?",
 			"negativeText": "Greetings your lordship, can I help you with anything?",

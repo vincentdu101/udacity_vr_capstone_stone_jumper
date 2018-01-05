@@ -22,6 +22,7 @@ public class CharacterMenu : MonoBehaviour {
 	private MenuDataService menuDataService;
 	private CharacterDataService characterDataService;
 	private string characterName;
+	private float soundDistance = 6.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -33,10 +34,24 @@ public class CharacterMenu : MonoBehaviour {
 		menuDataService = gameDataService.GetComponent<MenuDataService> ();
 		characterDataService = gameDataService.GetComponent<CharacterDataService> ();
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
-		
+		handleSoundEffect ();
+	}
+
+	private void handleSoundEffect() {
+		AudioSource audio = this.GetComponent<AudioSource> ();
+
+		if (audio != null) {
+			Vector3 playerDirection = player.transform.position - this.transform.position;
+
+			if (playerDirection.magnitude < soundDistance && audio.isPlaying == false) {
+				audio.Play ();
+			} else if (playerDirection.magnitude >= soundDistance && audio.isPlaying == true) {
+				audio.Stop ();
+			}
+		}
 	}
 
 	public Boolean IsBtnActive(string btn) {

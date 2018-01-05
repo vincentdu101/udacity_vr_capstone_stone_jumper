@@ -11,9 +11,13 @@ public class PlayerLifeService : MonoBehaviour {
 	private double recoverRate = 0.01;
 	private bool damageTaken = false;
 	private GameObject playerLifeText;
+	private GameObject damageFilter;
+	private GameObject player;
 
 	void Start() {
 		currentLife = defaultLifeCount;
+		player = GameObject.FindGameObjectWithTag ("Player");
+		damageFilter = GameObject.Find ("DamageFilter");
 		playerLifeText = GameObject.FindGameObjectWithTag ("Life");
 	}
 
@@ -30,8 +34,11 @@ public class PlayerLifeService : MonoBehaviour {
 	}
 
 	public void lifeTakingHit() {
-		currentLife -= 0.5;
+		damageFilter.transform.position = player.transform.position;
+		damageFilter.SetActive (true);
+		currentLife -= 0.2;
 		damageTaken = true;
+		damageFilter.transform.position = damageFilter.transform.position + new Vector3(0.0f, 1000.0f, 0.0f);
 	}
 
 	public void resetLife() {

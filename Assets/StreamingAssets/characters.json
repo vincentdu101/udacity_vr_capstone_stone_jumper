@@ -173,7 +173,7 @@
 		{
 			"id": "VC1S0-0B",
 			"text": "Greetings Warrior. I am Illugi the lead worker of this worker unit. How may I help you?",
-			"btns": ["positive", "negative", "close"],
+			"btns": ["positive", "close"],
 			"positiveText": "Greetings sir, can you tell me if you've seen any glowing stones?",
 			"close": "It is an honor to meet you again sir, good day.",
 			"nextPositiveSequence": "VC1S1-1B",

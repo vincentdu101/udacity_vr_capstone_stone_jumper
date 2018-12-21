@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MenuService : Photon.PunBehaviour {
+public class MenuService: MonoBehaviour {
 
 	public GameObject gameController;
 	public GameObject mainMenu;

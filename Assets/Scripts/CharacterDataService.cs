@@ -24,12 +24,27 @@ public class CharacterDataService : MonoBehaviour {
 		inventoryDataService = gameData.GetComponent<InventoryDataService> ();
 		gameStateObj = GameObject.FindGameObjectWithTag ("GameState");
 		gameState = gameStateObj.GetComponent<GameState> ();
-		LoadDataFromFile ();
+		
+		// send data from 
+		POST();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
+	}
+
+	public WWW POST() {
+		WWW www;
+		Hashtable postHeader = new Hashtable();
+		postHeader.Add("Content-Type", "application/json");
+
+		// convert json string to byte
+		var formData = System.Text.Encoding.UTF8.GetBytes("{ \"query\": \"{game(id: 1) { id title } }\" }");
+
+		www = new WWW("http://localhost:3000/graphql", formData, postHeader);
+		StartCoroutine(LoadDataFromServer(www));
+		return www;
 	}
 
 	private void LoadChoicesIntoDictionary(GameDataModel.CharacterChoice[] inputChoices) {
@@ -60,6 +75,39 @@ public class CharacterDataService : MonoBehaviour {
 			Debug.LogError("Cannot load game data!");
 			filePath = Path.Combine("jar:file://" + Application.dataPath + "!/assets/", gameDataFileName);
 			StartCoroutine (GetDataInAndroid (filePath));
+		}
+	}
+
+	private IEnumerator LoadDataFromServer(WWW data) {
+		// Path.Combine combines strings into a file path
+		// Application.StreamingAssets points to Assets/StreamingAssets in the Editor, and the StreamingAssets folder in a build
+		// string filePath = Path.Combine(Application.streamingAssetsPath, gameDataFileName);
+
+		// if(File.Exists(filePath)) {
+		// 	// Read the json from the file into a string
+		// 	string dataAsJson = File.ReadAllText(filePath); 
+		// 	// Pass the json to JsonUtility, and tell it to create a GameData object from it
+		// 	GameDataModel.GameData data = JsonUtility.FromJson<GameDataModel.GameData>(dataAsJson);
+
+		// 	// Retrieve the names and choices property of data
+		// 	names = data.names;
+		// 	LoadChoicesIntoDictionary (data.choices);
+		// } else {
+		// 	Debug.LogError("Cannot load game data!");
+		// 	filePath = Path.Combine("jar:file://" + Application.dataPath + "!/assets/", gameDataFileName);
+		// 	StartCoroutine (GetDataInAndroid (filePath));
+		// }	
+
+		yield return data; // Wait until the download is done
+		if (data.error != null)
+		{
+			Debug.Log("There was an error sending request: " + data.error);
+		}
+		else
+		{
+			Debug.Log("WWW Request: " + data.text);
+			GameDataModel.GameData parsedData = JsonUtility.FromJson<GameDataModel.GameData>(data.text);
+			Debug.Log(parsedData);
 		}
 	}
 

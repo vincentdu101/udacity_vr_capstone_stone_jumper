@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameServer : Photon.PunBehaviour {
+public class GameServer: MonoBehaviour {
 
 	public GameObject gameStateObj;
 	private GameState gameState;
@@ -25,9 +25,9 @@ public class GameServer : Photon.PunBehaviour {
 	}
 
 	public void Connect() {
-		if (!PhotonNetwork.connected) {
-			PhotonNetwork.ConnectUsingSettings (gameVersion);
-		}
+		// if (!PhotonNetwork.connected) {
+		// 	PhotonNetwork.ConnectUsingSettings (gameVersion);
+		// }
 	}
 
 	public void StartGame() {

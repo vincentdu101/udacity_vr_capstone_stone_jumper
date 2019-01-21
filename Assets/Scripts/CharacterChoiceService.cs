@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterChoiceService : MonoBehaviour {
+public class CharacterContactService : MonoBehaviour {
 
-	private GameDataModel.CharacterChoice choice;
+	private GameDataModel.Contact contact;
 
-	public void SetChoice(GameDataModel.CharacterChoice choice) {
-		this.choice = choice;
+	public void SetContact(GameDataModel.Contact contact) {
+		this.contact = contact;
 	}
 
-	public GameDataModel.CharacterChoice GetChoice() {
-		return choice;
+	public GameDataModel.Contact GetContact() {
+		return contact;
 	}
 }

@@ -7,35 +7,67 @@ public class GameDataModel : MonoBehaviour
 	[System.Serializable]
 	public class GameData {
 		public string[] names;
-		public CharacterChoice[] choices;
+		public Data data;
 	}
 
 	[System.Serializable]
-	public class CharacterChoice {
-		public string id;
+	public class Data {
+		public Game game;
+	}
+
+	[System.Serializable]
+	public class Game {
+		public int id;
+		public string title;
+		public Contact[] contacts;
+	}
+
+	[System.Serializable]
+	public class Contact {
+		public int id;
 		public string text;
-		public string[] btns;
-		public string positiveText;
-		public string negativeText;
-		public string close;
-		public string nextPositiveSequence;
-		public string nextNegativeSequence;
-		public string resetChoice;
+		public string characterType;
+		public int heirarchy; 
 		public string itemGranted;
-		public string positiveRequirement;
-		public string character;
-		public string positiveItemGone;
-		public string removeItem;
+		public string requirement;
+		public string itemGone;
 		public string finishTask;
-		public void clone(CharacterChoice choice) {
+
+		public Choice[] choices;
+
+		public void clone(Contact contact) {
+			this.id = contact.id;
+			this.text = contact.text;
+			this.characterType = contact.characterType;
+			this.heirarchy = contact.heirarchy;
+			this.choices = contact.choices;
+			this.requirement = contact.requirement;
+			this.itemGranted = contact.itemGranted;
+			this.itemGone = contact.itemGone;
+			this.finishTask = contact.finishTask;
+		}
+	}
+
+	[System.Serializable]
+	public class Choice {
+		public int id;
+		public string text;
+		public string choiceType;
+		public string itemGranted;
+		public string requirement;
+		public string itemGone;
+		public string finishTask;
+		public int[] contacts;
+
+		public void clone(Choice choice) {
 			this.id = choice.id;
 			this.text = choice.text;
-			this.btns = choice.btns;
-			this.positiveText = choice.positiveText;
-			this.negativeText = choice.negativeText;
-			this.close = choice.close;
-			this.nextPositiveSequence = choice.nextPositiveSequence;
-			this.nextNegativeSequence = choice.nextNegativeSequence;
+			this.choiceType = choice.choiceType;
+			this.requirement = choice.requirement;
+			this.itemGranted = choice.itemGranted;
+			this.itemGone = choice.itemGone;
+			this.finishTask = choice.finishTask;
+			this.contacts = choice.contacts;
 		}
 	}
 

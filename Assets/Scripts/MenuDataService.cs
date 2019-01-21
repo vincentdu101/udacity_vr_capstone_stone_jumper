@@ -14,7 +14,7 @@ public class MenuDataService : MonoBehaviour {
 	private GameObject gameData;
 	private GameObject gameStateObj;
 	private GameState gameState;
-	private CharacterChoiceService characterChoiceService;
+	private CharacterContactService characterContactService;
 	private InventoryDataService inventoryDataService;
 	Vector3 menuStartBuffer = new Vector3(0.0f, 0.5f, 2.25f);
 	Vector3 menuCameraBuffer = new Vector3(0.0f, 1.0f, 1.0f);
@@ -39,18 +39,18 @@ public class MenuDataService : MonoBehaviour {
 		
 	}
 
-	private bool isPositiveRequirementMet(GameDataModel.CharacterChoice choice) {
+	private bool isRequirementMet(GameDataModel.Choice choice) {
 		bool requirementMet = false;
-		if (choice.positiveRequirement != null) {
-			return inventoryDataService.IsItemFound (choice.positiveRequirement);
+		if (choice.requirement != null) {
+			return inventoryDataService.IsItemFound (choice.requirement);
 		}
 		return requirementMet;
 	}
 
-	private bool isPositiveItemGone(GameDataModel.CharacterChoice choice) {
+	private bool isItemGone(GameDataModel.Choice choice) {
 		bool itemGone = true;
-		if (choice.positiveItemGone != null) {
-			return !inventoryDataService.IsItemFound (choice.positiveItemGone);
+		if (choice.itemGone != null) {
+			return !inventoryDataService.IsItemFound (choice.itemGone);
 		}
 		return itemGone;
 	}
@@ -59,15 +59,11 @@ public class MenuDataService : MonoBehaviour {
 		return !gameState.IsTaskDone (task);
 	}
 
-	private bool CheckPositiveItems(GameDataModel.CharacterChoice choice, GameObject btn) {
-		bool isPositive = btn.name.Contains ("Positive");
-
-		if (!isPositive) {
-			return true;
-		} else if (choice.positiveRequirement != null) {
-			return isPositiveRequirementMet (choice) && TaskNotCompleted(choice.positiveRequirement);
-		} else if (choice.positiveItemGone != null) {
-			return isPositiveItemGone (choice) && TaskNotCompleted(choice.positiveItemGone);
+	private bool CheckChoice(GameDataModel.Choice choice) {
+		if (choice.requirement != null) {
+			return isRequirementMet(choice) && TaskNotCompleted(choice.requirement);
+		} else if (choice.itemGone != null) {
+			return isItemGone(choice) && TaskNotCompleted(choice.itemGone);
 		} else {
 			return true;
 		}
@@ -86,26 +82,28 @@ public class MenuDataService : MonoBehaviour {
 	}
 
 	public void ActivateOrDeactivateBtn(GameObject btn, Boolean activate, 
-										GameDataModel.CharacterChoice choice, string text) {
+										GameDataModel.Contact contact, int choiceIndex) {
 		if (btn == null) {
 			return;
 		}
 
-		if (activate == true && CheckPositiveItems(choice, btn)) {
-			characterChoiceService = btn.GetComponentInChildren<CharacterChoiceService>();
-			btn.GetComponentInChildren<Text> ().text = text;
+		GameDataModel.Choice choice = contact.choices[choiceIndex];
+
+		if (activate == true && CheckChoice(choice)) {
+			characterContactService = btn.GetComponentInChildren<CharacterContactService>();
+			btn.GetComponentInChildren<Text> ().text = choice.text;
 			btn.SetActive (true);
-			characterChoiceService.SetChoice (choice);
+			characterContactService.SetContact (contact);
 		} else {
 			btn.SetActive (false);
 		}
 	}
 
-	public void ModifyMenuMessage(GameDataModel.CharacterChoice nextChoice) {
-		message.GetComponent<Text>().text = nextChoice.text;
+	public void ModifyMenuMessage(GameDataModel.Contact nextContact) {
+		message.GetComponent<Text>().text = nextContact.text;
 
-		if (nextChoice.itemGranted != null) {
-			string itemFound = nextChoice.itemGranted;
+		if (nextContact.itemGranted != null) {
+			string itemFound = nextContact.itemGranted;
 			item.SetActive (true);
 			item.GetComponentInChildren<Text> ().text = "Item Granted: " + itemFound;
 		} else {

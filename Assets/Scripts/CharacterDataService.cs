@@ -10,23 +10,24 @@ public class CharacterDataService : MonoBehaviour {
 	private GameObject gameStateObj;
 	private GameState gameState;
 	private InventoryDataService inventoryDataService;
+	private string serverPath = "http://localhost:3000/graphql";
 	private int stage = 1;
-	private Dictionary<string, GameDataModel.CharacterChoice> keyFigureProgress;
+	private Dictionary<string, GameDataModel.Contact> keyFigureProgress;
 	public string[] names;
-	public Dictionary<string, GameDataModel.CharacterChoice> previousChoices;
-	public Dictionary<string, GameDataModel.CharacterChoice> choices;
+	public Dictionary<string, GameDataModel.Contact> previousContacts;
+	public Dictionary<string, GameDataModel.Contact> contacts;
 
 	// Use this for initialization
 	void Start () {
-		choices = new Dictionary<string, GameDataModel.CharacterChoice> ();
-		previousChoices = new Dictionary<string, GameDataModel.CharacterChoice> ();
+		contacts = new Dictionary<string, GameDataModel.Contact> ();
+		previousContacts = new Dictionary<string, GameDataModel.Contact> ();
 		gameData = GameObject.FindGameObjectWithTag ("GameData");
 		inventoryDataService = gameData.GetComponent<InventoryDataService> ();
 		gameStateObj = GameObject.FindGameObjectWithTag ("GameState");
 		gameState = gameStateObj.GetComponent<GameState> ();
 		
-		// send data from 
-		POST();
+		// send data from server and local name file
+		LoadDataFromServer(POST());
 	}
 	
 	// Update is called once per frame
@@ -40,21 +41,54 @@ public class CharacterDataService : MonoBehaviour {
 		postHeader.Add("Content-Type", "application/json");
 
 		// convert json string to byte
-		var formData = System.Text.Encoding.UTF8.GetBytes("{ \"query\": \"{game(id: 1) { id title } }\" }");
+		var formData = System.Text.Encoding.UTF8.GetBytes("{ \"query\": \"{" + 
+			"game(id: 1) {" +
+				"id " +
+				"title " + 
+				"contacts { " + 
+					"id " + 
+					"text " +
+					"hierarchy " +
+					"characterType " +
+					"itemGranted " + 
+					"itemGone " + 
+					"finishTask " +
+					"requirement " +
+					"choices { " +
+						"id " +
+						"text " +
+						"itemGranted " +
+						"itemGone " +
+						"finishTask " +
+						"requirement " +
+						"choiceType " +
+						"contacts {id} " +
+					"} " +
+				"}" +
+			"}" +
+		"}\" }");
 
-		www = new WWW("http://localhost:3000/graphql", formData, postHeader);
+		www = new WWW(this.serverPath, formData, postHeader);
 		StartCoroutine(LoadDataFromServer(www));
 		return www;
 	}
 
-	private void LoadChoicesIntoDictionary(GameDataModel.CharacterChoice[] inputChoices) {
-		foreach (GameDataModel.CharacterChoice choice in inputChoices) {
-			if (!choices.ContainsKey (choice.id)) {
-				Debug.Log (choice.id);
-				Debug.Log (choice);
-				choices.Add (choice.id, choice);
+	private void LoadContactsIntoDictionary(GameDataModel.Contact[] inputContacts) {
+		// add contact to list of contacts if not already in the list
+		foreach (GameDataModel.Contact contact in inputContacts) {
+			string contactHeirarchyKey = this.GenerateContactKey(contact.id, contact.heirarchy, contact.characterType);
+			if (!contacts.ContainsKey (contactHeirarchyKey)) {
+				contacts.Add(contactHeirarchyKey, contact);
+			}
+
+			if (!previousContacts.ContainsKey(contact.characterType)) {
+				previousContacts.Add(contact.characterType, contact);
 			}
 		}
+	}
+
+	private string GenerateContactKey(int contactId, int heirarchy, string characterType) {
+		return contactId + "-" + heirarchy + "-" + this.GetKeyFigureSequence(characterType);
 	}
 
 	private void LoadDataFromFile() {
@@ -70,7 +104,7 @@ public class CharacterDataService : MonoBehaviour {
 
 			// Retrieve the names and choices property of data
 			names = data.names;
-			LoadChoicesIntoDictionary (data.choices);
+			// LoadChoicesIntoDictionary (data.choices);
 		} else {
 			Debug.LogError("Cannot load game data!");
 			filePath = Path.Combine("jar:file://" + Application.dataPath + "!/assets/", gameDataFileName);
@@ -79,25 +113,6 @@ public class CharacterDataService : MonoBehaviour {
 	}
 
 	private IEnumerator LoadDataFromServer(WWW data) {
-		// Path.Combine combines strings into a file path
-		// Application.StreamingAssets points to Assets/StreamingAssets in the Editor, and the StreamingAssets folder in a build
-		// string filePath = Path.Combine(Application.streamingAssetsPath, gameDataFileName);
-
-		// if(File.Exists(filePath)) {
-		// 	// Read the json from the file into a string
-		// 	string dataAsJson = File.ReadAllText(filePath); 
-		// 	// Pass the json to JsonUtility, and tell it to create a GameData object from it
-		// 	GameDataModel.GameData data = JsonUtility.FromJson<GameDataModel.GameData>(dataAsJson);
-
-		// 	// Retrieve the names and choices property of data
-		// 	names = data.names;
-		// 	LoadChoicesIntoDictionary (data.choices);
-		// } else {
-		// 	Debug.LogError("Cannot load game data!");
-		// 	filePath = Path.Combine("jar:file://" + Application.dataPath + "!/assets/", gameDataFileName);
-		// 	StartCoroutine (GetDataInAndroid (filePath));
-		// }	
-
 		yield return data; // Wait until the download is done
 		if (data.error != null)
 		{
@@ -106,8 +121,9 @@ public class CharacterDataService : MonoBehaviour {
 		else
 		{
 			Debug.Log("WWW Request: " + data.text);
+			LoadDataFromFile();
 			GameDataModel.GameData parsedData = JsonUtility.FromJson<GameDataModel.GameData>(data.text);
-			Debug.Log(parsedData);
+			LoadContactsIntoDictionary(parsedData.data.game.contacts);
 		}
 	}
 
@@ -121,48 +137,41 @@ public class CharacterDataService : MonoBehaviour {
 
 			// Retrieve the names and choices property of data
 			names = data.names;
-			LoadChoicesIntoDictionary (data.choices);
 		} else {
 			Debug.LogError ("Cannot load game data!");
 		}
 	}
 
-	public GameDataModel.CharacterChoice GetRandomChoice() {
+	private string FindNextChoiceContactKey(GameDataModel.Contact contact, GameDataModel.Choice choice) {
+		int nextContactId = 0;
+		foreach (int contactId in choice.contacts) {
+			if (contact.id != contactId) {
+				nextContactId = contactId;
+			}
+		}
+		return this.GenerateContactKey(nextContactId, stage, contact.characterType);
+	}
+
+	public GameDataModel.Contact GetRandomContact() {
 		int randomChoice = Random.Range (0, 2);
-		string key = "VC" + stage + "S" + randomChoice + "-0";
-		GameDataModel.CharacterChoice character;
-		choices.TryGetValue(key, out character);
+		string key = this.GenerateContactKey(randomChoice, stage, "Soldier");
+		GameDataModel.Contact character;
+		contacts.TryGetValue(key, out character);
 		return character;
 	}
 
-	public GameDataModel.CharacterChoice GetNextPositiveChoice(GameDataModel.CharacterChoice choice) {
-		GameDataModel.CharacterChoice character;
-		choices.TryGetValue (choice.nextPositiveSequence, out character);
-		if (character.resetChoice != null) {
-			UpdateResetChoice (character);
+	public GameDataModel.Contact GetNextChoice(GameDataModel.Contact contact, int choice) {
+		GameDataModel.Contact nextContact;
+		GameDataModel.Choice nextChoice = contact.choices[choice];
+		contacts.TryGetValue (this.FindNextChoiceContactKey(contact, nextChoice), out nextContact);
+		UpdateResetChoice (nextContact);
+		if (nextChoice.itemGone != null) {
+			inventoryDataService.RemoveItem (nextChoice.itemGone);
 		}
-		if (character.removeItem != null) {
-			inventoryDataService.RemoveItem (character.removeItem);
+		if (nextContact.finishTask != null) {	
+			gameState.FinishTask (nextContact.finishTask);
 		}
-		if (character.finishTask != null) {	
-			gameState.FinishTask (character.finishTask);
-		}
-		return character;
-	}
-
-	public GameDataModel.CharacterChoice GetNextNegativeChoice(GameDataModel.CharacterChoice choice) {
-		GameDataModel.CharacterChoice character;
-		choices.TryGetValue (choice.nextNegativeSequence, out character);
-		if (character.resetChoice != null) {
-			UpdateResetChoice (character);
-		}
-		if (character.removeItem != null) {
-			inventoryDataService.RemoveItem (character.removeItem);
-		}
-		if (character.finishTask != null) {	
-			gameState.FinishTask (character.finishTask);
-		}
-		return character;
+		return nextContact;
 	}
 
 	public string GetKeyFigureSequence(string figure) {
@@ -184,20 +193,23 @@ public class CharacterDataService : MonoBehaviour {
 		}
 	}
 
-	public GameDataModel.CharacterChoice GetKeyFigureChoice(string figure) {
-		GameDataModel.CharacterChoice previousChoice;
-		GameDataModel.CharacterChoice nextChoice;
-		string key; 
-		previousChoices.TryGetValue(figure, out previousChoice);
-		if (previousChoice == null) {
-			key = "VC" + stage + "S0" + "-0" + GetKeyFigureSequence(figure);
-		} else {
-			key = previousChoice.resetChoice;
-		}
-		choices.TryGetValue(key, out nextChoice);
-		previousChoices.Remove (figure);
-		previousChoices.Add (figure, nextChoice);
-		return nextChoice;
+	public GameDataModel.Contact GetKeyFigureChoice(string figure) {
+	// 	GameDataModel.Contact previousContact;
+	// 	GameDataModel.Contact nextContact;
+	// 	string key; 
+	// 	previousContacts.TryGetValue(figure, out previousContact);
+	// 	if (previousContact == null) {
+	// 		key = "VC" + stage + "S0" + "-0" + GetKeyFigureSequence(figure);
+	// 	} else {
+	// 		key = previousChoice.resetChoice;
+	// 	}
+	// 	contacts.TryGetValue(key, out nextContact);
+	// 	previousContacts.Remove (figure);
+	// 	previousContacts.Add (figure, nextChoice);
+	// 	return nextChoice;
+		GameDataModel.Contact nextContact;
+		previousContacts.TryGetValue(figure, out nextContact);
+		return nextContact;
 	}
 
 	public string GetCharacterName() {
@@ -205,16 +217,8 @@ public class CharacterDataService : MonoBehaviour {
 		return names[random];
 	}
 
-	public void UpdateResetChoice(GameDataModel.CharacterChoice choice) {
-		GameDataModel.CharacterChoice previousChoice;
-		string key; 
-		previousChoices.TryGetValue(choice.character, out previousChoice);
-		if (previousChoice == null) {
-			key = "VC" + stage + "S0" + "-0" + GetKeyFigureSequence(choice.character);
-		} else {
-			key = previousChoice.resetChoice;
-		}
-		previousChoices.Remove (choice.character);
-		previousChoices.Add (choice.character, choice);
+	public void UpdateResetChoice(GameDataModel.Contact contact) {
+		previousContacts.Remove (contact.characterType);
+		previousContacts.Add (contact.characterType, contact);
 	}
 }

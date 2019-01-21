@@ -10,7 +10,7 @@ public class CharacterMenu : MonoBehaviour {
 	public GameObject positiveBtn;
 	public GameObject negativeBtn;
 
-	private GameDataModel.CharacterChoice activeChoice;
+	private GameDataModel.Contact activeContact;
 	private GameObject gameDataService;
 	private GameObject[] controls;
 	private GameObject[] characters;
@@ -54,14 +54,14 @@ public class CharacterMenu : MonoBehaviour {
 		}
 	}
 
-	public Boolean IsBtnActive(string btn) {
-		return Array.IndexOf(activeChoice.btns, btn) != -1;
+	public Boolean IsChoiceActive(int index) {
+		return activeContact.choices[index] == null;
 	}
 		
 	private void ActivateMenuBtns() {
-		menuDataService.ActivateOrDeactivateBtn (closeBtn, IsBtnActive("close"), activeChoice, activeChoice.close);
-		menuDataService.ActivateOrDeactivateBtn (positiveBtn, IsBtnActive("positive"), activeChoice, activeChoice.positiveText);
-		menuDataService.ActivateOrDeactivateBtn (negativeBtn, IsBtnActive("negative"), activeChoice, activeChoice.negativeText);                         
+		menuDataService.ActivateOrDeactivateBtn (positiveBtn, IsChoiceActive(0), activeContact, 0);
+		menuDataService.ActivateOrDeactivateBtn (negativeBtn, IsChoiceActive(1), activeContact, 1);    
+		menuDataService.ActivateOrDeactivateBtn (closeBtn, IsChoiceActive(2), activeContact, 2);                     
 	}
 
 	private void LookAtPlayer() {
@@ -84,21 +84,22 @@ public class CharacterMenu : MonoBehaviour {
 		}
 	}
 
-	private void DetermineCharacterChoice() {
+	private void DetermineCharacterContact() {
+		Debug.Log(this.name);
 		if (this.name == "EricTheRed") {
 			characterName = "Erik The Red";
-			activeChoice = characterDataService.GetKeyFigureChoice ("EricTheRed");
+			activeContact = characterDataService.GetKeyFigureChoice ("EricTheRed");
 		} else if (this.name == "Illugi") {
 			characterName = "Illugi";
-			activeChoice = characterDataService.GetKeyFigureChoice ("Illugi");
+			activeContact = characterDataService.GetKeyFigureChoice ("Illugi");
 		} else if (this.name == "ShipCaptain") {
 			characterName = "Ship Captain";
-			activeChoice = characterDataService.GetKeyFigureChoice ("ShipCaptain");
+			activeContact = characterDataService.GetKeyFigureChoice ("ShipCaptain");
 		} else if (this.name == "Glaumur") {
 			characterName = "Glaumur";
-			activeChoice = characterDataService.GetKeyFigureChoice ("Glaumur");
+			activeContact = characterDataService.GetKeyFigureChoice ("Glaumur");
 		} else {
-			activeChoice = characterDataService.GetRandomChoice();
+			activeContact = characterDataService.GetRandomContact();
 		}
 	}
 
@@ -109,10 +110,10 @@ public class CharacterMenu : MonoBehaviour {
 	}
 
 	public void PlayerContactStart() {
-		DetermineCharacterChoice();
+		DetermineCharacterContact();
 		SetCharacterName ();
 		menuDataService.MoveMessageMenu (camera);
-		menuDataService.ModifyMenuMessage (activeChoice);
+		menuDataService.ModifyMenuMessage (activeContact);
 		menuDataService.SetCharacterName (characterName);
 		ActivateMenuBtns ();
 		DisableAllCharacters ();

@@ -16,7 +16,7 @@ public class MenuService: MonoBehaviour {
 	private GameObject[] controls;
 	private GameObject gameData;
 	private GameObject gameMessage;
-	private GameDataModel.CharacterChoice nextChoice;
+	private GameDataModel.Contact nextContact;
 	private MenuDataService menuDataService;
 	private CharacterDataService characterDataService;
 	private InventoryDataService inventoryDataService;
@@ -57,34 +57,30 @@ public class MenuService: MonoBehaviour {
 		messageMenu.SetActive (false);
 	}
 
-	public Boolean IsBtnActive(string btn) {
-		return Array.IndexOf(nextChoice.btns, btn) != -1;
+	public Boolean IsBtnActive(int choice) {
+		return nextContact.choices[choice] == null;
 	}
 
-	private GameDataModel.CharacterChoice GetNextChoice(GameDataModel.CharacterChoice current, String choice) {
-		if (choice == "positive") {
-			return characterDataService.GetNextPositiveChoice (current);
-		} else {
-			return characterDataService.GetNextNegativeChoice (current);
-		}
+	private GameDataModel.Contact GetNextChoice(GameDataModel.Contact current, int choice) {
+		return characterDataService.GetNextChoice(current, choice);
 	}
 
-	public void nonCloseResponse(string choice) {
-		GameDataModel.CharacterChoice currentChoice = this.GetComponentInParent<CharacterChoiceService>().GetChoice();
-		nextChoice = GetNextChoice (currentChoice, choice);
+	public void nonCloseResponse(int choice) {
+		GameDataModel.Contact currentContact = this.GetComponentInParent<CharacterContactService>().GetContact();
+		nextContact = GetNextChoice (currentContact, choice);
 
 		GameObject closeBtn = GameObject.Find ("OkBtn");
 		GameObject positiveBtn = GameObject.Find ("PositiveBtn");
 		GameObject negativeBtn = GameObject.Find ("NegativeBtn");
 
-		menuDataService.ActivateOrDeactivateBtn (closeBtn, IsBtnActive("close"), nextChoice, nextChoice.close);
-		menuDataService.ActivateOrDeactivateBtn (positiveBtn, IsBtnActive("positive"), nextChoice, nextChoice.positiveText);
-		menuDataService.ActivateOrDeactivateBtn (negativeBtn, IsBtnActive("negative"), nextChoice, nextChoice.negativeText);
-		menuDataService.ModifyMenuMessage (nextChoice);
+		menuDataService.ActivateOrDeactivateBtn (positiveBtn, IsBtnActive(0), nextContact, 0);
+		menuDataService.ActivateOrDeactivateBtn (negativeBtn, IsBtnActive(1), nextContact, 1);
+		menuDataService.ActivateOrDeactivateBtn (closeBtn, IsBtnActive(2), nextContact, 2);
+		menuDataService.ModifyMenuMessage (nextContact);
 
-		if (nextChoice.itemGranted != null) {
-			string item = nextChoice.itemGranted;
-			inventoryDataService.ItemFound (nextChoice.itemGranted);
+		if (nextContact.itemGranted != null) {
+			string item = nextContact.itemGranted;
+			inventoryDataService.ItemFound (nextContact.itemGranted);
 			gameMessage.GetComponent<Text>().text = "You are given a " + item + ".";
 		}
 	}

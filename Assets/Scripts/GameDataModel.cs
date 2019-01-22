@@ -27,7 +27,7 @@ public class GameDataModel : MonoBehaviour
 		public int id;
 		public string text;
 		public string characterType;
-		public int heirarchy; 
+		public int hierarchy; 
 		public string itemGranted;
 		public string requirement;
 		public string itemGone;
@@ -39,13 +39,18 @@ public class GameDataModel : MonoBehaviour
 			this.id = contact.id;
 			this.text = contact.text;
 			this.characterType = contact.characterType;
-			this.heirarchy = contact.heirarchy;
+			this.hierarchy = contact.hierarchy;
 			this.choices = contact.choices;
 			this.requirement = contact.requirement;
 			this.itemGranted = contact.itemGranted;
 			this.itemGone = contact.itemGone;
 			this.finishTask = contact.finishTask;
 		}
+	}
+
+	[System.Serializable]
+	public class ContactId {
+		public int id;
 	}
 
 	[System.Serializable]
@@ -57,7 +62,7 @@ public class GameDataModel : MonoBehaviour
 		public string requirement;
 		public string itemGone;
 		public string finishTask;
-		public int[] contacts;
+		public ContactId[] contacts;
 
 		public void clone(Choice choice) {
 			this.id = choice.id;
@@ -68,6 +73,16 @@ public class GameDataModel : MonoBehaviour
 			this.itemGone = choice.itemGone;
 			this.finishTask = choice.finishTask;
 			this.contacts = choice.contacts;
+		}
+		public void RemoveDupContactId(int inContactId) {
+			ContactId[] newContacts = new ContactId[contacts.Length];
+			for(int x = 0; x < this.contacts.Length; x++) {
+				ContactId contactId = this.contacts[x];
+				if (contactId.id != inContactId) {
+					newContacts[x] = contactId;
+				}
+			}
+			this.contacts = newContacts;
 		}
 	}
 

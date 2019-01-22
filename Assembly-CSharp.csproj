@@ -183,7 +183,7 @@
      <Compile Include="Assets\PhotonChatApi\IChatClientListener.cs" />
      <Compile Include="Assets\Scripts\AIFollow.cs" />
      <Compile Include="Assets\Scripts\AIWorker.cs" />
-     <Compile Include="Assets\Scripts\CharacterChoiceService.cs" />
+     <Compile Include="Assets\Scripts\CharacterContactService.cs" />
      <Compile Include="Assets\Scripts\CharacterDataService.cs" />
      <Compile Include="Assets\Scripts\CharacterMenu.cs" />
      <Compile Include="Assets\Scripts\CharacterModel.cs" />

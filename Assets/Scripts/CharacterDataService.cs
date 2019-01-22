@@ -12,6 +12,7 @@ public class CharacterDataService : MonoBehaviour {
 	private InventoryDataService inventoryDataService;
 	private string serverPath = "http://localhost:3000/graphql";
 	private int stage = 1;
+	private int[] soldierContacts = {1, 4, 5};
 	private Dictionary<string, GameDataModel.Contact> keyFigureProgress;
 	public string[] names;
 	public Dictionary<string, GameDataModel.Contact> previousContacts;
@@ -76,7 +77,7 @@ public class CharacterDataService : MonoBehaviour {
 	private void LoadContactsIntoDictionary(GameDataModel.Contact[] inputContacts) {
 		// add contact to list of contacts if not already in the list
 		foreach (GameDataModel.Contact contact in inputContacts) {
-			string contactHeirarchyKey = this.GenerateContactKey(contact.id, contact.heirarchy, contact.characterType);
+			string contactHeirarchyKey = this.GenerateContactKey(contact.id, contact.hierarchy, contact.characterType);
 			if (!contacts.ContainsKey (contactHeirarchyKey)) {
 				contacts.Add(contactHeirarchyKey, contact);
 			}
@@ -87,8 +88,8 @@ public class CharacterDataService : MonoBehaviour {
 		}
 	}
 
-	private string GenerateContactKey(int contactId, int heirarchy, string characterType) {
-		return contactId + "-" + heirarchy + "-" + this.GetKeyFigureSequence(characterType);
+	private string GenerateContactKey(int contactId, int hierarchy, string characterType) {
+		return contactId + "-" + hierarchy + "-" + this.GetKeyFigureSequence(characterType);
 	}
 
 	private void LoadDataFromFile() {
@@ -144,17 +145,19 @@ public class CharacterDataService : MonoBehaviour {
 
 	private string FindNextChoiceContactKey(GameDataModel.Contact contact, GameDataModel.Choice choice) {
 		int nextContactId = 0;
-		foreach (int contactId in choice.contacts) {
-			if (contact.id != contactId) {
-				nextContactId = contactId;
+		
+		foreach (GameDataModel.ContactId contactId in choice.contacts) {
+			if (contact.id != contactId.id) {
+				nextContactId = contactId.id;
+				break;
 			}
 		}
 		return this.GenerateContactKey(nextContactId, stage, contact.characterType);
 	}
 
 	public GameDataModel.Contact GetRandomContact() {
-		int randomChoice = Random.Range (0, 2);
-		string key = this.GenerateContactKey(randomChoice, stage, "Soldier");
+		int randomChoice = soldierContacts[Random.Range (0, 2)];
+		string key = this.GenerateContactKey(randomChoice, stage, "SOLDIER");
 		GameDataModel.Contact character;
 		contacts.TryGetValue(key, out character);
 		return character;
@@ -164,6 +167,10 @@ public class CharacterDataService : MonoBehaviour {
 		GameDataModel.Contact nextContact;
 		GameDataModel.Choice nextChoice = contact.choices[choice];
 		contacts.TryGetValue (this.FindNextChoiceContactKey(contact, nextChoice), out nextContact);
+		if (nextContact == null) {
+			return null;
+		}
+
 		UpdateResetChoice (nextContact);
 		if (nextChoice.itemGone != null) {
 			inventoryDataService.RemoveItem (nextChoice.itemGone);

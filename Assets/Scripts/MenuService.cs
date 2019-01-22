@@ -58,7 +58,7 @@ public class MenuService: MonoBehaviour {
 	}
 
 	public Boolean IsBtnActive(int choice) {
-		return nextContact.choices[choice] == null;
+		return nextContact.choices.Length > choice;
 	}
 
 	private GameDataModel.Contact GetNextChoice(GameDataModel.Contact current, int choice) {
@@ -68,6 +68,13 @@ public class MenuService: MonoBehaviour {
 	public void nonCloseResponse(int choice) {
 		GameDataModel.Contact currentContact = this.GetComponentInParent<CharacterContactService>().GetContact();
 		nextContact = GetNextChoice (currentContact, choice);
+
+		if (nextContact == null) {
+			closeMenu();
+			return;
+		}
+
+		Debug.Log(nextContact.text);
 
 		GameObject closeBtn = GameObject.Find ("OkBtn");
 		GameObject positiveBtn = GameObject.Find ("PositiveBtn");

@@ -55,7 +55,7 @@ public class CharacterMenu : MonoBehaviour {
 	}
 
 	public Boolean IsChoiceActive(int index) {
-		return activeContact.choices[index] == null;
+		return activeContact.choices.Length > index;
 	}
 		
 	private void ActivateMenuBtns() {

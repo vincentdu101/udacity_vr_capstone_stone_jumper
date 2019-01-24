@@ -6,10 +6,6 @@ using UnityEngine.UI;
 
 public class CharacterMenu : MonoBehaviour {
 
-	public GameObject closeBtn;
-	public GameObject positiveBtn;
-	public GameObject negativeBtn;
-
 	private GameDataModel.Contact activeContact;
 	private GameObject gameDataService;
 	private GameObject[] controls;
@@ -52,16 +48,6 @@ public class CharacterMenu : MonoBehaviour {
 				audio.Stop ();
 			}
 		}
-	}
-
-	public Boolean IsChoiceActive(int index) {
-		return activeContact.choices.Length > index;
-	}
-		
-	private void ActivateMenuBtns() {
-		menuDataService.ActivateOrDeactivateBtn (positiveBtn, IsChoiceActive(0), activeContact, 0);
-		menuDataService.ActivateOrDeactivateBtn (negativeBtn, IsChoiceActive(1), activeContact, 1);    
-		menuDataService.ActivateOrDeactivateBtn (closeBtn, IsChoiceActive(2), activeContact, 2);                     
 	}
 
 	private void LookAtPlayer() {
@@ -115,7 +101,7 @@ public class CharacterMenu : MonoBehaviour {
 		menuDataService.MoveMessageMenu (camera);
 		menuDataService.ModifyMenuMessage (activeContact);
 		menuDataService.SetCharacterName (characterName);
-		ActivateMenuBtns ();
+		menuDataService.ActivateMenuBtns(activeContact); 
 		DisableAllCharacters ();
 		LookAtPlayer ();
 	}

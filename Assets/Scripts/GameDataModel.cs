@@ -75,11 +75,13 @@ public class GameDataModel : MonoBehaviour
 			this.contacts = choice.contacts;
 		}
 		public void RemoveDupContactId(int inContactId) {
-			ContactId[] newContacts = new ContactId[contacts.Length];
-			for(int x = 0; x < this.contacts.Length; x++) {
+			ContactId[] newContacts = new ContactId[contacts.Length - 1];
+			for(int x = 1; x < newContacts.Length; x++) {
 				ContactId contactId = this.contacts[x];
+				Debug.Log(contactId.id);
 				if (contactId.id != inContactId) {
 					newContacts[x] = contactId;
+					Debug.Log(newContacts[x].id);
 				}
 			}
 			this.contacts = newContacts;

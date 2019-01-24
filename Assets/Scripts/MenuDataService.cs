@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class MenuDataService : MonoBehaviour {
-
+	private int totalBtns = 3;
 	private GameObject mainMenu;
 	private GameObject messageMenu;
 	private GameObject message;
@@ -68,6 +68,28 @@ public class MenuDataService : MonoBehaviour {
 			return true;
 		}
 	}
+	private GameObject[] GatherButtons() {
+		GameObject[] btns = new GameObject[totalBtns];
+		for (int x = 0; x < totalBtns; x++) {
+			GameObject btn = GameObject.Find ("btn" + x);
+			btns[x] = btn;
+		}
+		return btns;
+	}
+
+	private void ResetAllBtns(GameObject[] btns) {
+		foreach (GameObject btn in btns) {
+			btn.SetActive(false);
+		}
+	}
+		
+	public void ActivateMenuBtns(GameDataModel.Contact contact) {
+		GameObject[] btns = GatherButtons();
+		ResetAllBtns(btns);
+		for (int x = 0; x < contact.choices.Length; x++) {
+			ActivateOrDeactivateBtn(btns[x], contact, x);
+		}                  
+	}
 
 	public void StartGame(GameObject player) {
 		mainMenu.SetActive (false);
@@ -81,19 +103,13 @@ public class MenuDataService : MonoBehaviour {
 		messageMenu.transform.rotation = new Quaternion (0.0f, camera.transform.rotation.y, 0.0f, camera.transform.rotation.w);
 	}
 
-	public void ActivateOrDeactivateBtn(GameObject btn, Boolean activate, 
-										GameDataModel.Contact contact, int choiceIndex) {
+	public void ActivateOrDeactivateBtn(GameObject btn, GameDataModel.Contact contact, int choiceIndex) {
 		if (btn == null) {
-			return;
-		}
-
-		if (!activate) {
-			btn.SetActive (false);
 			return;
 		}
 		
 		GameDataModel.Choice choice = contact.choices[choiceIndex];
-		choice.RemoveDupContactId(contact.id);
+		// choice.RemoveDupContactId(contact.id);
 		if (CheckChoice(choice)) {
 			characterContactService = btn.GetComponentInChildren<CharacterContactService>();
 			btn.GetComponentInChildren<Text> ().text = choice.text;

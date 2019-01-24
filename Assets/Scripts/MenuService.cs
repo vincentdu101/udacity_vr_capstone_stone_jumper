@@ -5,7 +5,6 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class MenuService: MonoBehaviour {
-
 	public GameObject gameController;
 	public GameObject mainMenu;
 	public GameObject messageMenu;
@@ -50,6 +49,9 @@ public class MenuService: MonoBehaviour {
 			control.SetActive (true);
 		}
 	}
+	private GameDataModel.Contact GetNextChoice(GameDataModel.Contact current, int choice) {
+		return characterDataService.GetNextChoice(current, choice);
+	}
 
 	public void closeMenu() {
 		reactivateAllCharacters ();
@@ -61,10 +63,6 @@ public class MenuService: MonoBehaviour {
 		return nextContact.choices.Length > choice;
 	}
 
-	private GameDataModel.Contact GetNextChoice(GameDataModel.Contact current, int choice) {
-		return characterDataService.GetNextChoice(current, choice);
-	}
-
 	public void nonCloseResponse(int choice) {
 		GameDataModel.Contact currentContact = this.GetComponentInParent<CharacterContactService>().GetContact();
 		nextContact = GetNextChoice (currentContact, choice);
@@ -74,15 +72,7 @@ public class MenuService: MonoBehaviour {
 			return;
 		}
 
-		Debug.Log(nextContact.text);
-
-		GameObject closeBtn = GameObject.Find ("OkBtn");
-		GameObject positiveBtn = GameObject.Find ("PositiveBtn");
-		GameObject negativeBtn = GameObject.Find ("NegativeBtn");
-
-		menuDataService.ActivateOrDeactivateBtn (positiveBtn, IsBtnActive(0), nextContact, 0);
-		menuDataService.ActivateOrDeactivateBtn (negativeBtn, IsBtnActive(1), nextContact, 1);
-		menuDataService.ActivateOrDeactivateBtn (closeBtn, IsBtnActive(2), nextContact, 2);
+		menuDataService.ActivateMenuBtns (nextContact);
 		menuDataService.ModifyMenuMessage (nextContact);
 
 		if (nextContact.itemGranted != null) {

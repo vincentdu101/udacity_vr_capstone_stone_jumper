@@ -147,6 +147,8 @@ public class CharacterDataService : MonoBehaviour {
 		int nextContactId = 0;
 		
 		foreach (GameDataModel.ContactId contactId in choice.contacts) {
+			Debug.Log(contact);
+			Debug.Log(contactId);
 			if (contact.id != contactId.id) {
 				nextContactId = contactId.id;
 				break;

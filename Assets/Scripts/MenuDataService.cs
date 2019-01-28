@@ -79,15 +79,30 @@ public class MenuDataService : MonoBehaviour {
 
 	private void ResetAllBtns(GameObject[] btns) {
 		foreach (GameObject btn in btns) {
-			btn.SetActive(false);
+			if (btn != null) {
+				btn.SetActive(false);
+			} 
 		}
+	}
+
+	private GameDataModel.Choice[] FilterOutContactInChoices(GameDataModel.Contact contact) {
+		GameDataModel.Choice[] choices = new GameDataModel.Choice[totalBtns];
+		// for (int x = 0; x < contact.choices.Length; x++) {
+		// 	if (contact.choices[x].contacts)
+		// }
+		return choices;
 	}
 		
 	public void ActivateMenuBtns(GameDataModel.Contact contact) {
 		GameObject[] btns = GatherButtons();
+		GameDataModel.Choice[] validChoices = FilterOutContactInChoices(contact);
 		ResetAllBtns(btns);
-		for (int x = 0; x < contact.choices.Length; x++) {
-			ActivateOrDeactivateBtn(btns[x], contact, x);
+		for (int x = 0; x < totalBtns; x++) {
+			// if (validChoices[x] != null) {
+				ActivateOrDeactivateBtn(btns[x], contact, x);
+			// } else {
+			// 	btns[x].SetActive(false);
+			// }
 		}                  
 	}
 
@@ -107,10 +122,16 @@ public class MenuDataService : MonoBehaviour {
 		if (btn == null) {
 			return;
 		}
-		
+
+		if ((contact.choices.Length - 1) < choiceIndex) {
+			btn.SetActive(false);
+			return;
+		}
+
 		GameDataModel.Choice choice = contact.choices[choiceIndex];
 		// choice.RemoveDupContactId(contact.id);
 		if (CheckChoice(choice)) {
+			Debug.Log(choice.text);
 			characterContactService = btn.GetComponentInChildren<CharacterContactService>();
 			btn.GetComponentInChildren<Text> ().text = choice.text;
 			btn.SetActive (true);

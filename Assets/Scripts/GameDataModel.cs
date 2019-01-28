@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GameDataModel : MonoBehaviour
-{
+namespace GameDataModel {
 
 	[System.Serializable]
 	public class GameData {
@@ -74,17 +73,12 @@ public class GameDataModel : MonoBehaviour
 			this.finishTask = choice.finishTask;
 			this.contacts = choice.contacts;
 		}
-		public void RemoveDupContactId(int inContactId) {
-			ContactId[] newContacts = new ContactId[contacts.Length - 1];
-			for(int x = 1; x < newContacts.Length; x++) {
-				ContactId contactId = this.contacts[x];
-				Debug.Log(contactId.id);
-				if (contactId.id != inContactId) {
-					newContacts[x] = contactId;
-					Debug.Log(newContacts[x].id);
+		public void ContactsContactId(int inContactId) {
+			for (int x = 0; x < contacts.Length; x++) {
+				if (contacts[x].id == inContactId) {
+
 				}
 			}
-			this.contacts = newContacts;
 		}
 	}
 

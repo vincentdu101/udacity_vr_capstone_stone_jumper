@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using GameDataModel;
 
 public class CharacterDataService : MonoBehaviour {
 
@@ -13,15 +14,17 @@ public class CharacterDataService : MonoBehaviour {
 	private string serverPath = "http://localhost:3000/graphql";
 	private int stage = 1;
 	private int[] soldierContacts = {1, 4, 5};
-	private Dictionary<string, GameDataModel.Contact> keyFigureProgress;
+	private Dictionary<string, Contact> keyFigureProgress;
 	public string[] names;
-	public Dictionary<string, GameDataModel.Contact> previousContacts;
-	public Dictionary<string, GameDataModel.Contact> contacts;
+	public Dictionary<string, Contact> previousContacts;
+	public Dictionary<string, int> keyFigureHierarchyCount;
+	public Dictionary<string, Contact> contacts;
 
 	// Use this for initialization
 	void Start () {
-		contacts = new Dictionary<string, GameDataModel.Contact> ();
-		previousContacts = new Dictionary<string, GameDataModel.Contact> ();
+		contacts = new Dictionary<string, Contact> ();
+		previousContacts = new Dictionary<string, Contact> ();
+		keyFigureHierarchyCount = new Dictionary<string, int>();
 		gameData = GameObject.FindGameObjectWithTag ("GameData");
 		inventoryDataService = gameData.GetComponent<InventoryDataService> ();
 		gameStateObj = GameObject.FindGameObjectWithTag ("GameState");
@@ -74,21 +77,29 @@ public class CharacterDataService : MonoBehaviour {
 		return www;
 	}
 
-	private void LoadContactsIntoDictionary(GameDataModel.Contact[] inputContacts) {
+	private void LoadContactsIntoDictionary(Contact[] inputContacts) {
 		// add contact to list of contacts if not already in the list
-		foreach (GameDataModel.Contact contact in inputContacts) {
-			string contactHeirarchyKey = this.GenerateContactKey(contact.id, contact.hierarchy, contact.characterType);
+		foreach (Contact contact in inputContacts) {
+			string figure = contact.characterType;
+			int defaultHierarchy = 1;
+			if (!keyFigureHierarchyCount.ContainsKey(figure) && IsKeyFigure(figure)) {
+				keyFigureHierarchyCount.Add(figure, defaultHierarchy);
+			}
+
+			string contactHeirarchyKey = this.GenerateContactKey(contact.id, contact.characterType);
 			if (!contacts.ContainsKey (contactHeirarchyKey)) {
 				contacts.Add(contactHeirarchyKey, contact);
 			}
 
-			if (!previousContacts.ContainsKey(contact.characterType)) {
-				previousContacts.Add(contact.characterType, contact);
+			if (!previousContacts.ContainsKey(figure)) {
+				previousContacts.Add(figure, contact);
 			}
 		}
 	}
 
-	private string GenerateContactKey(int contactId, int hierarchy, string characterType) {
+	private string GenerateContactKey(int contactId, string characterType) {
+		int hierarchy;
+		keyFigureHierarchyCount.TryGetValue(characterType, out hierarchy);
 		return contactId + "-" + hierarchy + "-" + this.GetKeyFigureSequence(characterType);
 	}
 
@@ -101,7 +112,7 @@ public class CharacterDataService : MonoBehaviour {
 			// Read the json from the file into a string
 			string dataAsJson = File.ReadAllText(filePath); 
 			// Pass the json to JsonUtility, and tell it to create a GameData object from it
-			GameDataModel.GameData data = JsonUtility.FromJson<GameDataModel.GameData>(dataAsJson);
+			GameData data = JsonUtility.FromJson<GameData>(dataAsJson);
 
 			// Retrieve the names and choices property of data
 			names = data.names;
@@ -123,7 +134,7 @@ public class CharacterDataService : MonoBehaviour {
 		{
 			Debug.Log("WWW Request: " + data.text);
 			LoadDataFromFile();
-			GameDataModel.GameData parsedData = JsonUtility.FromJson<GameDataModel.GameData>(data.text);
+			GameData parsedData = JsonUtility.FromJson<GameData>(data.text);
 			LoadContactsIntoDictionary(parsedData.data.game.contacts);
 		}
 	}
@@ -134,7 +145,7 @@ public class CharacterDataService : MonoBehaviour {
 		if (www.text != null) {
 
 			string dataAsJson = www.text;
-			GameDataModel.GameData data = JsonUtility.FromJson<GameDataModel.GameData>(dataAsJson);
+			GameData data = JsonUtility.FromJson<GameData>(dataAsJson);
 
 			// Retrieve the names and choices property of data
 			names = data.names;
@@ -143,41 +154,69 @@ public class CharacterDataService : MonoBehaviour {
 		}
 	}
 
-	private string FindNextChoiceContactKey(GameDataModel.Contact contact, GameDataModel.Choice choice) {
+	private void UpdateHeirarchyOfKeyFigure(Contact contact, Choice choice) {
+		if (choice.choiceType == "NORMAL") {
+			int hierarchy;
+			keyFigureHierarchyCount.TryGetValue(contact.characterType, out hierarchy);
+			keyFigureHierarchyCount.Remove(contact.characterType);
+			keyFigureHierarchyCount.Add(contact.characterType, hierarchy++);
+		}
+	}
+
+	private string FindNextChoiceContactKey(Contact contact, Choice choice) {
 		int nextContactId = 0;
 		
-		foreach (GameDataModel.ContactId contactId in choice.contacts) {
-			Debug.Log(contact);
-			Debug.Log(contactId);
+		foreach (ContactId contactId in choice.contacts) {
 			if (contact.id != contactId.id) {
 				nextContactId = contactId.id;
 				break;
 			}
 		}
-		return this.GenerateContactKey(nextContactId, stage, contact.characterType);
+		UpdateHeirarchyOfKeyFigure(contact, choice);
+		return this.GenerateContactKey(nextContactId, contact.characterType);
 	}
 
-	public GameDataModel.Contact GetRandomContact() {
+	private Contact RemoveCurrentChoiceInNextContact(Contact contact, Choice choice) {
+		Choice[] validChoices = new Choice[contact.choices.Length - 1];
+		int nextSlot = 0;
+		for (int x = 0; x < contact.choices.Length; x++) {
+			if (contact.choices[x].id != choice.id) {
+				validChoices[nextSlot] = contact.choices[x];
+				nextSlot++;
+			}
+		}
+		contact.choices = validChoices;
+		return contact;
+	}
+	private bool IsKeyFigure(string figure) {
+		return GetKeyFigureSequence(figure) != "0";
+	}
+
+	public Contact GetRandomContact() {
 		int randomChoice = soldierContacts[Random.Range (0, 2)];
-		string key = this.GenerateContactKey(randomChoice, stage, "SOLDIER");
-		GameDataModel.Contact character;
+		string key = this.GenerateContactKey(randomChoice, "SOLDIER");
+		Contact character;
 		contacts.TryGetValue(key, out character);
 		return character;
 	}
 
-	public GameDataModel.Contact GetNextChoice(GameDataModel.Contact contact, int choice) {
-		GameDataModel.Contact nextContact;
-		GameDataModel.Choice nextChoice = contact.choices[choice];
+	public Contact GetNextChoice(Contact contact, int choice) {
+		Contact nextContact;
+		Choice nextChoice = contact.choices[choice];
+		Debug.Log(nextChoice.id);
 		contacts.TryGetValue (this.FindNextChoiceContactKey(contact, nextChoice), out nextContact);
 		if (nextContact == null) {
 			return null;
 		}
 
 		UpdateResetChoice (nextContact);
-		if (nextChoice.itemGone != null) {
+		nextContact = RemoveCurrentChoiceInNextContact(nextContact, nextChoice);
+		Debug.Log(nextChoice.id);
+		Debug.Log(nextChoice.itemGone == "");
+		if (nextChoice.itemGone != "") {
 			inventoryDataService.RemoveItem (nextChoice.itemGone);
 		}
-		if (nextContact.finishTask != null) {	
+		if (nextContact.finishTask != "") {	
 			gameState.FinishTask (nextContact.finishTask);
 		}
 		return nextContact;
@@ -185,26 +224,26 @@ public class CharacterDataService : MonoBehaviour {
 
 	public string GetKeyFigureSequence(string figure) {
 		switch (figure) {
-		case "EricTheRed": {
-			return "A";
-		}
-		case "Illugi": {
+			case "EricTheRed": {
+				return "A";
+			}
+			case "Illugi": {
 				return "B";
-		}
-		case "ShipCaptain": {
+			}
+			case "ShipCaptain": {
 				return "C";
-		}
-		case "Glaumur": {
+			}
+			case "Glaumur": {
 				return "D";
-		}
-		default:	
-			return "0";
+			}
+			default:	
+				return "0";
 		}
 	}
 
-	public GameDataModel.Contact GetKeyFigureChoice(string figure) {
-	// 	GameDataModel.Contact previousContact;
-	// 	GameDataModel.Contact nextContact;
+	public Contact GetKeyFigureChoice(string figure) {
+	// 	Contact previousContact;
+	// 	Contact nextContact;
 	// 	string key; 
 	// 	previousContacts.TryGetValue(figure, out previousContact);
 	// 	if (previousContact == null) {
@@ -216,7 +255,7 @@ public class CharacterDataService : MonoBehaviour {
 	// 	previousContacts.Remove (figure);
 	// 	previousContacts.Add (figure, nextChoice);
 	// 	return nextChoice;
-		GameDataModel.Contact nextContact;
+		Contact nextContact;
 		previousContacts.TryGetValue(figure, out nextContact);
 		return nextContact;
 	}
@@ -226,7 +265,7 @@ public class CharacterDataService : MonoBehaviour {
 		return names[random];
 	}
 
-	public void UpdateResetChoice(GameDataModel.Contact contact) {
+	public void UpdateResetChoice(Contact contact) {
 		previousContacts.Remove (contact.characterType);
 		previousContacts.Add (contact.characterType, contact);
 	}

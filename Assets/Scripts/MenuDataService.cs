@@ -59,11 +59,13 @@ public class MenuDataService : MonoBehaviour {
 		return !gameState.IsTaskDone (task);
 	}
 
-	private bool CheckChoice(GameDataModel.Choice choice) {
+	private bool CheckChoice(GameDataModel.Choice choice, GameDataModel.Contact contact) {
 		if (choice.requirement != "") {
 			return isRequirementMet(choice) && TaskNotCompleted(choice.requirement);
 		} else if (choice.itemGone != "") {
 			return isItemGone(choice) && TaskNotCompleted(choice.itemGone);
+		} else if (choice.contacts.Length > 1 && choice.contacts[1].id == contact.id) {
+			return false;
 		} else {
 			return true;
 		}
@@ -127,17 +129,18 @@ public class MenuDataService : MonoBehaviour {
 			btn.SetActive(false);
 			return;
 		}
-
+		
 		GameDataModel.Choice choice = contact.choices[choiceIndex];
 		// choice.RemoveDupContactId(contact.id);
-		if (CheckChoice(choice)) {
+		if (CheckChoice(choice, contact)) {
+			Debug.Log(contact.id);
 			Debug.Log(choice.text);
+			Debug.Log(choice.contacts[0].id);
 			characterContactService = btn.GetComponentInChildren<CharacterContactService>();
 			btn.GetComponentInChildren<Text> ().text = choice.text;
 			btn.SetActive (true);
 			characterContactService.SetContact (contact);
 		} else {
-			Debug.Log(CheckChoice(choice));
 			btn.SetActive (false);
 		}
 	}
